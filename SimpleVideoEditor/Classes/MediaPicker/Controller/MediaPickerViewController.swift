@@ -47,6 +47,35 @@ class MediaPickerViewController: UIViewController {
         setupView()
         view.backgroundColor = .white
     }
+    
+    static func checkPhotoLibraryPermission(hasPermissionHandler: @escaping VoidCallback) {
+        let deniedHandler = {
+            ZFAlertView(title: "请先开启相册权限已选择视频".international,
+                        leftTitle: "确认".international,
+                        rightTitle: "去设置".international) { (isLeft) in
+                            guard !isLeft else { return }
+                            if let url = URL(string: UIApplication.openSettingsURLString) {
+                                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                            }
+            }.show()
+        }
+        switch PHPhotoLibrary.authorizationStatus() {
+        case .authorized:
+            hasPermissionHandler()
+        case .notDetermined:
+            PHPhotoLibrary.requestAuthorization { status in
+                DispatchQueue.main.async {
+                    if status == .authorized {
+                        hasPermissionHandler()
+                    } else {
+                        deniedHandler()
+                    }
+                }
+            }
+        default:
+            deniedHandler()
+        }
+    }
 }
 
 // MARK: - 事件

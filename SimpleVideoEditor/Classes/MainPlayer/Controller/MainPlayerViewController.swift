@@ -42,13 +42,15 @@ class MainPlayerViewController: BaseViewController {
 // MARK: - 事件响应
 private extension MainPlayerViewController {
     func clickReselectVideo() {
-        present(MediaPickerViewController(videoResultCallback: { (videoItem) in
-            self.videoItem = videoItem
-            self.vm.videoItem.accept(videoItem)
-            self.vm.playState.accept(.playing)
-            self.vm.playRate.accept(.normal)
-            self.setupPlayer()
-        }))
+        MediaPickerViewController.checkPhotoLibraryPermission {
+            self.present(MediaPickerViewController(videoResultCallback: { (videoItem) in
+                self.videoItem = videoItem
+                self.vm.videoItem.accept(videoItem)
+                self.vm.playState.accept(.playing)
+                self.vm.playRate.accept(.normal)
+                self.setupPlayer()
+            }))
+        }
     }
 }
 
@@ -205,7 +207,7 @@ extension Reactive where Base: UIView {
     
     var animationHidden: Binder<Bool> {
         Binder<Bool>(self.base) { (view, hidden) in
-            UIView.animate(withDuration: 0.15, animations: {
+            UIView.animate(withDuration: 0.25, animations: {
                 view.alpha = hidden ? 0 : 1
             }) { (_) in
                 view.isHidden = hidden
