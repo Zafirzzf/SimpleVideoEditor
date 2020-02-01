@@ -1,0 +1,42 @@
+PODS:
+  - NimbleKit (2.1)
+  - RxCocoa (5.0.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.0.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.0.1)
+  - SnapKit (5.0.1)
+  - SwiftDate (6.1.0)
+  - SwiftyNotification (1.3.1)
+
+DEPENDENCIES:
+  - NimbleKit
+  - RxCocoa
+  - RxSwift
+  - SnapKit
+  - SwiftDate
+  - SwiftyNotification
+
+SPEC REPOS:
+  trunk:
+    - NimbleKit
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - SnapKit
+    - SwiftDate
+    - SwiftyNotification
+
+SPEC CHECKSUMS:
+  NimbleKit: fc0c4d88eece0fc61f0a32c5e3a605c1fd1d30c0
+  RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
+  RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
+  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SwiftDate: fa2bb3962056bb44047b4b85a30044e5eae30b03
+  SwiftyNotification: 97bc51087f1cb0decd8866183b45d9fed15aa0c7
+
+PODFILE CHECKSUM: 159eb0980d585446e1a2927d41b7ea246488e394
+
+COCOAPODS: 1.8.4
