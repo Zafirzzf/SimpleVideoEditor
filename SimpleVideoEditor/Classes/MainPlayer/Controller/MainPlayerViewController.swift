@@ -21,6 +21,7 @@ class MainPlayerViewController: BaseViewController {
     lazy var playerLayer = AVPlayerLayer(player: player)
     let rxBag = DisposeBag()
     let containerView = UIView()
+    var statusBarHidden = true
     
     required init?(coder aDecoder: NSCoder) { nil }
     
@@ -42,6 +43,9 @@ class MainPlayerViewController: BaseViewController {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
+    override var prefersStatusBarHidden: Bool { statusBarHidden }
+    override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
+
 }
 
 // MARK: - 事件响应
@@ -64,8 +68,6 @@ private extension MainPlayerViewController {
         vm.playState.accept(.pause)
         VideoManager.outputVideo(of: videoItem, complete: exportVC.finish)
     }
-    
-    override internal var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
 }
 
 // MARK: - 基础配置
@@ -80,6 +82,9 @@ private extension MainPlayerViewController {
             .disposed(by: rxBag)
         vm.isFullScreen.asDriver()
             .drive(containerView.rx.rotation)
+            .disposed(by: rxBag)
+        vm.output.statusBarHidden
+            .drive(self.rx.statusBarHidden)
             .disposed(by: rxBag)
         containerView.whenTap { [unowned self] (tap) in
             self.vm.input.playerViewTap.accept(tap.location(in: self.containerView))
@@ -124,11 +129,11 @@ private extension MainPlayerViewController {
             .disposed(by: rxBag)
         
         backButton.snp.makeConstraints {
-            $0.centerY.equalTo(selectVideoButton)
-            $0.left.equalTo(5)
+            $0.top.equalTo(20)
+            $0.left.equalTo(15)
         }
         selectVideoButton.snp.makeConstraints {
-            $0.top.equalTo(STATUS_BAR_HEIGHT + 5)
+            $0.top.equalTo(5)
             $0.centerX.equalToSuperview()
         }
         saveButton.snp.makeConstraints {
@@ -210,6 +215,7 @@ private extension MainPlayerViewController {
 extension Reactive where Base: UIView {
     var rotation: Binder<Bool> {
         Binder<Bool>(self.base) { (view, isFullScreen) in
+            UIApplication.shared.setStatusBarHidden(true, with: .fade)
             UIView.animate(withDuration: 0.15, animations: {
                 if isFullScreen {
                     view.frame = [STATUS_BAR_HEIGHT, 0, SCREEN_HEIGHT - STATUS_BAR_HEIGHT - TAB_IPHONEX_MARGIN, SCREEN_WIDTH]
@@ -229,9 +235,7 @@ extension Reactive where Base: UIView {
         Binder<Bool>(self.base) { (view, hidden) in
             UIView.animate(withDuration: 0.25, animations: {
                 view.alpha = hidden ? 0 : 1
-            }) { (_) in
-                view.isHidden = hidden
-            }
+            })
         }
     }
 }
@@ -276,3 +280,11 @@ extension Reactive where Base: CALayer {
     }
 }
 
+extension Reactive where Base == MainPlayerViewController {
+    var statusBarHidden: Binder<Bool> {
+        Binder<Bool>(self.base) { (vc, hidden) in
+            vc.statusBarHidden = hidden
+            vc.setNeedsStatusBarAppearanceUpdate()
+        }
+    }
+}

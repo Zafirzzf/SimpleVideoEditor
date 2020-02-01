@@ -41,6 +41,7 @@ class PlayerViewModel {
         let backButtonIsHidden: Driver<Bool>
         let selectVideoHidden: Driver<Bool>
         let saveButtonHidden: Driver<Bool>
+        let statusBarHidden: Driver<Bool>
     }
     
     let input: Input
@@ -62,15 +63,16 @@ class PlayerViewModel {
     init(player: AVPlayer, videoItem: VideoPickItem) {
         self.videoItem = BehaviorRelay<VideoPickItem>(value: videoItem)
         let playerFrame = Observable.combineLatest(isFullScreen.asObservable(), self.videoItem.asObservable()) { (isFullScreen, item) -> CGRect in
-            let videoHeight = item.videoHeight(from: SCREEN_WIDTH)
-            if videoItem.isHorizontal {
+            if item.isHorizontal {
+                let videoHeight = item.videoHeight(from: SCREEN_WIDTH)
                 if isFullScreen {
                     return [0, 0, SCREEN_HEIGHT, SCREEN_WIDTH]
                 } else {
                     return [0, (SCREEN_HEIGHT - STATUS_BAR_HEIGHT - TAB_IPHONEX_MARGIN - videoHeight) / 2, SCREEN_WIDTH, videoHeight]
                 }
             } else {
-                return [30, (SCREEN_HEIGHT - STATUS_BAR_HEIGHT - TAB_IPHONEX_MARGIN - videoHeight) / 2, SCREEN_WIDTH - 2 * 30, videoHeight]
+                let videoHeight = item.videoHeight(from: SCREEN_WIDTH - 30 * 2)
+                return [30, STATUS_BAR_HEIGHT, SCREEN_WIDTH - 2 * 30, videoHeight]
             }
         }
         
@@ -98,7 +100,8 @@ class PlayerViewModel {
                        rateButtonSelected: playRate.map { $0 != .normal }.asDriver(onErrorJustReturn: false),
                        backButtonIsHidden: isFullScreen.map { !$0 }.asDriver(onErrorJustReturn: true),
                        selectVideoHidden: isFullScreen.map { $0 }.asDriver(onErrorJustReturn: true),
-                       saveButtonHidden: saveButtonHidden.asDriver(onErrorJustReturn: false))
+                       saveButtonHidden: saveButtonHidden.asDriver(onErrorJustReturn: false),
+                       statusBarHidden: isFullScreen.map { $0 }.asDriver(onErrorJustReturn: false))
         input = .init()
         let timer = Timer.scheduledTimer(withTimeInterval: 0.02, repeats: true) { [weak self] (_) in
             guard let self = self else { return }
