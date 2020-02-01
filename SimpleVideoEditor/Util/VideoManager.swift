@@ -10,8 +10,7 @@ import UIKit
 import AVFoundation
 
 class VideoManager {
-    static func outputVideo(of videoItem: VideoPickItem) {
-        HudManager.shared.showHud()
+    static func outputVideo(of videoItem: VideoPickItem, complete: @escaping BoolCallback) {
         let asset = videoItem.asset
         guard let assetReader = try? AVAssetReader(asset: asset) else { return }
         
@@ -120,7 +119,6 @@ class VideoManager {
             }
         }
         
-        
         group.notify(queue: .main) {
             assetWriter.finishWriting {
                 let status = assetWriter.status
@@ -129,9 +127,10 @@ class VideoManager {
                     assetReader.cancelReading()
                     assetWriter.cancelWriting()
                     PhotoLibraryManager.saveVideoToAblum(with: outputURL) { (success) in
-                        HudManager.shared.showText("保存成功".international)
+                        complete(true)
                     }
                 } else {
+                    complete(false)
                     print("finishWriting: error: \n\n", assetWriter.error)
                 }
             }

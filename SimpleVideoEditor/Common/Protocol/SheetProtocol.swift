@@ -20,7 +20,7 @@ extension SheetProtocol {
         let backgroundView = BackgroundView(frame: UIScreen.main.bounds, tapCallback: { [unowned self] in
             self.dismiss()
         })
-        backgroundView.backgroundColor = UIColor.black.withAlphaComponent(0)
+        backgroundView.backgroundColor = UIColor.blackLight.withAlphaComponent(0)
 
         UIWindow.keyWindow.addSubview(backgroundView)
         let cornerContainer = createCornerContainerView()
@@ -31,7 +31,7 @@ extension SheetProtocol {
         cornerContainer.addRoundedCorners(direction: [.topLeft, .topRight], cornerRadii: CGSize(width: 20, height: 20))
         UIView.animate(withDuration: 0.2, animations: {
             cornerContainer.y = SCREEN_HEIGHT - cornerContainer.height
-            backgroundView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+            backgroundView.backgroundColor = UIColor.blackLight.withAlphaComponent(0.5)
         }, completion: nil)
     }
     
@@ -39,7 +39,7 @@ extension SheetProtocol {
         let backgroundView = getBackgroundView()
         UIView.animate(withDuration: 0.2, animations: {
             backgroundView.subviews.first?.y = SCREEN_HEIGHT
-            backgroundView.backgroundColor = UIColor.black.withAlphaComponent(0)
+            backgroundView.backgroundColor = UIColor.blackLight.withAlphaComponent(0)
         }, completion: { _ in
             backgroundView.removeFromSuperview()
         })

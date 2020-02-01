@@ -33,7 +33,7 @@ class VideoPickerCell: UICollectionViewCell {
             .textAlignment(.right)
             .font(13.fontMedium)
             .textColor(.white)
-            .shadow(color: UIColor.black, opacity: 1, offset: .zero, radius: 3)
+            .shadow(color: UIColor.blackLight, opacity: 1, offset: .zero, radius: 3)
             .addToSuperView(contentView)
         imageView.snp.makeConstraints {
             $0.edges.equalTo(UIEdgeInsets.zero)

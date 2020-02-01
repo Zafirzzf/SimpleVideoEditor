@@ -101,6 +101,7 @@ private extension MediaPickerViewController {
     func setupView() {
         collectionView.then {
             $0.delegate = self
+            $0.backgroundColor = UIColor.blackLight
             view.addSubview($0)
             $0.register(VideoPickerCell.self, forCellWithReuseIdentifier: cellID)
             $0.snp.makeConstraints {

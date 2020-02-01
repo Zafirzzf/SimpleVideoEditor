@@ -240,7 +240,7 @@ extension ExpandButtonStyle {
     /// 朝下筛选交易对的风格
     static var filterSymbolStyle: ExpandButtonStyle {
         let style = ExpandButtonStyle()
-        style.backgroundColor = UIColor.black
+        style.backgroundColor = UIColor.blackLight
         //修改横线颜色
         style.titleMarginLineColor = UIColor.white.withAlphaComponent(0.1)
         //修改标题颜色

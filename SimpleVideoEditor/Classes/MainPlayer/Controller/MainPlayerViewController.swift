@@ -37,6 +37,11 @@ class MainPlayerViewController: BaseViewController {
         setupBottomControlView()
         setupPlayer()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
 }
 
 // MARK: - 事件响应
@@ -52,12 +57,21 @@ private extension MainPlayerViewController {
             }))
         }
     }
+    
+    func clickSaveVideo() {
+        let exportVC = ExportViewController()
+        push(exportVC)
+        vm.playState.accept(.pause)
+        VideoManager.outputVideo(of: videoItem, complete: exportVC.finish)
+    }
+    
+    override internal var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
 }
 
 // MARK: - 基础配置
 private extension MainPlayerViewController {
     func setup() {
-        view.backgroundColor = .black
+        view.backgroundColor = .blackLight
         view.addSubview(containerView)
         playerLayer.videoGravity = .resizeAspect
         vm.output.playerFrame.drive(playerLayer.rx.frame)
@@ -97,7 +111,13 @@ private extension MainPlayerViewController {
             .image("save".toImage())
             .addToSuperView(containerView)
             .whenTap { [unowned self] in
-                VideoManager.outputVideo(of: self.videoItem)
+                ZFAlertView(title: "将以镜像的状态保存视频，是否继续".international,
+                            leftTitle: "取消".international,
+                            rightTitle: "保存") { (isLeft) in
+                                guard !isLeft else { return }
+                                self.clickSaveVideo()
+                }.show()
+                
             }.base
         vm.output.saveButtonHidden
             .drive(saveButton.rx.isHidden)

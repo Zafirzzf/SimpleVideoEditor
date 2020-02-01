@@ -186,6 +186,10 @@
 		18C1B68123E5296E00B673E1 /* test1.MP4 in Resources */ = {isa = PBXBuildFile; fileRef = 18C1B68023E5296E00B673E1 /* test1.MP4 */; };
 		18C1B68323E56BD500B673E1 /* PlayerControlTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C1B68223E56BD500B673E1 /* PlayerControlTopView.swift */; };
 		18C1B68423E56BD500B673E1 /* PlayerControlTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C1B68223E56BD500B673E1 /* PlayerControlTopView.swift */; };
+		18C1B68623E5A0F200B673E1 /* FakeProgressMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C1B68523E5A0F200B673E1 /* FakeProgressMaker.swift */; };
+		18C1B68723E5A0F200B673E1 /* FakeProgressMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C1B68523E5A0F200B673E1 /* FakeProgressMaker.swift */; };
+		18C1B68D23E5A6A900B673E1 /* ExportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C1B68C23E5A6A900B673E1 /* ExportViewController.swift */; };
+		18C1B68E23E5A6A900B673E1 /* ExportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C1B68C23E5A6A900B673E1 /* ExportViewController.swift */; };
 		18C4526123E2968000B6C66E /* ExpandButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C4526023E2968000B6C66E /* ExpandButton.swift */; };
 		18C4526223E2968000B6C66E /* ExpandButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C4526023E2968000B6C66E /* ExpandButton.swift */; };
 		18C4526423E29B4700B6C66E /* PlayRateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C4526323E29B4700B6C66E /* PlayRateType.swift */; };
@@ -302,6 +306,8 @@
 		18BE46DB23DDBBD5009A5EDE /* VideoPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPickerCell.swift; sourceTree = "<group>"; };
 		18C1B68023E5296E00B673E1 /* test1.MP4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test1.MP4; sourceTree = "<group>"; };
 		18C1B68223E56BD500B673E1 /* PlayerControlTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerControlTopView.swift; sourceTree = "<group>"; };
+		18C1B68523E5A0F200B673E1 /* FakeProgressMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeProgressMaker.swift; sourceTree = "<group>"; };
+		18C1B68C23E5A6A900B673E1 /* ExportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportViewController.swift; sourceTree = "<group>"; };
 		18C4526023E2968000B6C66E /* ExpandButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandButton.swift; sourceTree = "<group>"; };
 		18C4526323E29B4700B6C66E /* PlayRateType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayRateType.swift; sourceTree = "<group>"; };
 		43B1611D41F661F796A77D2F /* Pods-SimpleVideoEditorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleVideoEditorTests.debug.xcconfig"; path = "Target Support Files/Pods-SimpleVideoEditorTests/Pods-SimpleVideoEditorTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -427,6 +433,7 @@
 			isa = PBXGroup;
 			children = (
 				181AFFDE23E190330092EC79 /* VideoManager.swift */,
+				18C1B68523E5A0F200B673E1 /* FakeProgressMaker.swift */,
 				181AFFE123E1B49F0092EC79 /* PhotoLibraryManager.swift */,
 				18BE45AD23DDB275009A5EDE /* PKHUD */,
 				18BE45C023DDB275009A5EDE /* ZFAlertView */,
@@ -614,8 +621,9 @@
 			isa = PBXGroup;
 			children = (
 				1865B40923DE9CA0006BEFF0 /* PreSelect */,
-				1865B40223DE8F78006BEFF0 /* MainPlayer */,
 				18BE469023DDB3AC009A5EDE /* MediaPicker */,
+				1865B40223DE8F78006BEFF0 /* MainPlayer */,
+				18C1B68823E5A68800B673E1 /* Export */,
 				18BE469723DDB3AC009A5EDE /* Base */,
 			);
 			path = Classes;
@@ -691,6 +699,38 @@
 				18BE46A423DDB3AC009A5EDE /* BaseScrollView.swift */,
 				18BE46A523DDB3AC009A5EDE /* BaseTableView.swift */,
 				18BE46A623DDB3AC009A5EDE /* BaseNavigationController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		18C1B68823E5A68800B673E1 /* Export */ = {
+			isa = PBXGroup;
+			children = (
+				18C1B68A23E5A68800B673E1 /* Model */,
+				18C1B68923E5A68800B673E1 /* Controller */,
+				18C1B68B23E5A68800B673E1 /* View */,
+			);
+			path = Export;
+			sourceTree = "<group>";
+		};
+		18C1B68923E5A68800B673E1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				18C1B68C23E5A6A900B673E1 /* ExportViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		18C1B68A23E5A68800B673E1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18C1B68B23E5A68800B673E1 /* View */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -917,6 +957,7 @@
 				18BE45F323DDB275009A5EDE /* PKHUDSquareBaseView.swift in Sources */,
 				18BE467F23DDB2D3009A5EDE /* Timer+Extension.swift in Sources */,
 				18BE466323DDB2D3009A5EDE /* UILabel+Extension.swift in Sources */,
+				18C1B68D23E5A6A900B673E1 /* ExportViewController.swift in Sources */,
 				18BE45E723DDB275009A5EDE /* HUD.swift in Sources */,
 				18BE460B23DDB275009A5EDE /* ValidateTool.swift in Sources */,
 				18BE468D23DDB2D3009A5EDE /* AbnormalViewState.swift in Sources */,
@@ -929,6 +970,7 @@
 				18BE463823DDB2C4009A5EDE /* SheetProtocol.swift in Sources */,
 				181AFFD023DED3DA0092EC79 /* PlayerControlBottomView.swift in Sources */,
 				18BE46BF23DDB3AC009A5EDE /* BaseTabBarController.swift in Sources */,
+				18C1B68623E5A0F200B673E1 /* FakeProgressMaker.swift in Sources */,
 				18BE462823DDB2C4009A5EDE /* ScreenSize+Config.swift in Sources */,
 				18BE46AF23DDB3AC009A5EDE /* AssetAlbum.swift in Sources */,
 				18BE467523DDB2D3009A5EDE /* Date+Extension.swift in Sources */,
@@ -1013,6 +1055,7 @@
 				18BE45EE23DDB275009A5EDE /* WindowRootViewController.swift in Sources */,
 				18BE45E223DDB275009A5EDE /* PKHUDAssets.swift in Sources */,
 				18BE467A23DDB2D3009A5EDE /* Decimal+Extension.swift in Sources */,
+				18C1B68E23E5A6A900B673E1 /* ExportViewController.swift in Sources */,
 				18BE466E23DDB2D3009A5EDE /* CGFloat.swift in Sources */,
 				18BE463723DDB2C4009A5EDE /* AlertProtocol.swift in Sources */,
 				18BE466423DDB2D3009A5EDE /* UILabel+Extension.swift in Sources */,
@@ -1025,6 +1068,7 @@
 				18BE46B023DDB3AC009A5EDE /* AssetAlbum.swift in Sources */,
 				18BE45FE23DDB275009A5EDE /* ZFAlertContent.swift in Sources */,
 				18BE45E023DDB275009A5EDE /* PKHUDSuccessView.swift in Sources */,
+				18C1B68723E5A0F200B673E1 /* FakeProgressMaker.swift in Sources */,
 				181AFFCE23DED0C00092EC79 /* PlayerViewModel.swift in Sources */,
 				18BE468A23DDB2D3009A5EDE /* LoadCellable.swift in Sources */,
 				18BE46CA23DDB3AC009A5EDE /* BaseTableView.swift in Sources */,

@@ -18,7 +18,8 @@ class BaseNavigationController: UINavigationController {
         navigationBar.isTranslucent = false
         navigationBar.barTintColor = UIColor.white
         modalPresentationStyle = .fullScreen
-        navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.medium(size: 18)]
+        navigationBar.setBackgroundImage(UIImage(color: UIColor.blackLight), for: .default)
+        navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.medium(size: 18)]
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -29,7 +30,7 @@ class BaseNavigationController: UINavigationController {
         if children.count > 0 {
             viewController.hidesBottomBarWhenPushed = true
             let backBtn = UIButton(type: .custom).nb
-//                .image(Asset.Public.publicHeadBackBlack.image)
+                .image("back".toImage())
                 .width(30).height(30)
                 .imageEdgeInsets(0, -20, 0, 0)
                 .base.addTouch { [unowned self] in

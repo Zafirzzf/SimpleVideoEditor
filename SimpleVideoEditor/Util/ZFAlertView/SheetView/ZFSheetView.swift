@@ -28,7 +28,7 @@ class ZFSheetView: UIView {
     func show() {
         UIWindow.keyWindow.addSubview(self)
         UIView.animate(withDuration: 0.25) {
-            self.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+            self.backgroundColor = UIColor.blackLight.withAlphaComponent(0.5)
             self.contentView.y = self.height - TAB_IPHONEX_MARGIN - self.contentView.height
         }
     }
@@ -36,7 +36,7 @@ class ZFSheetView: UIView {
     func dismiss() {
         UIView.animate(withDuration: 0.25, animations: {
             self.contentView.y = self.height
-            self.backgroundColor = UIColor.black.withAlphaComponent(0)
+            self.backgroundColor = UIColor.blackLight.withAlphaComponent(0)
 
         }) { (finish) in
             self.removeFromSuperview()

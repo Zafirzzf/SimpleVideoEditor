@@ -14,7 +14,7 @@ class ZFAlertView: UIView {
     
     init(title: String, leftTitle: String, rightTitle: String? = nil, isLeftClick: @escaping (Bool) -> Void) {
         super.init(frame: UIScreen.main.bounds)
-        backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        backgroundColor = UIColor.blackLight.withAlphaComponent(0.5)
         let content = ZFAlertContent(title: title, leftTitle: leftTitle, rightTitle: rightTitle, isLeftClick: isLeftClick)
         addSubview(content)
     }

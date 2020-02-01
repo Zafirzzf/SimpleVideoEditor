@@ -12,7 +12,7 @@ class PreSelectViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .black
+        view.backgroundColor = .blackLight
         
         let titleLabel = UILabel().nb
             .font(UIFont(name: "Helvetica-BoldOblique", size: 25)!)
@@ -43,7 +43,7 @@ class PreSelectViewController: BaseViewController {
             .whenTap { [unowned self] in
                 MediaPickerViewController.checkPhotoLibraryPermission {
                     self.present(MediaPickerViewController(videoResultCallback: { (result) in
-                        UIWindow.keyWindow.rootViewController = MainPlayerViewController(video: result)
+                        UIWindow.keyWindow.rootViewController = BaseNavigationController(rootViewController: MainPlayerViewController(video: result)) 
                     }), animated: true, completion: nil)
                 }
         }.base

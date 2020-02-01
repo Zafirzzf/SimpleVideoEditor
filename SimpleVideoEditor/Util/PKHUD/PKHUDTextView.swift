@@ -15,7 +15,7 @@ open class PKHUDTextView: PKHUDWideBaseView {
     public init(text: String?) {
         super.init()
         //修改错误弹窗提示背景颜色
-        self.backgroundColor = UIColor.black.withAlphaComponent(0.8)
+        self.backgroundColor = UIColor.blackLight.withAlphaComponent(0.8)
         commonInit(text)
     }
 

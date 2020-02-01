@@ -35,7 +35,7 @@ class HudManager {
 //            title: nil,
 //            subtitle: text)
 //        customView.frame.size = CGSize(width: 110, height: 110)
-//        customView.backgroundColor = UIColor.black.withAlphaComponent(0.8)
+//        customView.backgroundColor = UIColor.blackLight.withAlphaComponent(0.8)
 //        hud.contentView = customView
         hud.show()
         hud.hide(afterDelay: KAfterDelay)
@@ -60,7 +60,7 @@ extension HudManager {
     
 //    var loadingView: UIView {
 //        let containerView = UIView(frame: CGRect(x: 0, y: 0, width: 124, height: 124))
-//        containerView.backgroundColor = UIColor.Common.blackLight
+//        containerView.backgroundColor = UIColor.Common.blackLightLight
 //        let animate = LOTAnimationView(name: "pullRefresh")
 //        animate.size = CGSize(width: 70, height: 70)
 //        animate.center = CGPoint(x: containerView.center.x, y: containerView.center.y - 10)

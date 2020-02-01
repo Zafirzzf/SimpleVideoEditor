@@ -18,7 +18,7 @@ class BaseTabBarController: UITabBarController {
         super.viewDidLoad()
         setupChildVC()
         tabBar.isTranslucent = false
-//        tabBar.tintColor = UIColor.black172233D
+//        tabBar.tintColor = UIColor.blackLight172233D
     }
     
     func setupChildVC() {

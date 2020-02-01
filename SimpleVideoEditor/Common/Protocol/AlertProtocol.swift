@@ -21,7 +21,7 @@ extension AlertProtocol {
     func show() {
         VCManager.windowTopVC()?.view.endEditing(true)
         let backgroundView = BackgroundView(frame: UIScreen.main.bounds)
-        backgroundView.backgroundColor = UIColor.black.withAlphaComponent(0)
+        backgroundView.backgroundColor = UIColor.blackLight.withAlphaComponent(0)
         backgroundView.whenTap { [unowned self] (_) in
             self.tapEmptyArea()
         }
@@ -33,7 +33,7 @@ extension AlertProtocol {
             $0.centerX.equalTo(SCREEN_WIDTH.half)
             $0.centerY.equalTo(SCREEN_HEIGHT.half)
         }
-        backgroundView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        backgroundView.backgroundColor = UIColor.blackLight.withAlphaComponent(0.5)
     }
     
     func dismiss() {

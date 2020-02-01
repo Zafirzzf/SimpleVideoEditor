@@ -12,6 +12,6 @@ extension UIColor {
     static let subject = UIColor("#FF6685")
     static let blackLight = UIColor("#191F2E")
     static let confirmGradientColors = [UIColor("#FF4466"), UIColor("#FF809A")]
-    static let blackBackground: [CGColor] = [UIColor.black.withAlphaComponent(0.7), UIColor.black.withAlphaComponent(0)].map { $0.cgColor }
+    static let blackBackground: [CGColor] = [UIColor.blackLight.withAlphaComponent(0.7), UIColor.blackLight.withAlphaComponent(0)].map { $0.cgColor }
     
 }

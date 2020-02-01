@@ -53,7 +53,7 @@ class ZFAlertContent: UIView {
                                                size: CGSize(width: bounds.width,
                                                             height: bounds.height - 50 - lineHeight)))
         titleLabel.backgroundColor = UIColor.white
-//        titleLabel.textColor = UIColor.Common.black333333
+        titleLabel.textColor = UIColor.blackLight
         titleLabel.font = 18.font
         titleLabel.numberOfLines = 0
         titleLabel.textAlignment = .center
@@ -65,14 +65,14 @@ class ZFAlertContent: UIView {
         } else {
             let leftBtn = UIButton(frame: CGRect(x: 0, y: titleLabel.frame.maxY + lineHeight, width: (bounds.width / 2 - lineHeight), height: 50))
             leftBtn.setTitle(leftTitle, for: .normal)
-//            leftBtn.setTitleColor(UIColor.Common.subject, for: .normal)
+            leftBtn.setTitleColor(UIColor.blackLight, for: .normal)
             buttonCommonProperty(leftBtn)
             leftBtn.addTarget(self, action: #selector(leftButtonClick), for: .touchUpInside)
             addSubview(leftBtn)
             
             let rightBtn = UIButton(frame: CGRect(x: leftBtn.frame.maxX + lineHeight, y: leftBtn.frame.minY, width: leftBtn.bounds.width, height: leftBtn.bounds.height))
             rightBtn.setTitle(rightTitle, for: .normal)
-//            rightBtn.setTitleColor(UIColor.Common.subject, for: .normal)
+            rightBtn.setTitleColor(UIColor.subject, for: .normal)
             buttonCommonProperty(rightBtn)
             rightBtn.addTarget(self, action: #selector(rightButtonClick), for: .touchUpInside)
             addSubview(rightBtn)
@@ -82,8 +82,8 @@ class ZFAlertContent: UIView {
     func buttonCommonProperty(_ button: UIButton) {
         button.titleLabel?.font = 18.font
         button.titleLabel?.textAlignment = .center
-//        let highLightedColor = UIColor.Common.grayCCCCCC
-//        button.setBackgroundImage(UIImage(color: highLightedColor), for: .highlighted)
+        let highLightedColor = UIColor.subject
+        button.setBackgroundImage(UIImage(color: highLightedColor), for: .highlighted)
         button.setBackgroundImage(UIImage(color: UIColor.white), for: .normal)
     }
 }
