@@ -25,12 +25,12 @@ class PreSelectViewController: BaseViewController {
             .textColor(UIColor.white)
             .numberOfLines(0)
             .textAlignment(.center)
-            .text("简单易用的视频播放器\n 镜像/慢速 \n 可保存到本地".international)
+            .text(KeyString.mainIntroducation*)
             .addToSuperView(self.view).base
         let endLabel = UILabel().nb
             .font(15.font)
             .textColor(UIColor.white)
-            .text("更多功能敬请期待...".international)
+            .text(KeyString.moreFeatureIntroducation*)
             .addToSuperView(self.view).base
         
         let selectButton = UIButton().nb.font(15.fontMedium)
@@ -54,7 +54,8 @@ class PreSelectViewController: BaseViewController {
         }
         subTitlteLabel.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom).offset(20)
-            $0.centerX.equalToSuperview()
+            $0.left.equalTo(10)
+            $0.right.equalTo(-10)
         }
         selectButton.snp.makeConstraints {
             $0.width.height.equalTo(80)

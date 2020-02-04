@@ -116,9 +116,9 @@ private extension MainPlayerViewController {
             .image("save".toImage())
             .addToSuperView(containerView)
             .whenTap { [unowned self] in
-                ZFAlertView(title: "将以镜像的状态保存视频，是否继续".international,
-                            leftTitle: "取消".international,
-                            rightTitle: "保存") { (isLeft) in
+                ZFAlertView(title: KeyString.saveMirrorText*,
+                            leftTitle: KeyString.cancel*,
+                            rightTitle: KeyString.save*) { (isLeft) in
                                 guard !isLeft else { return }
                                 self.clickSaveVideo()
                 }.show()

@@ -50,9 +50,9 @@ class MediaPickerViewController: UIViewController {
     
     static func checkPhotoLibraryPermission(hasPermissionHandler: @escaping VoidCallback) {
         let deniedHandler = {
-            ZFAlertView(title: "请先开启相册权限已选择视频".international,
-                        leftTitle: "确认".international,
-                        rightTitle: "去设置".international) { (isLeft) in
+            ZFAlertView(title: KeyString.pleaseOpenAlbumPermission*,
+                        leftTitle: KeyString.confirm*,
+                        rightTitle: KeyString.gotoSet*) { (isLeft) in
                             guard !isLeft else { return }
                             if let url = URL(string: UIApplication.openSettingsURLString) {
                                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
@@ -85,7 +85,7 @@ private extension MediaPickerViewController {
         HudManager.shared.showHud()
         requestId = item.loadVideo(progressHandler: { [weak self] (_, error) in
             if error != nil {
-                HudManager.shared.showFailure("加载出错")
+                HudManager.shared.showFailure(KeyString.loadError*)
             }
         }) { [weak self] (avAsset) in
             HudManager.shared.dismissHud()

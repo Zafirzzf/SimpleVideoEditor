@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  SimpleVideoEditor
+
+  Created by 周正飞 on 2020/2/4.
+  Copyright © 2020 周正飞. All rights reserved.
+*/
+
+"确认" = "Confirm";
+"取消" = "Cancel";
+"保存" = "Save";
+"去设置" = "Setting";
+"加载出错" = "Error Occurred";
+"选择视频" = "Select Video";
+"镜像" = "Mirror";
+"导出视频" = "Export Video";
+"导出失败" = "Export Fail";
+"将以镜像的状态保存视频，是否继续" = "The video will be saved in a mirrored state, do you want to continue?";
+"简单易用的视频播放器\n 镜像/慢速 \n 可保存到本地" = "Easy-to-use video player \n Mirror  Slow \n can be saved locally";
+"更多功能敬请期待..." = "Stay tuned for more features ...";
+"请先开启相册权限已选择视频" = "Please open the album permission first selected video";

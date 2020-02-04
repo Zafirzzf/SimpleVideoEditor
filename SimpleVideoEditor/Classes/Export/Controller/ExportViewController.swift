@@ -16,7 +16,7 @@ class ExportViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "导出视频".international
+        title = KeyString.exportVideo*
         finishImageV.alpha = 0
         view.addSubview(finishImageV)
         let progressView = UIProgressView(progressViewStyle: .bar).then {
@@ -65,7 +65,7 @@ class ExportViewController: BaseViewController {
                 self.pop()
             }
         } else {
-            HudManager.shared.showText("导出失败".international)
+            HudManager.shared.showText(KeyString.exportFail*)
             pop()
         }
     }

@@ -22,7 +22,7 @@ class PlayerControlOptionView: UIView {
     init() {
         super.init(frame: .zero)
         mirrorButton.nb
-            .title("镜像".international)
+            .title(KeyString.mirror*)
             .font(11.fontMedium)
             .titleColor(UIColor.white)
             .titleColor(UIColor.subject, state: .selected)

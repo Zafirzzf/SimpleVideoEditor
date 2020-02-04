@@ -141,7 +141,6 @@ class PlayerViewModel {
         // 松开进度条
         input.sliderTouchup.subscribe(onNext: { [unowned self] value in
             let totalTimeSec = Double(CMTimeGetSeconds(player.currentItem!.duration))
-            print("进度targetTime: ", totalTimeSec * Double(value))
             let targetTime = CMTime(seconds: totalTimeSec * Double(value), preferredTimescale: 100000)
             player.seek(to: targetTime) { (finish) in
                 self.seekTimeCompletion(player: player)
