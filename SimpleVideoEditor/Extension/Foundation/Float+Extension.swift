@@ -81,4 +81,8 @@ extension Double {
         }
         return resultStr
     }
+    
+    var validNumber: Double {
+        self.isNaN ? 0 : self
+    }
 }

@@ -23,6 +23,12 @@
 		181AFFE023E190330092EC79 /* VideoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181AFFDE23E190330092EC79 /* VideoManager.swift */; };
 		181AFFE223E1B49F0092EC79 /* PhotoLibraryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181AFFE123E1B49F0092EC79 /* PhotoLibraryManager.swift */; };
 		181AFFE323E1B49F0092EC79 /* PhotoLibraryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181AFFE123E1B49F0092EC79 /* PhotoLibraryManager.swift */; };
+		184C691523E916BC0040ABCB /* Bugly in Frameworks */ = {isa = PBXBuildFile; fileRef = 184C691223E916BC0040ABCB /* Bugly */; };
+		184C691623E916BC0040ABCB /* Bugly in Frameworks */ = {isa = PBXBuildFile; fileRef = 184C691223E916BC0040ABCB /* Bugly */; };
+		184C691923E917930040ABCB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 184C691823E917930040ABCB /* SystemConfiguration.framework */; };
+		184C691B23E9179A0040ABCB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 184C691A23E9179A0040ABCB /* Security.framework */; };
+		184C691D23E917A10040ABCB /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 184C691C23E917A10040ABCB /* libz.tbd */; };
+		184C691F23E917A80040ABCB /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 184C691E23E917A80040ABCB /* libc++.tbd */; };
 		1865B40723DE8FBB006BEFF0 /* MainPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1865B40623DE8FBB006BEFF0 /* MainPlayerViewController.swift */; };
 		1865B40823DE8FBB006BEFF0 /* MainPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1865B40623DE8FBB006BEFF0 /* MainPlayerViewController.swift */; };
 		1865B40B23DE9CAD006BEFF0 /* PreSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1865B40A23DE9CAD006BEFF0 /* PreSelectViewController.swift */; };
@@ -183,7 +189,6 @@
 		18BE46CC23DDB3AC009A5EDE /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BE46A623DDB3AC009A5EDE /* BaseNavigationController.swift */; };
 		18BE46DC23DDBBD5009A5EDE /* VideoPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BE46DB23DDBBD5009A5EDE /* VideoPickerCell.swift */; };
 		18BE46DD23DDBBD5009A5EDE /* VideoPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BE46DB23DDBBD5009A5EDE /* VideoPickerCell.swift */; };
-		18C1B68123E5296E00B673E1 /* test1.MP4 in Resources */ = {isa = PBXBuildFile; fileRef = 18C1B68023E5296E00B673E1 /* test1.MP4 */; };
 		18C1B68323E56BD500B673E1 /* PlayerControlTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C1B68223E56BD500B673E1 /* PlayerControlTopView.swift */; };
 		18C1B68423E56BD500B673E1 /* PlayerControlTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C1B68223E56BD500B673E1 /* PlayerControlTopView.swift */; };
 		18C1B68623E5A0F200B673E1 /* FakeProgressMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C1B68523E5A0F200B673E1 /* FakeProgressMaker.swift */; };
@@ -217,9 +222,19 @@
 		181AFFDB23E1722F0092EC79 /* ZoomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomButton.swift; sourceTree = "<group>"; };
 		181AFFDE23E190330092EC79 /* VideoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoManager.swift; sourceTree = "<group>"; };
 		181AFFE123E1B49F0092EC79 /* PhotoLibraryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryManager.swift; sourceTree = "<group>"; };
+		184C690F23E916BC0040ABCB /* BuglyConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuglyConfig.h; sourceTree = "<group>"; };
+		184C691023E916BC0040ABCB /* Bugly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bugly.h; sourceTree = "<group>"; };
+		184C691123E916BC0040ABCB /* BuglyLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuglyLog.h; sourceTree = "<group>"; };
+		184C691223E916BC0040ABCB /* Bugly */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = Bugly; sourceTree = "<group>"; };
+		184C691423E916BC0040ABCB /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		184C691723E916EA0040ABCB /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		184C691823E917930040ABCB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		184C691A23E9179A0040ABCB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		184C691C23E917A10040ABCB /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		184C691E23E917A80040ABCB /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		1865B40623DE8FBB006BEFF0 /* MainPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPlayerViewController.swift; sourceTree = "<group>"; };
 		1865B40A23DE9CAD006BEFF0 /* PreSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreSelectViewController.swift; sourceTree = "<group>"; };
-		18BE457A23D95B72009A5EDE /* SimpleVideoEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleVideoEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18BE457A23D95B72009A5EDE /* SimpleVideo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleVideo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BE457D23D95B72009A5EDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18BE458623D95B73009A5EDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18BE458923D95B73009A5EDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -304,7 +319,6 @@
 		18BE46A523DDB3AC009A5EDE /* BaseTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableView.swift; sourceTree = "<group>"; };
 		18BE46A623DDB3AC009A5EDE /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		18BE46DB23DDBBD5009A5EDE /* VideoPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPickerCell.swift; sourceTree = "<group>"; };
-		18C1B68023E5296E00B673E1 /* test1.MP4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test1.MP4; sourceTree = "<group>"; };
 		18C1B68223E56BD500B673E1 /* PlayerControlTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerControlTopView.swift; sourceTree = "<group>"; };
 		18C1B68523E5A0F200B673E1 /* FakeProgressMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeProgressMaker.swift; sourceTree = "<group>"; };
 		18C1B68C23E5A6A900B673E1 /* ExportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportViewController.swift; sourceTree = "<group>"; };
@@ -323,6 +337,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				184C691F23E917A80040ABCB /* libc++.tbd in Frameworks */,
+				184C691D23E917A10040ABCB /* libz.tbd in Frameworks */,
+				184C691B23E9179A0040ABCB /* Security.framework in Frameworks */,
+				184C691923E917930040ABCB /* SystemConfiguration.framework in Frameworks */,
+				184C691523E916BC0040ABCB /* Bugly in Frameworks */,
 				6EEA377AC5EC369F77A21711 /* Pods_SimpleVideoEditor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,6 +350,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				184C691623E916BC0040ABCB /* Bugly in Frameworks */,
 				BD11EB1C8987698F528B1AB9 /* Pods_SimpleVideoEditorTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,6 +358,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		184C690D23E916BC0040ABCB /* Bugly */ = {
+			isa = PBXGroup;
+			children = (
+				184C690E23E916BC0040ABCB /* Headers */,
+				184C691223E916BC0040ABCB /* Bugly */,
+				184C691323E916BC0040ABCB /* Modules */,
+			);
+			path = Bugly;
+			sourceTree = "<group>";
+		};
+		184C690E23E916BC0040ABCB /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				184C690F23E916BC0040ABCB /* BuglyConfig.h */,
+				184C691023E916BC0040ABCB /* Bugly.h */,
+				184C691123E916BC0040ABCB /* BuglyLog.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		184C691323E916BC0040ABCB /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				184C691423E916BC0040ABCB /* module.modulemap */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
 		1865B40223DE8F78006BEFF0 /* MainPlayer */ = {
 			isa = PBXGroup;
 			children = (
@@ -398,7 +446,7 @@
 		18BE457B23D95B72009A5EDE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				18BE457A23D95B72009A5EDE /* SimpleVideoEditor.app */,
+				18BE457A23D95B72009A5EDE /* SimpleVideo.app */,
 				18BE459023D95B73009A5EDE /* SimpleVideoEditorTests.xctest */,
 			);
 			name = Products;
@@ -412,7 +460,7 @@
 				18BE461523DDB2C4009A5EDE /* Common */,
 				18BE45AC23DDB275009A5EDE /* Util */,
 				18BE457D23D95B72009A5EDE /* AppDelegate.swift */,
-				18C1B68023E5296E00B673E1 /* test1.MP4 */,
+				184C691723E916EA0040ABCB /* Bridging-Header.h */,
 				18BE458623D95B73009A5EDE /* Assets.xcassets */,
 				18BE458823D95B73009A5EDE /* LaunchScreen.storyboard */,
 				18BE458B23D95B73009A5EDE /* Info.plist */,
@@ -438,6 +486,7 @@
 				18BE45AD23DDB275009A5EDE /* PKHUD */,
 				18BE45C023DDB275009A5EDE /* ZFAlertView */,
 				18BE45C723DDB275009A5EDE /* NiceGesture */,
+				184C690D23E916BC0040ABCB /* Bugly */,
 				18BE45CF23DDB275009A5EDE /* Tool */,
 			);
 			path = Util;
@@ -749,6 +798,10 @@
 		7CFD3DDF88744AA8D0AB475D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				184C691E23E917A80040ABCB /* libc++.tbd */,
+				184C691C23E917A10040ABCB /* libz.tbd */,
+				184C691A23E9179A0040ABCB /* Security.framework */,
+				184C691823E917930040ABCB /* SystemConfiguration.framework */,
 				EF383DA62B6C4FA178E8EDFA /* Pods_SimpleVideoEditor.framework */,
 				CFBDD7074C35F1E6B736E77A /* Pods_SimpleVideoEditorTests.framework */,
 			);
@@ -774,7 +827,7 @@
 			);
 			name = SimpleVideoEditor;
 			productName = SimpleVideoEditor;
-			productReference = 18BE457A23D95B72009A5EDE /* SimpleVideoEditor.app */;
+			productReference = 18BE457A23D95B72009A5EDE /* SimpleVideo.app */;
 			productType = "com.apple.product-type.application";
 		};
 		18BE458F23D95B73009A5EDE /* SimpleVideoEditorTests */ = {
@@ -840,7 +893,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				18BE45F123DDB275009A5EDE /* Images.xcassets in Resources */,
-				18C1B68123E5296E00B673E1 /* test1.MP4 in Resources */,
 				18BE458A23D95B73009A5EDE /* LaunchScreen.storyboard in Resources */,
 				18BE458723D95B73009A5EDE /* Assets.xcassets in Resources */,
 			);
@@ -1260,6 +1312,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 2YBDAL8C2A;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1271,11 +1324,16 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SimpleVideoEditor/Util/Bugly",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zafir.videoEditor;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SimpleVideo;
 				PROVISIONING_PROFILE_SPECIFIER = videoEditor;
+				SWIFT_OBJC_BRIDGING_HEADER = "SimpleVideoEditor/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1286,6 +1344,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 2YBDAL8C2A;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1297,11 +1356,16 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SimpleVideoEditor/Util/Bugly",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zafir.videoEditor;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SimpleVideo;
 				PROVISIONING_PROFILE_SPECIFIER = videoEditor;
+				SWIFT_OBJC_BRIDGING_HEADER = "SimpleVideoEditor/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -1322,6 +1386,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SimpleVideoEditor/Util/Bugly",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = zafir.SimpleVideoEditorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1348,6 +1416,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SimpleVideoEditor/Util/Bugly",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = zafir.SimpleVideoEditorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

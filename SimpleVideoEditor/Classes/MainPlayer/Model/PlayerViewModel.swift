@@ -85,7 +85,10 @@ class PlayerViewModel {
         let timeReply = BehaviorRelay<(current: Double, total: Double)>(value: (0, 0))
         let progressObserver = timeReply.map { Float($0.current / $0.total) }
         let timeFormatObserver = timeReply
-            .map { timeFormat(of: $0.current) + "/" + timeFormat(of: $0.total) }
+            .map {
+                timeFormat(of: $0.current) + "/" + timeFormat(of: $0.total)
+                
+        }
         let fullScreenHidden = self.videoItem
             .map { !$0.isHorizontal }
             .asDriver(onErrorJustReturn: false)
@@ -114,7 +117,8 @@ class PlayerViewModel {
                     self.seekTimeCompletion(player: player)
                 }
             }
-            timeReply.accept((currentTimeSec, totalTimeSec))
+            
+            timeReply.accept((currentTimeSec.validNumber, totalTimeSec.validNumber))
         }
         timer.fire()
         RunLoop.main.add(timer, forMode: .common)

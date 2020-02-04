@@ -19,10 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = .white
         window?.rootViewController = PreSelectViewController()
         window?.makeKeyAndVisible()
-//        let path = Bundle.main.path(forResource: "test1", ofType: "MP4")!
-//        if UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(path) {
-//            UISaveVideoAtPathToSavedPhotosAlbum(path, nil, nil, nil)
-//        }
+        Bugly.start(withAppId: "749b56a434")
+        let path = Bundle.main.path(forResource: "test1", ofType: "mp4")!
+        if UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(path) {
+            UISaveVideoAtPathToSavedPhotosAlbum(path, nil, nil, nil)
+        }
         return true
     }
 
