@@ -9,21 +9,21 @@
 import Foundation
 
 enum PlayRateType: Float, CaseIterable {
-    case slowest = 0.25
-    case half = 0.5
-    case eightTenths = 0.8
     case normal = 1
+    case eightTenths = 0.8
+    case half = 0.5
+    case slowest = 0.25
     
     func toggle() -> PlayRateType {
         switch self {
-        case .slowest:
-            return .half
-        case .half:
+        case .normal:
             return .eightTenths
         case .eightTenths:
-            return .normal
-        case .normal:
+            return .half
+        case .half:
             return .slowest
+        case .slowest:
+            return .normal
         }
     }
     

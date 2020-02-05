@@ -41,7 +41,7 @@ class VideoManager {
         }
         
         let videoCompressionProperty: [String: Any] = [
-            AVVideoAverageBitRateKey: 1.0 * videoItem.size.width * videoItem.size.height,
+            AVVideoAverageBitRateKey: 1.5 * videoItem.size.width * videoItem.size.height,
             AVVideoExpectedSourceFrameRateKey: 15,
             AVVideoProfileLevelKey: AVVideoProfileLevelH264BaselineAutoLevel]
         
