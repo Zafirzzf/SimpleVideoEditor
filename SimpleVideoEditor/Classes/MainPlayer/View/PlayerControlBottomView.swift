@@ -60,6 +60,7 @@ class PlayerControlBottomView: UIView {
             $0.right.equalTo(-15)
             $0.centerY.equalToSuperview()
             $0.left.equalTo(timeLabel.snp.right).offset(8)
+            $0.width.height.equalTo(20)
         }
     }
     
