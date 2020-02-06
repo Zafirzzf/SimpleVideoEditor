@@ -203,6 +203,8 @@
 		18CFED2223E96F8F00AC3895 /* KeyString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CFED2023E96F8F00AC3895 /* KeyString.swift */; };
 		18CFED2E23E97AE500AC3895 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18CFED3123E97AE500AC3895 /* Localizable.strings */; };
 		18CFED2F23E97AE500AC3895 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18CFED3123E97AE500AC3895 /* Localizable.strings */; };
+		18ED4E0D23EC171000A02DA0 /* AVPlayerSeeker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED4E0C23EC171000A02DA0 /* AVPlayerSeeker.swift */; };
+		18ED4E0E23EC171000A02DA0 /* AVPlayerSeeker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED4E0C23EC171000A02DA0 /* AVPlayerSeeker.swift */; };
 		6EEA377AC5EC369F77A21711 /* Pods_SimpleVideoEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF383DA62B6C4FA178E8EDFA /* Pods_SimpleVideoEditor.framework */; };
 		BD11EB1C8987698F528B1AB9 /* Pods_SimpleVideoEditorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFBDD7074C35F1E6B736E77A /* Pods_SimpleVideoEditorTests.framework */; };
 /* End PBXBuildFile section */
@@ -333,6 +335,7 @@
 		18CFED2023E96F8F00AC3895 /* KeyString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyString.swift; sourceTree = "<group>"; };
 		18CFED3023E97AE500AC3895 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		18CFED3223E97AE700AC3895 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		18ED4E0C23EC171000A02DA0 /* AVPlayerSeeker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVPlayerSeeker.swift; sourceTree = "<group>"; };
 		43B1611D41F661F796A77D2F /* Pods-SimpleVideoEditorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleVideoEditorTests.debug.xcconfig"; path = "Target Support Files/Pods-SimpleVideoEditorTests/Pods-SimpleVideoEditorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		53EB539BFDEA033AC3528CB0 /* Pods-SimpleVideoEditor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleVideoEditor.debug.xcconfig"; path = "Target Support Files/Pods-SimpleVideoEditor/Pods-SimpleVideoEditor.debug.xcconfig"; sourceTree = "<group>"; };
 		84F8C6B9E64C8049B7E2E906 /* Pods-SimpleVideoEditorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleVideoEditorTests.release.xcconfig"; path = "Target Support Files/Pods-SimpleVideoEditorTests/Pods-SimpleVideoEditorTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -491,6 +494,7 @@
 		18BE45AC23DDB275009A5EDE /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				18ED4E0C23EC171000A02DA0 /* AVPlayerSeeker.swift */,
 				181AFFDE23E190330092EC79 /* VideoManager.swift */,
 				18C1B68523E5A0F200B673E1 /* FakeProgressMaker.swift */,
 				181AFFE123E1B49F0092EC79 /* PhotoLibraryManager.swift */,
@@ -1019,6 +1023,7 @@
 				18BE45DD23DDB275009A5EDE /* PKHUD.swift in Sources */,
 				18BE467923DDB2D3009A5EDE /* Decimal+Extension.swift in Sources */,
 				18BE466123DDB2D3009A5EDE /* UIWindow+Extension.swift in Sources */,
+				18ED4E0D23EC171000A02DA0 /* AVPlayerSeeker.swift in Sources */,
 				18BE460723DDB275009A5EDE /* NewGestureVIew+Gesture.swift in Sources */,
 				18BE460323DDB275009A5EDE /* NewPanGesture.swift in Sources */,
 				18BE45F323DDB275009A5EDE /* PKHUDSquareBaseView.swift in Sources */,
@@ -1118,6 +1123,7 @@
 				1865B40C23DE9CAD006BEFF0 /* PreSelectViewController.swift in Sources */,
 				181AFFE323E1B49F0092EC79 /* PhotoLibraryManager.swift in Sources */,
 				18BE45D823DDB275009A5EDE /* PKHUDAnimation.swift in Sources */,
+				18ED4E0E23EC171000A02DA0 /* AVPlayerSeeker.swift in Sources */,
 				18BE463923DDB2C4009A5EDE /* SheetProtocol.swift in Sources */,
 				181AFFD423DF17A30092EC79 /* VideoPickItem.swift in Sources */,
 				18BE45EE23DDB275009A5EDE /* WindowRootViewController.swift in Sources */,

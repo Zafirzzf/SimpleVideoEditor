@@ -55,7 +55,6 @@ class PlayerViewModel {
 
     private var progressTimer: Timer?
     private let rxBag = DisposeBag()
-    private var isDragingSlider = false
     
     deinit {
         progressTimer?.invalidate()
@@ -108,7 +107,6 @@ class PlayerViewModel {
         input = .init()
         let timer = Timer.scheduledTimer(withTimeInterval: 0.02, repeats: true) { [weak self] (_) in
             guard let self = self else { return }
-            guard !self.isDragingSlider else { return }
             let totalTimeSec = Double(CMTimeGetSeconds(player.currentItem!.duration))
             let currentTimeSec = Double(CMTimeGetSeconds(player.currentItem!.currentTime()))
             if currentTimeSec == totalTimeSec {
@@ -134,17 +132,14 @@ class PlayerViewModel {
             .disposed(by: rxBag)
         
         // 拖动进度条
-        input.dragProgress.skip(1).subscribe(onNext: { [unowned self] progress in
-            self.isDragingSlider = true
+        input.dragProgress.skip(1).subscribe(onNext: { progress in
+            player.pause()
+            player.seekToTime(of: progress)
         }).disposed(by: rxBag)
         
         // 松开进度条
         input.sliderTouchup.subscribe(onNext: { [unowned self] value in
-            let totalTimeSec = Double(CMTimeGetSeconds(player.currentItem!.duration))
-            let targetTime = CMTime(seconds: totalTimeSec * Double(value), preferredTimescale: 100000)
-            player.seek(to: targetTime) { (finish) in
-                self.seekTimeCompletion(player: player)
-            }
+            self.playState.accept(self.playState.value)
         }).disposed(by: rxBag)
         
         // 点击镜像
@@ -183,7 +178,6 @@ class PlayerViewModel {
     }
     
     func seekTimeCompletion(player: AVPlayer) {
-        isDragingSlider = false
         if playState.value == .playing {
             playState.accept(self.playState.value)
             playRate.accept(self.playRate.value)
