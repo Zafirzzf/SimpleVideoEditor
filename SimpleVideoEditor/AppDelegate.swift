@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = PreSelectViewController()
         window?.makeKeyAndVisible()
         Bugly.start(withAppId: "749b56a434")
+        _ = GDTAdManager.shared
 //        let path = Bundle.main.path(forResource: "test1", ofType: "mp4")!
 //        if UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(path) {
 //            UISaveVideoAtPathToSavedPhotosAlbum(path, nil, nil, nil)

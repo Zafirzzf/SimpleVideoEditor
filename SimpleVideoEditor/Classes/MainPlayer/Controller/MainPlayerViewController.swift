@@ -30,6 +30,7 @@ class MainPlayerViewController: BaseViewController {
         playerItem = AVPlayerItem(asset: video.asset)
         player = AVPlayer(playerItem: playerItem)
         super.init(nibName: nil, bundle: nil)
+        ImageGenerator.generateThumbnailImages(with: video.asset)
     }
     
     override func viewDidLoad() {
