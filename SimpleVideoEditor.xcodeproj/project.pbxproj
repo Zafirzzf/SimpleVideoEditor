@@ -262,7 +262,7 @@
 		184C691E23E917A80040ABCB /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		1865B40623DE8FBB006BEFF0 /* MainPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPlayerViewController.swift; sourceTree = "<group>"; };
 		1865B40A23DE9CAD006BEFF0 /* PreSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreSelectViewController.swift; sourceTree = "<group>"; };
-		18BE457A23D95B72009A5EDE /* SimpleVideo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleVideo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18BE457A23D95B72009A5EDE /* SimplePlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimplePlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BE457D23D95B72009A5EDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18BE458623D95B73009A5EDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18BE458923D95B73009A5EDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -531,7 +531,7 @@
 		18BE457B23D95B72009A5EDE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				18BE457A23D95B72009A5EDE /* SimpleVideo.app */,
+				18BE457A23D95B72009A5EDE /* SimplePlayer.app */,
 				18BE459023D95B73009A5EDE /* SimpleVideoEditorTests.xctest */,
 			);
 			name = Products;
@@ -970,7 +970,7 @@
 				18C6E43923FBF7FA005F05F8 /* SwiftyPreference */,
 			);
 			productName = SimpleVideoEditor;
-			productReference = 18BE457A23D95B72009A5EDE /* SimpleVideo.app */;
+			productReference = 18BE457A23D95B72009A5EDE /* SimplePlayer.app */;
 			productType = "com.apple.product-type.application";
 		};
 		18BE458F23D95B73009A5EDE /* SimpleVideoEditorTests */ = {
@@ -1488,7 +1488,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 2YBDAL8C2A;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1505,7 +1505,7 @@
 					"$(PROJECT_DIR)/SimpleVideoEditor/Util/Bugly",
 					"$(PROJECT_DIR)/SimpleVideoEditor/Util/GDT/lib",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -1527,7 +1527,7 @@
 					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zafir.videoEditor;
-				PRODUCT_NAME = SimpleVideo;
+				PRODUCT_NAME = SimplePlayer;
 				PROVISIONING_PROFILE_SPECIFIER = videoEditor;
 				SWIFT_OBJC_BRIDGING_HEADER = "SimpleVideoEditor/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -1542,7 +1542,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 2YBDAL8C2A;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1559,7 +1559,7 @@
 					"$(PROJECT_DIR)/SimpleVideoEditor/Util/Bugly",
 					"$(PROJECT_DIR)/SimpleVideoEditor/Util/GDT/lib",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -1581,7 +1581,7 @@
 					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zafir.videoEditor;
-				PRODUCT_NAME = SimpleVideo;
+				PRODUCT_NAME = SimplePlayer;
 				PROVISIONING_PROFILE_SPECIFIER = videoEditor;
 				SWIFT_OBJC_BRIDGING_HEADER = "SimpleVideoEditor/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;

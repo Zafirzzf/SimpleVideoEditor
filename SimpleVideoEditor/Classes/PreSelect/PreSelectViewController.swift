@@ -16,7 +16,7 @@ class PreSelectViewController: BaseViewController {
         
         let titleLabel = UILabel().nb
             .font(UIFont(name: "Helvetica-BoldOblique", size: 25)!)
-            .text("Simple Video")
+            .text("Simple Player")
             .textColor(UIColor.white)
             .addToSuperView(self.view).base
             

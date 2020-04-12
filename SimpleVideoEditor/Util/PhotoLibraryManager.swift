@@ -70,7 +70,7 @@ class PhotoLibraryManager {
     }
     
     private static var projectAlbumCollection: PHAssetCollection? {
-        let title = "SimpleVideo"
+        let title = "SimplePlayer"
         let fetchOptions = PHFetchOptions()
         fetchOptions.predicate = NSPredicate(format: "title = %@", title)
         var localIdentifier = ""

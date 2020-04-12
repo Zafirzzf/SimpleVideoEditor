@@ -70,7 +70,7 @@ private class BottomView: UIView {
                 
         let titleLabel = UILabel().nb
             .font(UIFont(name: "Helvetica-BoldOblique", size: 22)!)
-            .text("Simple Video")
+            .text("Simple Player")
             .textColor(UIColor.black)
             .addToSuperView(self).base
         
