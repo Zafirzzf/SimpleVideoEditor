@@ -12,6 +12,7 @@ target 'SimpleVideoEditor' do
     pod 'SnapKit'
     pod 'SwiftDate'
     pod 'SwiftyNotification'
+    pod 
     
   target 'SimpleVideoEditorTests' do
     inherit! :search_paths

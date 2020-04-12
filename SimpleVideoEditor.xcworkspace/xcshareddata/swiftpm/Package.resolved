@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "SwiftyPreference",
+        "repositoryURL": "https://github.com/Zafirzzf/SwiftyPreference.git",
+        "state": {
+          "branch": null,
+          "revision": "1aa5c5a39f92f69b67b59be3224c61e471c2d3fb",
+          "version": "2.0.3"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

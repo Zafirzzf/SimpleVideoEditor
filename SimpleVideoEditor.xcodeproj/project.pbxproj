@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -212,6 +212,9 @@
 		18C6E41A23FBC023005F05F8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C6E41923FBC023005F05F8 /* Foundation.framework */; };
 		18C6E43323FBC041005F05F8 /* libGDTMobSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C6E42F23FBC041005F05F8 /* libGDTMobSDK.a */; };
 		18C6E43423FBC041005F05F8 /* libGDTMobSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C6E42F23FBC041005F05F8 /* libGDTMobSDK.a */; };
+		18C6E43623FBF73F005F05F8 /* PreferenceConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C6E43523FBF73F005F05F8 /* PreferenceConfig.swift */; };
+		18C6E43723FBF73F005F05F8 /* PreferenceConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C6E43523FBF73F005F05F8 /* PreferenceConfig.swift */; };
+		18C6E43A23FBF7FA005F05F8 /* SwiftyPreference in Frameworks */ = {isa = PBXBuildFile; productRef = 18C6E43923FBF7FA005F05F8 /* SwiftyPreference */; };
 		18CFED2123E96F8F00AC3895 /* KeyString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CFED2023E96F8F00AC3895 /* KeyString.swift */; };
 		18CFED2223E96F8F00AC3895 /* KeyString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CFED2023E96F8F00AC3895 /* KeyString.swift */; };
 		18CFED2E23E97AE500AC3895 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18CFED3123E97AE500AC3895 /* Localizable.strings */; };
@@ -380,6 +383,7 @@
 		18C6E43023FBC041005F05F8 /* GDTRewardVideoAdNetworkConnectorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTRewardVideoAdNetworkConnectorProtocol.h; sourceTree = "<group>"; };
 		18C6E43123FBC041005F05F8 /* GDTUnifiedNativeAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTUnifiedNativeAd.h; sourceTree = "<group>"; };
 		18C6E43223FBC041005F05F8 /* GDTVideoConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTVideoConfig.h; sourceTree = "<group>"; };
+		18C6E43523FBF73F005F05F8 /* PreferenceConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceConfig.swift; sourceTree = "<group>"; };
 		18CFED1523E96D7600AC3895 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		18CFED1F23E96E9D00AC3895 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		18CFED2023E96F8F00AC3895 /* KeyString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyString.swift; sourceTree = "<group>"; };
@@ -403,6 +407,7 @@
 			files = (
 				18C6E41A23FBC023005F05F8 /* Foundation.framework in Frameworks */,
 				18C6E41823FBC01C005F05F8 /* UIKit.framework in Frameworks */,
+				18C6E43A23FBF7FA005F05F8 /* SwiftyPreference in Frameworks */,
 				18C6E41623FBC017005F05F8 /* CoreGraphics.framework in Frameworks */,
 				18C6E43323FBC041005F05F8 /* libGDTMobSDK.a in Frameworks */,
 				18C6E41423FBC012005F05F8 /* AdSupport.framework in Frameworks */,
@@ -667,6 +672,7 @@
 				18BE461823DDB2C4009A5EDE /* UIColor+Config.swift */,
 				18BE461923DDB2C4009A5EDE /* ScreenSize+Config.swift */,
 				18BE461D23DDB2C4009A5EDE /* Notification+Config.swift */,
+				18C6E43523FBF73F005F05F8 /* PreferenceConfig.swift */,
 				18BE461B23DDB2C4009A5EDE /* GlobalSettings.swift */,
 				18BE461C23DDB2C4009A5EDE /* Const.swift */,
 				18CFED2023E96F8F00AC3895 /* KeyString.swift */,
@@ -956,6 +962,9 @@
 			dependencies = (
 			);
 			name = SimpleVideoEditor;
+			packageProductDependencies = (
+				18C6E43923FBF7FA005F05F8 /* SwiftyPreference */,
+			);
 			productName = SimpleVideoEditor;
 			productReference = 18BE457A23D95B72009A5EDE /* SimpleVideo.app */;
 			productType = "com.apple.product-type.application";
@@ -1008,6 +1017,9 @@
 				"zh-Hans",
 			);
 			mainGroup = 18BE457123D95B72009A5EDE;
+			packageReferences = (
+				18C6E43823FBF7FA005F05F8 /* XCRemoteSwiftPackageReference "SwiftyPreference" */,
+			);
 			productRefGroup = 18BE457B23D95B72009A5EDE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1172,6 +1184,7 @@
 				1865B40723DE8FBB006BEFF0 /* MainPlayerViewController.swift in Sources */,
 				18BE45F923DDB275009A5EDE /* ZFSheetView.swift in Sources */,
 				18BE46B123DDB3AC009A5EDE /* AssetItem.swift in Sources */,
+				18C6E43623FBF73F005F05F8 /* PreferenceConfig.swift in Sources */,
 				18BE46C723DDB3AC009A5EDE /* BaseScrollView.swift in Sources */,
 				18BE45FF23DDB275009A5EDE /* NewLongPressGesture.swift in Sources */,
 				18BE45FD23DDB275009A5EDE /* ZFAlertContent.swift in Sources */,
@@ -1275,6 +1288,7 @@
 				18BE466C23DDB2D3009A5EDE /* UIVIewController+Extension.swift in Sources */,
 				18BE460E23DDB275009A5EDE /* MediaTool.swift in Sources */,
 				18BE460623DDB275009A5EDE /* NewGestureAction.swift in Sources */,
+				18C6E43723FBF73F005F05F8 /* PreferenceConfig.swift in Sources */,
 				18BE468623DDB2D3009A5EDE /* Array+Extension.swift in Sources */,
 				18BE466823DDB2D3009A5EDE /* UIView+Extension.swift in Sources */,
 				181AFFD723E118850092EC79 /* CustomImagePositionButton.swift in Sources */,
@@ -1468,7 +1482,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 2YBDAL8C2A;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1522,7 +1536,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 2YBDAL8C2A;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1662,6 +1676,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		18C6E43823FBF7FA005F05F8 /* XCRemoteSwiftPackageReference "SwiftyPreference" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Zafirzzf/SwiftyPreference.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		18C6E43923FBF7FA005F05F8 /* SwiftyPreference */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18C6E43823FBF7FA005F05F8 /* XCRemoteSwiftPackageReference "SwiftyPreference" */;
+			productName = SwiftyPreference;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 18BE457223D95B72009A5EDE /* Project object */;
 }
