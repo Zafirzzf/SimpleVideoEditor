@@ -43,7 +43,7 @@ class ExportViewController: BaseViewController {
         }
         progressMaker = FakeProgressMaker(target: self) { (progress) in
             progressView.progress = progress
-            textLabel.text = String(format: "%02d", Int(progress * 100)) + "%"
+            textLabel.text = String(format: "%d", Int(progress * 100)) + "%"
         }
     }
     
