@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = PreSelectViewController()
         window?.makeKeyAndVisible()
         Bugly.start(withAppId: "749b56a434")
+        FirebaseApp.configure()
         if PreferenceConfig.openAppTimes > 1 {
             _ = GDTAdManager.shared
         } else {

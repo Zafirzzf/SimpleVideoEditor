@@ -12,7 +12,7 @@ target 'SimpleVideoEditor' do
     pod 'SnapKit'
     pod 'SwiftDate'
     pod 'SwiftyNotification'
-    pod 
+    pod 'Firebase/Analytics'
     
   target 'SimpleVideoEditorTests' do
     inherit! :search_paths

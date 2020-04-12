@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>434251720143-e7emc06b4b5q8m4q4qmrbp1ikngu7unn.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.434251720143-e7emc06b4b5q8m4q4qmrbp1ikngu7unn</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA6xYrjzmvdwmgv65qlOGfBqR_545QgWDU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>434251720143</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.zafir.videoEditor</string>
+	<key>PROJECT_ID</key>
+	<string>simpleplayer-37bee</string>
+	<key>STORAGE_BUCKET</key>
+	<string>simpleplayer-37bee.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:434251720143:ios:384a6209ba4a7e55c51eba</string>
+	<key>DATABASE_URL</key>
+	<string>https://simpleplayer-37bee.firebaseio.com</string>
+</dict>
+</plist>
