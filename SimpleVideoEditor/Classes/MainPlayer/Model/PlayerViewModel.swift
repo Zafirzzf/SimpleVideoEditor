@@ -41,6 +41,9 @@ class PlayerViewModel {
         let backButtonIsHidden: Driver<Bool>
         let selectVideoHidden: Driver<Bool>
         let saveButtonHidden: Driver<Bool>
+        var settingButtonHidden: Driver<Bool> {
+            saveButtonHidden.map { !$0 }
+        }
         let statusBarHidden: Driver<Bool>
     }
     

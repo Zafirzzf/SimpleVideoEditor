@@ -217,6 +217,12 @@
 		18C6E43A23FBF7FA005F05F8 /* SwiftyPreference in Frameworks */ = {isa = PBXBuildFile; productRef = 18C6E43923FBF7FA005F05F8 /* SwiftyPreference */; };
 		18C8F1E92442C3CB00FE5CB4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18C8F1E82442C3CB00FE5CB4 /* GoogleService-Info.plist */; };
 		18C8F1EA2442C3CB00FE5CB4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18C8F1E82442C3CB00FE5CB4 /* GoogleService-Info.plist */; };
+		18CC8CB8244AF452000D3C0A /* SettingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC8CB7244AF452000D3C0A /* SettingListView.swift */; };
+		18CC8CBA244AF683000D3C0A /* SettingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC8CB9244AF683000D3C0A /* SettingItem.swift */; };
+		18CC8CBC244AF989000D3C0A /* SideSheetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC8CBB244AF989000D3C0A /* SideSheetProtocol.swift */; };
+		18CC8CBE244AFD03000D3C0A /* TextLogoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC8CBD244AFD03000D3C0A /* TextLogoLabel.swift */; };
+		18CC8CC0244B038F000D3C0A /* EmailSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC8CBF244B038F000D3C0A /* EmailSender.swift */; };
+		18CC8CC2244B0496000D3C0A /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC8CC1244B0496000D3C0A /* DeviceInfo.swift */; };
 		18CFED2123E96F8F00AC3895 /* KeyString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CFED2023E96F8F00AC3895 /* KeyString.swift */; };
 		18CFED2223E96F8F00AC3895 /* KeyString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CFED2023E96F8F00AC3895 /* KeyString.swift */; };
 		18CFED2E23E97AE500AC3895 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18CFED3123E97AE500AC3895 /* Localizable.strings */; };
@@ -387,6 +393,12 @@
 		18C6E43223FBC041005F05F8 /* GDTVideoConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTVideoConfig.h; sourceTree = "<group>"; };
 		18C6E43523FBF73F005F05F8 /* PreferenceConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceConfig.swift; sourceTree = "<group>"; };
 		18C8F1E82442C3CB00FE5CB4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		18CC8CB7244AF452000D3C0A /* SettingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingListView.swift; sourceTree = "<group>"; };
+		18CC8CB9244AF683000D3C0A /* SettingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingItem.swift; sourceTree = "<group>"; };
+		18CC8CBB244AF989000D3C0A /* SideSheetProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideSheetProtocol.swift; sourceTree = "<group>"; };
+		18CC8CBD244AFD03000D3C0A /* TextLogoLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextLogoLabel.swift; sourceTree = "<group>"; };
+		18CC8CBF244B038F000D3C0A /* EmailSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSender.swift; sourceTree = "<group>"; };
+		18CC8CC1244B0496000D3C0A /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		18CFED1523E96D7600AC3895 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		18CFED1F23E96E9D00AC3895 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		18CFED2023E96F8F00AC3895 /* KeyString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyString.swift; sourceTree = "<group>"; };
@@ -655,6 +667,7 @@
 				18BE45D223DDB275009A5EDE /* Then.swift */,
 				18BE45D323DDB275009A5EDE /* VCManager.swift */,
 				18BE45D423DDB275009A5EDE /* HudManager.swift */,
+				18CC8CC1244B0496000D3C0A /* DeviceInfo.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -700,6 +713,7 @@
 			isa = PBXGroup;
 			children = (
 				181AFFD523E118850092EC79 /* CustomImagePositionButton.swift */,
+				18CC8CBD244AFD03000D3C0A /* TextLogoLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -766,6 +780,7 @@
 				18BE469023DDB3AC009A5EDE /* MediaPicker */,
 				1865B40223DE8F78006BEFF0 /* MainPlayer */,
 				18C1B68823E5A68800B673E1 /* Export */,
+				18CC8CB3244AA645000D3C0A /* Setting */,
 				18BE469723DDB3AC009A5EDE /* Base */,
 			);
 			path = Classes;
@@ -912,6 +927,17 @@
 				18C6E43223FBC041005F05F8 /* GDTVideoConfig.h */,
 			);
 			path = lib;
+			sourceTree = "<group>";
+		};
+		18CC8CB3244AA645000D3C0A /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				18CC8CB7244AF452000D3C0A /* SettingListView.swift */,
+				18CC8CB9244AF683000D3C0A /* SettingItem.swift */,
+				18CC8CBB244AF989000D3C0A /* SideSheetProtocol.swift */,
+				18CC8CBF244B038F000D3C0A /* EmailSender.swift */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		44A36C345FE2FAB99DBD8E44 /* Pods */ = {
@@ -1150,6 +1176,7 @@
 				18BE46B323DDB3AC009A5EDE /* MediaPickerViewController.swift in Sources */,
 				18BE460F23DDB275009A5EDE /* Then.swift in Sources */,
 				18BE462623DDB2C4009A5EDE /* UIColor+Config.swift in Sources */,
+				18CC8CBE244AFD03000D3C0A /* TextLogoLabel.swift in Sources */,
 				18BE45F523DDB275009A5EDE /* PKHUDErrorView.swift in Sources */,
 				18BE468923DDB2D3009A5EDE /* LoadCellable.swift in Sources */,
 				18BE45DD23DDB275009A5EDE /* PKHUD.swift in Sources */,
@@ -1161,12 +1188,14 @@
 				18BE45F323DDB275009A5EDE /* PKHUDSquareBaseView.swift in Sources */,
 				18BE467F23DDB2D3009A5EDE /* Timer+Extension.swift in Sources */,
 				18BE466323DDB2D3009A5EDE /* UILabel+Extension.swift in Sources */,
+				18CC8CBA244AF683000D3C0A /* SettingItem.swift in Sources */,
 				18C1B68D23E5A6A900B673E1 /* ExportViewController.swift in Sources */,
 				18BE45E723DDB275009A5EDE /* HUD.swift in Sources */,
 				18CFED2123E96F8F00AC3895 /* KeyString.swift in Sources */,
 				18BE460B23DDB275009A5EDE /* ValidateTool.swift in Sources */,
 				18BE468D23DDB2D3009A5EDE /* AbnormalViewState.swift in Sources */,
 				18BE45D923DDB275009A5EDE /* PKHUDAnimating.swift in Sources */,
+				18CC8CC0244B038F000D3C0A /* EmailSender.swift in Sources */,
 				181AFFCD23DED0C00092EC79 /* PlayerViewModel.swift in Sources */,
 				18BE45ED23DDB275009A5EDE /* WindowRootViewController.swift in Sources */,
 				18BE463623DDB2C4009A5EDE /* AlertProtocol.swift in Sources */,
@@ -1179,7 +1208,9 @@
 				18BE462823DDB2C4009A5EDE /* ScreenSize+Config.swift in Sources */,
 				18BE46AF23DDB3AC009A5EDE /* AssetAlbum.swift in Sources */,
 				18BE467523DDB2D3009A5EDE /* Date+Extension.swift in Sources */,
+				18CC8CB8244AF452000D3C0A /* SettingListView.swift in Sources */,
 				18ED4E1323EC57A100A02DA0 /* ImageGenerator.swift in Sources */,
+				18CC8CC2244B0496000D3C0A /* DeviceInfo.swift in Sources */,
 				18BE468123DDB2D3009A5EDE /* Dictionary+Extension.swift in Sources */,
 				18BE46B723DDB3AC009A5EDE /* BaseControllerVM.swift in Sources */,
 				18BE468323DDB2D3009A5EDE /* Float+Extension.swift in Sources */,
@@ -1195,6 +1226,7 @@
 				18BE45FF23DDB275009A5EDE /* NewLongPressGesture.swift in Sources */,
 				18BE45FD23DDB275009A5EDE /* ZFAlertContent.swift in Sources */,
 				181AFFDF23E190330092EC79 /* VideoManager.swift in Sources */,
+				18CC8CBC244AF989000D3C0A /* SideSheetProtocol.swift in Sources */,
 				18BE45E123DDB275009A5EDE /* PKHUDAssets.swift in Sources */,
 				18BE462E23DDB2C4009A5EDE /* Const.swift in Sources */,
 				18BE467723DDB2D3009A5EDE /* Optional+Extension.swift in Sources */,

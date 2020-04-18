@@ -11,6 +11,7 @@ import Photos
 import AVFoundation
 import RxSwift
 import RxCocoa
+import StoreKit
 
 class MainPlayerViewController: BaseViewController {
     
@@ -30,7 +31,6 @@ class MainPlayerViewController: BaseViewController {
         playerItem = AVPlayerItem(asset: video.asset)
         player = AVPlayer(playerItem: playerItem)
         super.init(nibName: nil, bundle: nil)
-        ImageGenerator.generateThumbnailImages(with: video.asset)
     }
     
     override func viewDidLoad() {
@@ -38,6 +38,9 @@ class MainPlayerViewController: BaseViewController {
         setup()
         setupBottomControlView()
         setupPlayer()
+        if PreferenceConfig.openAppTimes == 1 {
+            SKStoreReviewController.requestReview()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -123,15 +126,29 @@ private extension MainPlayerViewController {
                                 guard !isLeft else { return }
                                 self.clickSaveVideo()
                 }.show()
-                
             }.base
+        
+        let settingButton = UIButton().nb
+            .image("setting".toImage())
+            .addToSuperView(containerView)
+            .whenTap {
+                SettingListView().show()
+        }.base
+        
         vm.output.saveButtonHidden
             .drive(saveButton.rx.isHidden)
             .disposed(by: rxBag)
-        
+        vm.output.settingButtonHidden
+            .drive(settingButton.rx.isHidden)
+            .disposed(by: rxBag)
         backButton.snp.makeConstraints {
             $0.top.equalTo(20)
             $0.left.equalTo(15)
+        }
+        settingButton.snp.makeConstraints {
+            $0.left.equalTo(15)
+            $0.width.height.equalTo(25)
+            $0.centerY.equalTo(selectVideoButton)
         }
         selectVideoButton.snp.makeConstraints {
             $0.top.equalTo(5)
@@ -139,7 +156,7 @@ private extension MainPlayerViewController {
         }
         saveButton.snp.makeConstraints {
             $0.centerY.equalTo(selectVideoButton)
-            $0.right.equalTo(-30)
+            $0.right.equalTo(-15)
             $0.width.height.equalTo(35)
         }
     }

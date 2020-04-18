@@ -27,10 +27,10 @@ class FakeProgressMaker {
             }
             if self.progress >= 0.99 {
                 return
-            } else if self.progress >= 0.9 {
+            } else if self.progress >= 0.5 {
                 self.progress += 0.0005
             } else {
-                self.progress += 0.001
+                self.progress += 0.0007
             }
         }
     }

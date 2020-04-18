@@ -20,7 +20,7 @@ class GDTAdManager: NSObject {
         splashAd.fetchDelay = 5
         splashAd.backgroundImage = UIImage(color: UIColor.subject, size: UIScreen.main.bounds.size)
         
-        let bottomView = BottomView(frame: [0, SCREEN_HEIGHT - SCREEN_HEIGHT * 0.2, SCREEN_WIDTH, SCREEN_HEIGHT * 0.2])
+        let bottomView = LaunchBottomView(frame: [0, SCREEN_HEIGHT - SCREEN_HEIGHT * 0.2, SCREEN_WIDTH, SCREEN_HEIGHT * 0.2])
         self.splashAd.loadAndShow(in: UIWindow.keyWindow, withBottomView: bottomView)
     }
     
@@ -56,7 +56,7 @@ extension GDTAdManager: GDTSplashAdDelegate {
 }
 
 
-private class BottomView: UIView {
+class LaunchBottomView: UIView {
     
     required init?(coder aDecoder: NSCoder) { nil }
     
@@ -68,11 +68,8 @@ private class BottomView: UIView {
             .maskToBounds()
             .addToSuperView(self).base
                 
-        let titleLabel = UILabel().nb
-            .font(UIFont(name: "Helvetica-BoldOblique", size: 22)!)
-            .text("Simple Player")
-            .textColor(UIColor.black)
-            .addToSuperView(self).base
+        let titleLabel = TextLogoLabel()
+        addSubview(titleLabel)
         
         logo.snp.makeConstraints {
             $0.centerY.equalToSuperview()

@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             PreferenceConfig.openAppTimes = PreferenceConfig.openAppTimes + 1
         }
         
-//        let path = Bundle.main.path(forResource: "test1", ofType: "mp4")!
+//        let path = Bundle.main.path(forResource: "test1", ofType: "MP4")!
 //        if UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(path) {
 //            UISaveVideoAtPathToSavedPhotosAlbum(path, nil, nil, nil)
 //        }
