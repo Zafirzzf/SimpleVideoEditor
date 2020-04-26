@@ -25,7 +25,7 @@ class GDTAdManager: NSObject {
     }
     
     func adShouldEnd() {
-        UIWindow.keyWindow.rootViewController = PreSelectViewController()
+        UIWindow.keyWindow.rootViewController = BaseNavigationController(rootViewController: PreSelectViewController()) 
     }
 }
 

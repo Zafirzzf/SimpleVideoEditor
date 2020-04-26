@@ -12,6 +12,15 @@ class PreSelectViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        hideNavigation()
+    }
+    
+    func setupView() {
         view.backgroundColor = .blackLight
         
         let titleLabel = UILabel().nb
@@ -27,11 +36,6 @@ class PreSelectViewController: BaseViewController {
             .textAlignment(.center)
             .text(KeyString.mainIntroducation*)
             .addToSuperView(self.view).base
-        let endLabel = UILabel().nb
-            .font(15.font)
-            .textColor(UIColor.white)
-            .text(KeyString.moreFeatureIntroducation*)
-            .addToSuperView(self.view).base
         
         let selectButton = UIButton().nb.font(15.fontMedium)
             .border(width: 5, color: UIColor.white)
@@ -43,9 +47,17 @@ class PreSelectViewController: BaseViewController {
             .whenTap { [unowned self] in
                 MediaPickerViewController.checkPhotoLibraryPermission {
                     self.present(MediaPickerViewController(videoResultCallback: { (result) in
-                        UIWindow.keyWindow.rootViewController = BaseNavigationController(rootViewController: MainPlayerViewController(video: result)) 
+                        UIWindow.keyWindow.rootViewController = BaseNavigationController(rootViewController: MainPlayerViewController(video: result))
                     }), animated: true, completion: nil)
                 }
+        }.base
+        
+        let musicFileButton = OptionButton(position: .top)
+            .nb.image("musicFile".toImage())
+            .title("提取的音乐".international)
+            .addToSuperView(self.view)
+            .whenTap { [unowned self] in
+                self.push(MusicFileViewController())
         }.base
         
         titleLabel.snp.makeConstraints {
@@ -62,9 +74,9 @@ class PreSelectViewController: BaseViewController {
             $0.centerY.equalToSuperview().offset(90)
             $0.centerX.equalToSuperview()
         }
-        endLabel.snp.makeConstraints {
+        musicFileButton.snp.makeConstraints {
+            $0.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(-50)
             $0.centerX.equalToSuperview()
-            $0.bottom.equalTo(-TAB_IPHONEX_MARGIN - 50)
         }
     }
 }

@@ -53,7 +53,11 @@ class VideoManager {
             AVVideoCompressionPropertiesKey: videoCompressionProperty]
         
         let assetVideoWriterInput = AVAssetWriterInput(mediaType: .video, outputSettings: videoSetting, sourceFormatHint: nil)
-        assetVideoWriterInput.transform = CGAffineTransform(scaleX: -1, y: 1)
+        if videoItem.isHorizontal {
+            assetVideoWriterInput.transform = CGAffineTransform(scaleX: -1, y: 1)
+        } else {
+            assetVideoWriterInput.transform = CGAffineTransform(scaleX: -1, y: -1)
+        }
         
         
         var audioChannal = AudioChannelLayout(mChannelLayoutTag: kAudioChannelLayoutTag_Stereo,
@@ -137,7 +141,8 @@ class VideoManager {
         }
     }
     
-    static var tempVideoPath: String {
+    private static var tempVideoPath: String {
         NSTemporaryDirectory() + Int(Date().timeIntervalSince1970).description + ".mp4"
     }
+    
 }

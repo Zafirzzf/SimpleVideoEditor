@@ -32,7 +32,11 @@ class VCManager {
     /// 推出
     static func push(vc: UIViewController, animated: Bool = true) {
         guard let currentVC = windowTopVC() else { return }
-        currentVC.navigationController?.pushViewController(vc, animated: animated)
+        if let navi = currentVC as? UINavigationController {
+            navi.pushViewController(vc, animated: animated)
+        } else {
+            currentVC.navigationController?.pushViewController(vc, animated: animated)
+        }
     }
     /// 弹出
     static func present(vc: UIViewController, animated: Bool = true) {

@@ -47,6 +47,12 @@ class MainPlayerViewController: BaseViewController {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        vm.input.viewDisappear.accept(())
+    }
+    
     override var prefersStatusBarHidden: Bool { statusBarHidden }
     override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
 
@@ -183,12 +189,12 @@ private extension MainPlayerViewController {
             $0.height.equalTo(50)
         }
         bottom.playPauseButton.rx.tap
-            .bind(to: vm.input.playOrPause)
+            .bind(to: vm.controlVM.input.playOrPause)
             .disposed(by: rxBag)
         bottom.progressView.rx.value
-            .bind(to: vm.input.dragProgress)
+            .bind(to: vm.controlVM.input.dragProgress)
             .disposed(by: rxBag)
-        bottom.touchup.bind(to: vm.input.sliderTouchup)
+        bottom.touchup.bind(to: vm.controlVM.input.sliderTouchup)
             .disposed(by: rxBag)
         bottom.fullScreenButton.rx.tap
             .bind(to: vm.input.changeFullScreen)
@@ -197,6 +203,9 @@ private extension MainPlayerViewController {
             .disposed(by: rxBag)
         optionView.rateSelect.bind(to: vm.input.rateSelect)
             .disposed(by: rxBag)
+        optionView.musicTap.bind(to: vm.input.pickMusic)
+            .disposed(by: rxBag)
+        
         vm.bottomControlHidden.asObservable()
             .bind(to: bottom.rx.animationHidden,
                   optionView.rx.animationHidden)
@@ -213,13 +222,13 @@ private extension MainPlayerViewController {
         vm.output.rateButtonSelected
             .drive(optionView.rateButton.rx.isSelected)
             .disposed(by: rxBag)
-        vm.output.playPauseIcon
+        vm.controlVM.output.playPauseIcon
             .drive(bottom.playPauseButton.rx.image())
             .disposed(by: rxBag)
-        vm.output.progress
+        vm.controlVM.output.progress
             .drive(bottom.progressView.rx.value)
             .disposed(by: rxBag)
-        vm.output.timeFormate
+        vm.controlVM.output.timeFormate
             .drive(bottom.timeLabel.rx.text)
             .disposed(by: rxBag)
         vm.output.fullScreenHidden
@@ -259,8 +268,8 @@ extension Reactive where Base: UIView {
 }
 
 extension Reactive where Base == AVPlayer {
-    var playState: Binder<PlayerViewModel.PlayState> {
-        Binder<PlayerViewModel.PlayState>(self.base) { (player, state) in
+    var playState: Binder<PlayState> {
+        Binder<PlayState>(self.base) { (player, state) in
             state == .playing ? player.play() : player.pause()
         }
     }

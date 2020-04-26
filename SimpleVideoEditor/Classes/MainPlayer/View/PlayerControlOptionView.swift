@@ -13,44 +13,54 @@ class PlayerControlOptionView: UIView {
 
     required init?(coder aDecoder: NSCoder) { nil }
     
-    let mirrorButton = ZoomButton(position: .top)
-    let rateButton = ZoomButton(position: .top)
+    let mirrorButton = OptionButton(position: .top)
+    let rateButton = OptionButton(position: .top)
+    let musicButton = OptionButton(position: .top)
     
     let mirrorTap = PublishRelay<Void>()
     let rateSelect = PublishRelay<Void>()
+    let musicTap = PublishRelay<Void>()
     
     init() {
         super.init(frame: .zero)
         mirrorButton.nb
             .title(KeyString.mirror*)
-            .font(11.fontMedium)
-            .titleColor(UIColor.white)
-            .titleColor(UIColor.subject, state: .selected)
             .image("mirror_normal".toImage())
             .image("mirror_sel".toImage(), state: .selected)
             .addToSuperView(self)
             .whenTap { [unowned self] in
                 self.mirrorTap.accept(())
         }
-        
         rateButton.nb.image("slowPlay_normal".toImage())
             .image("slowPlay_sel".toImage(), state: .selected)
-            .font(11.fontMedium)
-            .titleColor(UIColor.white)
-            .titleColor(UIColor.subject, state: .selected)
             .addToSuperView(self)
-        rateButton.addTouch { [unowned self] in
-            self.rateSelect.accept(())
+            .whenTap { [unowned self] in
+                self.rateSelect.accept(())
         }
-        
-        mirrorButton.snp.makeConstraints {
-            $0.centerY.equalToSuperview()
-            $0.centerX.equalToSuperview().offset(-40)
+        musicButton.nb.title("提取音乐".international)
+            .image("music_normal".toImage(), "music_sel".toImage())
+            .addToSuperView(self)
+            .whenTap {
+                self.musicTap.accept(())
         }
-        rateButton.snp.makeConstraints {
-            $0.centerY.equalToSuperview()
-            $0.centerX.equalToSuperview().offset(40)
+        let stackView = UIStackView(arrangedSubviews: [mirrorButton, rateButton, musicButton])
+        stackView.alignment = .center
+        stackView.distribution = .fillEqually
+        stackView.spacing = 20
+        addSubview(stackView)
+        stackView.snp.makeConstraints {
+            $0.center.equalToSuperview()
         }
     }
+}
+
+class OptionButton: ZoomButton {
+    required init?(coder aDecoder: NSCoder) { nil }
     
+    init(position: CustomImagePositionButton.ImagePosition) {
+        super.init(position: position, frame: .zero)
+        nb.font(11.fontMedium)
+            .titleColor(UIColor.white)
+            .titleColor(UIColor.subject, state: .selected)
+    }
 }
