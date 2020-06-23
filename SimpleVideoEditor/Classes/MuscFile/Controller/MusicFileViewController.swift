@@ -27,6 +27,7 @@ class MusicFileViewController: BaseViewController {
         super.viewDidLoad()
         setup()
         setupTableView()
+        setNavigation()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -93,6 +94,20 @@ private extension MusicFileViewController {
         vm.output.models.subscribe(onNext: { [unowned self] _ in
             self.tableView.reloadData()
         }).disposed(by: disposeBag)
+    }
+    
+    func setNavigation() {
+        let optionButton = UIButton(frame: CGRect(x: 0, y: 0, width: 25, height: 25)).nb
+            .image("share".toImage())
+            .whenTap { [unowned self] in
+                guard let music = self.vm.output.currentMusic.value else { return }
+                let items = [URL(fileURLWithPath: music.path)] as [Any]
+                let activity = UIActivityViewController(activityItems: items, applicationActivities: nil)
+                VCManager.windowTopVC().on {
+                    $0.present(activity, animated: true, completion: nil)
+                }
+        }.base
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: optionButton)
     }
 }
 
