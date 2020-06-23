@@ -234,6 +234,7 @@
 		18CFED2223E96F8F00AC3895 /* KeyString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CFED2023E96F8F00AC3895 /* KeyString.swift */; };
 		18CFED2E23E97AE500AC3895 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18CFED3123E97AE500AC3895 /* Localizable.strings */; };
 		18CFED2F23E97AE500AC3895 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18CFED3123E97AE500AC3895 /* Localizable.strings */; };
+		18D9609724A1C40200F4923F /* FileNameInputAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D9609624A1C40200F4923F /* FileNameInputAlert.swift */; };
 		18ED4E0D23EC171000A02DA0 /* AVPlayerSeeker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED4E0C23EC171000A02DA0 /* AVPlayerSeeker.swift */; };
 		18ED4E0E23EC171000A02DA0 /* AVPlayerSeeker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED4E0C23EC171000A02DA0 /* AVPlayerSeeker.swift */; };
 		18ED4E1023EC569100A02DA0 /* ProgressPanl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED4E0F23EC569100A02DA0 /* ProgressPanl.swift */; };
@@ -418,6 +419,7 @@
 		18CFED2023E96F8F00AC3895 /* KeyString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyString.swift; sourceTree = "<group>"; };
 		18CFED3023E97AE500AC3895 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		18CFED3223E97AE700AC3895 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		18D9609624A1C40200F4923F /* FileNameInputAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileNameInputAlert.swift; sourceTree = "<group>"; };
 		18ED4E0C23EC171000A02DA0 /* AVPlayerSeeker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVPlayerSeeker.swift; sourceTree = "<group>"; };
 		18ED4E0F23EC569100A02DA0 /* ProgressPanl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressPanl.swift; sourceTree = "<group>"; };
 		18ED4E1223EC57A100A02DA0 /* ImageGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGenerator.swift; sourceTree = "<group>"; };
@@ -972,6 +974,7 @@
 			isa = PBXGroup;
 			children = (
 				18CC8CCF244C71CE000D3C0A /* MusicItemCell.swift */,
+				18D9609624A1C40200F4923F /* FileNameInputAlert.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1308,6 +1311,7 @@
 				18BE461323DDB275009A5EDE /* HudManager.swift in Sources */,
 				18BE46DC23DDBBD5009A5EDE /* VideoPickerCell.swift in Sources */,
 				18CC8CE1244F2B08000D3C0A /* PlayControlVM.swift in Sources */,
+				18D9609724A1C40200F4923F /* FileNameInputAlert.swift in Sources */,
 				18BE46C123DDB3AC009A5EDE /* BaseViewController.swift in Sources */,
 				18BE463023DDB2C4009A5EDE /* Notification+Config.swift in Sources */,
 				18BE457E23D95B72009A5EDE /* AppDelegate.swift in Sources */,

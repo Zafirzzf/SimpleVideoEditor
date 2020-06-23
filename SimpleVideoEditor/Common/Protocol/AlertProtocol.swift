@@ -17,6 +17,10 @@ protocol AlertProtocol where Self: UIView {
 }
 
 extension AlertProtocol {
+    var leftMargin: CGFloat { 25 }
+}
+
+extension AlertProtocol {
     
     func show() {
         VCManager.windowTopVC()?.view.endEditing(true)

@@ -30,15 +30,7 @@ class HudManager {
     
     func showSuccessHud(_ text: String) {
         hud.userInteractionOnUnderlyingViewsEnabled = true
-//        let customView = PKHUDSquareBaseView(
-//            image: Asset.Public.publicPopSuccess.image,
-//            title: nil,
-//            subtitle: text)
-//        customView.frame.size = CGSize(width: 110, height: 110)
-//        customView.backgroundColor = UIColor.blackLight.withAlphaComponent(0.8)
-//        hud.contentView = customView
-        hud.show()
-        hud.hide(afterDelay: KAfterDelay)
+        showText(text)
     }
     
     func showFailure(_ text: String) {

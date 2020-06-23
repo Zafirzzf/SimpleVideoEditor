@@ -199,7 +199,7 @@ public extension UIImage {
             ZFAlertView(title: "尚未开启相册权限", leftTitle: "取消", rightTitle: "去开启") { (isLeft) in
                 guard !isLeft else { return }
                 guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
-                UIApplication.shared.openURL(url)
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }.show()
         default:
             completion?(false, nil)

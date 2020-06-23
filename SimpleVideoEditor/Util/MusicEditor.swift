@@ -26,7 +26,7 @@ var musicCacheDirectory: String {
 }
 
 class MusicEditor {
-    func pickMusic(of item: VideoPickItem) {
+    func pickMusic(of item: VideoPickItem, fileName: String, complete: @escaping VoidCallback) {
         let asset = item.asset
         let mixComposition = AVMutableComposition()
         guard let firstTrack = mixComposition.addMutableTrack(withMediaType: .audio, preferredTrackID: kCMPersistentTrackID_Invalid) else {
@@ -36,14 +36,20 @@ class MusicEditor {
         do {
             try firstTrack.insertTimeRange(CMTimeRange(start: .zero, duration: asset.duration), of: asset.tracks(withMediaType: .audio).first!, at: .zero)
             guard let exporter = AVAssetExportSession(asset: asset, presetName: AVAssetExportPresetAppleM4A) else { return }
-            exporter.outputURL = cacheAudioURL
+            exporter.outputURL = cacheAudioURL(of: fileName)
             exporter.outputFileType = .m4a
             exporter.shouldOptimizeForNetworkUse = true
             exporter.exportAsynchronously {
                 DispatchQueue.main.async {
-                    print(exporter.status, "导出状态: ")
-                    if exporter.status == .completed {
-                        HudManager.shared.showSuccessHud("Yeah")
+                    print(exporter.status.rawValue, "导出状态: ")
+                    switch exporter.status {
+                    case .completed:
+                        HudManager.shared.showSuccessHud("导出完成，请前往设置中心查看".international)
+                        complete()
+                    case .failed:
+                        HudManager.shared.showFailure("导出失败，请重试".international)
+                    default:
+                        break
                     }
                 }
             }
@@ -53,12 +59,10 @@ class MusicEditor {
         
     }
     
-    var cacheAudioURL: URL? {
-        let now = Date()
+    func cacheAudioURL(of name: String) -> URL? {
         let dateFormater = DateFormatter()
         dateFormater.dateFormat = "yyyy-MM-dd-HH-mm"
-        let timeString = dateFormater.string(from: now)
-        let cachePath = musicCacheDirectory + "/\(timeString).m4a"
+        let cachePath = musicCacheDirectory + "/\(name).m4a"
         return URL(fileURLWithPath: cachePath)
     }
 }

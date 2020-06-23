@@ -132,7 +132,9 @@ class PlayerViewModel {
             .disposed(by: rxBag)
         // 提取音乐
         input.pickMusic.subscribe(onNext: {
-            MusicEditor().pickMusic(of: videoItem)
+            FileNameInputAlert {
+                MusicEditor().pickMusic(of: videoItem, fileName: $0, complete: {  })
+            }.show()
         }).disposed(by: rxBag)
         
         // 切换全屏

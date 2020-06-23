@@ -26,7 +26,7 @@ class MusicFileViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        registTableViewReloadObservable()
+        setupTableView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -84,6 +84,52 @@ private extension MusicFileViewController {
             $0.left.right.equalToSuperview()
             $0.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(-20)
             $0.height.equalTo(50)
+        }
+    }
+    
+    func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        vm.output.models.subscribe(onNext: { [unowned self] _ in
+            self.tableView.reloadData()
+        }).disposed(by: disposeBag)
+    }
+}
+
+// MARK: - TableView
+extension MusicFileViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        vm.output.models.value?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = MusicItemCell.cellWithTableViewFromCode(tableView)
+        guard let models = vm.output.models.value else {
+            fatalError()
+        }
+        let model = models[indexPath.row]
+        cell.update(with: model)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let models = vm.output.models.value else {
+            fatalError()
+        }
+        let model = models[indexPath.row]
+        vm.input.selectMusic.accept(model)
+        vm.output.currentMusic.accept(model)
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        .delete
+    }
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        true
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            vm.input.deleteMusic.accept(indexPath.row)
         }
     }
 }

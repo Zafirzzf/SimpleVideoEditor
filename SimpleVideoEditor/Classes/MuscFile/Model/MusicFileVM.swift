@@ -24,6 +24,7 @@ class MusicFileVM {
     }
     struct Input {
         let selectMusic = PublishRelay<MusicItem>()
+        let deleteMusic = PublishRelay<Int>()
     }
     
     let output: Output
@@ -51,6 +52,12 @@ class MusicFileVM {
             .disposed(by: rxBag)
         input.selectMusic.bind(to: output.currentMusic)
             .disposed(by: rxBag)
+        input.deleteMusic.subscribe(onNext: { [unowned self] index in
+            guard var models = self.output.models.value else { return }
+            let removeModel = models.remove(at: index)
+            try? FileManager.default.removeItem(atPath: removeModel.path)
+            self.output.models.accept(models)
+        }).disposed(by: rxBag)
         // 点击播放暂停按钮
         controlVM.input.playOrPause
             .flatMapLatest { Observable.just(self.playState.value.toggle()) }
