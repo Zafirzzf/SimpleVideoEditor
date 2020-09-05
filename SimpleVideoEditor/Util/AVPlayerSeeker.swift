@@ -31,6 +31,16 @@ extension AVPlayer {
         return currentTime()
     }
     
+    func customSetRate(_ rate: PlayRateType) {
+        guard let playerItem = currentItem else { return }
+        let rateIsSlowest = rate == .slowest
+        playerItem.tracks.forEach {
+            if $0.assetTrack!.mediaType == AVMediaType.audio {
+                $0.isEnabled = !rateIsSlowest
+            }
+        }
+        self.rate = rate.rawValue
+    }
 }
 
 private class AVPlayerSeeker {

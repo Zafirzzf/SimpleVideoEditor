@@ -39,6 +39,7 @@ class MusicEditor {
             exporter.outputURL = cacheAudioURL(of: fileName)
             exporter.outputFileType = .m4a
             exporter.shouldOptimizeForNetworkUse = true
+            HudManager.shared.showHud()
             exporter.exportAsynchronously {
                 DispatchQueue.main.async {
                     print(exporter.status.rawValue, "导出状态: ")

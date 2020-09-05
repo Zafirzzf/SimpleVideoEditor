@@ -133,7 +133,7 @@ class PlayerViewModel {
         // 提取音乐
         input.pickMusic.subscribe(onNext: {
             FileNameInputAlert {
-                MusicEditor().pickMusic(of: videoItem, fileName: $0, complete: {  })
+                MusicEditor().pickMusic(of: videoItem, fileName: $0, complete: { })
             }.show()
         }).disposed(by: rxBag)
         

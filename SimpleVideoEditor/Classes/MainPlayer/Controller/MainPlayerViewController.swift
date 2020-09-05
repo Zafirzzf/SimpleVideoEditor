@@ -170,7 +170,6 @@ private extension MainPlayerViewController {
     func setupPlayer() {
         playerItem = AVPlayerItem(asset: videoItem.asset)
         player.replaceCurrentItem(with: playerItem)
-        player.rate = 0.5
         player.play()
     }
     
@@ -234,7 +233,7 @@ private extension MainPlayerViewController {
         vm.output.fullScreenHidden
             .drive(bottom.fullScreenButton.rx.isHidden)
             .disposed(by: rxBag)
-        vm.playState.bind(to: player.rx.playState)
+        vm.playState.bind(to: self.rx.playStateAndUpdateRate)
             .disposed(by: rxBag)
     }
 }
@@ -275,15 +274,7 @@ extension Reactive where Base == AVPlayer {
     }
     var rate: Binder<PlayRateType> {
         Binder<PlayRateType>(self.base) { (player, rate) in
-            guard let playerItem = player.currentItem else { return }
-            let rateIsSlowest = rate == .slowest
-            playerItem.tracks.forEach {
-                if $0.assetTrack!.mediaType == AVMediaType.audio {
-                    $0.isEnabled = !rateIsSlowest
-                }
-            }
-            let rate = rate.rawValue
-            player.rate = rate
+            player.customSetRate(rate)
         }
     }
 }
@@ -312,6 +303,17 @@ extension Reactive where Base == MainPlayerViewController {
         Binder<Bool>(self.base) { (vc, hidden) in
             vc.statusBarHidden = hidden
             vc.setNeedsStatusBarAppearanceUpdate()
+        }
+    }
+    
+    var playStateAndUpdateRate: Binder<PlayState> {
+        Binder<PlayState>(self.base) { (playerVC, state) in
+            if state == .playing {
+                playerVC.player.play()
+                playerVC.player.customSetRate(playerVC.vm.playRate.value)
+            } else {
+                playerVC.player.pause()
+            }
         }
     }
 }
