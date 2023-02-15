@@ -99,6 +99,26 @@ private extension MainPlayerViewController {
         containerView.whenTap { [unowned self] (tap) in
             self.vm.input.playerViewTap.accept(tap.location(in: self.containerView))
         }
+        
+        _ = containerView.newTapGesture { (tap) in
+            tap.numberOfTapsRequired = 2
+        }.whenEnded(handler: { [unowned self] _ in
+            self.vm.input.playerDoubleTap.accept(())
+        })
+        
+        var beginPoint: CGPoint = .zero
+        containerView.newPanGesture()
+            .whenBegan { [unowned self] pan in
+                let startPoint = pan.location(in: self.containerView)
+                beginPoint = startPoint
+            }
+            .whenChanged { [unowned self] (pan) in
+                let changePoint = pan.translation(in: self.containerView)
+                let progress = (changePoint.y - beginPoint.y) / SCREEN_HEIGHT
+                print(progress, "拖动进度")
+                print(changePoint.y / SCREEN_HEIGHT, "拖动进度2")
+            }
+        
         containerView.layer.addSublayer(playerLayer)
         let backButton = UIButton().nb
             .image("back".toImage())

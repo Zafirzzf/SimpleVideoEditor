@@ -27,6 +27,7 @@ class PlayerViewModel {
         let pickMusic = PublishRelay<Void>()
         let changeFullScreen = PublishRelay<Void>()
         let playerViewTap = PublishRelay<CGPoint>()
+        let playerDoubleTap = PublishRelay<Void>()
         let viewDisappear = PublishRelay<Void>()
     }
     struct Output {
@@ -156,6 +157,13 @@ class PlayerViewModel {
             if self.isFullScreen.value {
                 self.bottomControlHidden.accept(!self.bottomControlHidden.value)
             } else {
+                self.playState.accept(self.playState.value.toggle())
+            }
+        }).disposed(by: rxBag)
+        
+        // 双击屏幕
+        input.playerDoubleTap.subscribe(onNext: { [unowned self] in
+            if self.isFullScreen.value {
                 self.playState.accept(self.playState.value.toggle())
             }
         }).disposed(by: rxBag)

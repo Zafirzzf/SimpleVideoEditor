@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+import RxKeyboard
+import Bugly
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
