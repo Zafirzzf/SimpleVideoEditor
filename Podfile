@@ -12,13 +12,10 @@ target 'SimpleVideoEditor' do
     pod 'SnapKit'
     pod 'SwiftDate'
     pod 'SwiftyNotification'
-    pod 'Firebase/Analytics'
     pod 'RxKeyboard',                         '2.0.0'
     pod 'MJRefresh',                          '3.7.5'
-    pod 'WechatOpenSDK',                      '1.8.7.1'
     pod 'NSObject+Rx',                        '5.2.2'
     pod "RxGesture",                          '4.0.3'
-    pod 'Bugly',                               '2.5.90'
 #    pod 'DoraemonKit/Core',                   '3.1.2',  :configurations => ['Debug']
     
   target 'SimpleVideoEditorTests' do
