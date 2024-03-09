@@ -35,6 +35,8 @@
 	<string>访问相册以选择视频进行播放</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>您的数据用于精准的广告推荐</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

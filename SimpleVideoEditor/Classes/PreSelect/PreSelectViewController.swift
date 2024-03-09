@@ -7,17 +7,30 @@
 //
 
 import UIKit
+import AppTrackingTransparency
+
 
 class PreSelectViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        requestIDFAPermission()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         hideNavigation()
+    }
+    
+    func requestIDFAPermission() {
+        guard #available(iOS 14, *) else {
+            return
+        }
+        guard ATTrackingManager.trackingAuthorizationStatus == .notDetermined else { return }
+        ATTrackingManager.requestTrackingAuthorization { _ in
+            
+        }
     }
     
     func setupView() {
