@@ -11,10 +11,11 @@ target 'SimpleVideoEditor' do
     pod 'RxSwift', '6.6.0'
     pod 'RxCocoa', '6.6.0'
     pod 'NimbleKit'
-    pod 'SnapKit'
-    pod 'SwiftDate'
+    pod 'SnapKit' , '5.7.1'
+    pod 'SwiftDate', '7.0.0'
+    pod 'Bugly',  '2.5.93'
     pod 'SwiftyNotification'
-    pod 'Firebase/Analytics'
+    pod 'Ads-CN-Beta', '6.0.0.1'
     
   target 'SimpleVideoEditorTests' do
     inherit! :search_paths

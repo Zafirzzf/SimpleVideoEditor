@@ -6,7 +6,7 @@
 //  Copyright © 2020 周正飞. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol SideSheetProtocol: UIView {
     func show()

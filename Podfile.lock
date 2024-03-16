@@ -1,105 +1,34 @@
 PODS:
-  - Firebase/Analytics (6.22.0):
-    - Firebase/Core
-  - Firebase/Core (6.22.0):
-    - Firebase/CoreOnly
-    - FirebaseAnalytics (= 6.4.1)
-  - Firebase/CoreOnly (6.22.0):
-    - FirebaseCore (= 6.6.6)
-  - FirebaseAnalytics (6.4.1):
-    - FirebaseCore (~> 6.6)
-    - FirebaseInstallations (~> 1.1)
-    - GoogleAppMeasurement (= 6.4.1)
-    - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
-    - GoogleUtilities/MethodSwizzler (~> 6.0)
-    - GoogleUtilities/Network (~> 6.0)
-    - "GoogleUtilities/NSData+zlib (~> 6.0)"
-    - nanopb (= 0.3.9011)
-  - FirebaseCore (6.6.6):
-    - FirebaseCoreDiagnostics (~> 1.2)
-    - FirebaseCoreDiagnosticsInterop (~> 1.2)
-    - GoogleUtilities/Environment (~> 6.5)
-    - GoogleUtilities/Logger (~> 6.5)
-  - FirebaseCoreDiagnostics (1.2.3):
-    - FirebaseCoreDiagnosticsInterop (~> 1.2)
-    - GoogleDataTransportCCTSupport (~> 2.0)
-    - GoogleUtilities/Environment (~> 6.5)
-    - GoogleUtilities/Logger (~> 6.5)
-    - nanopb (~> 0.3.901)
-  - FirebaseCoreDiagnosticsInterop (1.2.0)
-  - FirebaseInstallations (1.1.1):
-    - FirebaseCore (~> 6.6)
-    - GoogleUtilities/UserDefaults (~> 6.5)
-    - PromisesObjC (~> 1.2)
-  - GoogleAppMeasurement (6.4.1):
-    - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
-    - GoogleUtilities/MethodSwizzler (~> 6.0)
-    - GoogleUtilities/Network (~> 6.0)
-    - "GoogleUtilities/NSData+zlib (~> 6.0)"
-    - nanopb (= 0.3.9011)
-  - GoogleDataTransport (5.1.1)
-  - GoogleDataTransportCCTSupport (2.0.2):
-    - GoogleDataTransport (~> 5.1)
-    - nanopb (~> 0.3.901)
-  - GoogleUtilities/AppDelegateSwizzler (6.5.2):
-    - GoogleUtilities/Environment
-    - GoogleUtilities/Logger
-    - GoogleUtilities/Network
-  - GoogleUtilities/Environment (6.5.2)
-  - GoogleUtilities/Logger (6.5.2):
-    - GoogleUtilities/Environment
-  - GoogleUtilities/MethodSwizzler (6.5.2):
-    - GoogleUtilities/Logger
-  - GoogleUtilities/Network (6.5.2):
-    - GoogleUtilities/Logger
-    - "GoogleUtilities/NSData+zlib"
-    - GoogleUtilities/Reachability
-  - "GoogleUtilities/NSData+zlib (6.5.2)"
-  - GoogleUtilities/Reachability (6.5.2):
-    - GoogleUtilities/Logger
-  - GoogleUtilities/UserDefaults (6.5.2):
-    - GoogleUtilities/Logger
-  - nanopb (0.3.9011):
-    - nanopb/decode (= 0.3.9011)
-    - nanopb/encode (= 0.3.9011)
-  - nanopb/decode (0.3.9011)
-  - nanopb/encode (0.3.9011)
+  - Ads-CN-Beta (6.0.0.1):
+    - Ads-CN-Beta/BUAdSDK (= 6.0.0.1)
+  - Ads-CN-Beta/BUAdSDK (6.0.0.1)
+  - Bugly (2.5.93)
   - NimbleKit (2.1)
-  - PromisesObjC (1.2.8)
   - RxCocoa (6.6.0):
     - RxRelay (= 6.6.0)
     - RxSwift (= 6.6.0)
   - RxRelay (6.6.0):
     - RxSwift (= 6.6.0)
   - RxSwift (6.6.0)
-  - SnapKit (5.0.1)
-  - SwiftDate (6.1.0)
+  - SnapKit (5.7.1)
+  - SwiftDate (7.0.0)
   - SwiftyNotification (1.3.1)
 
 DEPENDENCIES:
-  - Firebase/Analytics
+  - Ads-CN-Beta
+  - Bugly (= 2.5.93)
   - NimbleKit
-  - RxCocoa
-  - RxSwift
+  - RxCocoa (= 6.6.0)
+  - RxSwift (= 6.6.0)
   - SnapKit
   - SwiftDate
   - SwiftyNotification
 
 SPEC REPOS:
   trunk:
-    - Firebase
-    - FirebaseAnalytics
-    - FirebaseCore
-    - FirebaseCoreDiagnostics
-    - FirebaseCoreDiagnosticsInterop
-    - FirebaseInstallations
-    - GoogleAppMeasurement
-    - GoogleDataTransport
-    - GoogleDataTransportCCTSupport
-    - GoogleUtilities
-    - nanopb
+    - Ads-CN-Beta
+    - Bugly
     - NimbleKit
-    - PromisesObjC
     - RxCocoa
     - RxRelay
     - RxSwift
@@ -108,26 +37,16 @@ SPEC REPOS:
     - SwiftyNotification
 
 SPEC CHECKSUMS:
-  Firebase: 32f9520684e87c7af3f0704f7f88042626d6b536
-  FirebaseAnalytics: 83f822fd0d33a46f49f89b8c3ab16ab4d89df08a
-  FirebaseCore: 9aca0f1fffb405176ba15311a5621fcde4106fcf
-  FirebaseCoreDiagnostics: 13a6564cd6d5375066bbc8940cc1753af24497f3
-  FirebaseCoreDiagnosticsInterop: 296e2c5f5314500a850ad0b83e9e7c10b011a850
-  FirebaseInstallations: acb3216eb9784d3b1d2d2d635ff74fa892cc0c44
-  GoogleAppMeasurement: e49be3954045b17d046f271b9cc1ec052bad9702
-  GoogleDataTransport: 6ffa4dd0b6d547f8d27b91bd92fa9e197a3f5f1f
-  GoogleDataTransportCCTSupport: 12f02e5c8f09c055615de90bcd5ba2c375546051
-  GoogleUtilities: ad0f3b691c67909d03a3327cc205222ab8f42e0e
-  nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
+  Ads-CN-Beta: a23c8b868e1074adb46d65c682ef67b441421e67
+  Bugly: b8715e6ec4004b7f7fbffab0643ba80545aee3da
   NimbleKit: fc0c4d88eece0fc61f0a32c5e3a605c1fd1d30c0
-  PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   RxCocoa: 44a80de90e25b739b5aeaae3c8c371a32e3343cc
   RxRelay: 45eaa5db8ee4fb50e5ebd57deec0159e97fa51e6
   RxSwift: a4b44f7d24599f674deebd1818eab82e58410632
-  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
-  SwiftDate: fa2bb3962056bb44047b4b85a30044e5eae30b03
+  SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
+  SwiftDate: bbc26e26fc8c0c33fbee8c140c5e8a68293a148a
   SwiftyNotification: 97bc51087f1cb0decd8866183b45d9fed15aa0c7
 
-PODFILE CHECKSUM: 148e1140e112b20b1a259b8bb822c701355f9418
+PODFILE CHECKSUM: d62b92d471d95b23d7ec1ebc6ba2bca901e835bb
 
 COCOAPODS: 1.14.3

@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-protocol SingleTableViewProtocol: class {
+protocol SingleTableViewProtocol: AnyObject {
     associatedtype CellType: SingleTableViewCellProtocol
     var tableView: UITableView { get }
     var models: BehaviorRelay<[CellType.ModelType]?> { get }

@@ -8,28 +8,33 @@
 
 import UIKit
 import AppTrackingTransparency
-
+import AdSupport
 
 class PreSelectViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        requestIDFAPermission()
+        NotificationCenter.default.addObserver(forName: UIApplication.didBecomeActiveNotification, object: nil, queue: .main) { _ in
+            self.requestIDFAPermission()
+            print("idfa 是: \(ASIdentifierManager.shared().advertisingIdentifier.uuidString)")
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         hideNavigation()
     }
-    
+
     func requestIDFAPermission() {
         guard #available(iOS 14, *) else {
             return
         }
         guard ATTrackingManager.trackingAuthorizationStatus == .notDetermined else { return }
-        ATTrackingManager.requestTrackingAuthorization { _ in
-            
+        ATTrackingManager.requestTrackingAuthorization { status in
+            DispatchQueue.main.async {
+                print("请求结果 :", status.rawValue)
+            }
         }
     }
     

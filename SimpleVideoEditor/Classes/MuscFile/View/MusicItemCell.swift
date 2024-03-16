@@ -6,7 +6,7 @@
 //  Copyright © 2020 周正飞. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class MusicItemCell: UITableViewCell, SingleTableViewCellProtocol {
     required init?(coder aDecoder: NSCoder) { nil }
