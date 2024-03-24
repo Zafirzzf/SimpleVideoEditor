@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		021B1CD82BB045410057A3F9 /* CSJManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B1CD72BB045410057A3F9 /* CSJManager.swift */; };
 		181AFFCD23DED0C00092EC79 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181AFFCC23DED0C00092EC79 /* PlayerViewModel.swift */; };
 		181AFFCE23DED0C00092EC79 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181AFFCC23DED0C00092EC79 /* PlayerViewModel.swift */; };
 		181AFFD023DED3DA0092EC79 /* PlayerControlBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181AFFCF23DED3DA0092EC79 /* PlayerControlBottomView.swift */; };
@@ -250,6 +251,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		021B1CD72BB045410057A3F9 /* CSJManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSJManager.swift; sourceTree = "<group>"; };
 		181AFFCC23DED0C00092EC79 /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
 		181AFFCF23DED3DA0092EC79 /* PlayerControlBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerControlBottomView.swift; sourceTree = "<group>"; };
 		181AFFD223DF17A30092EC79 /* VideoPickItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPickItem.swift; sourceTree = "<group>"; };
@@ -531,6 +533,7 @@
 			isa = PBXGroup;
 			children = (
 				1825342524552D2900218B36 /* PlayerTimeController.swift */,
+				021B1CD72BB045410057A3F9 /* CSJManager.swift */,
 				18ED4E0C23EC171000A02DA0 /* AVPlayerSeeker.swift */,
 				181AFFDE23E190330092EC79 /* VideoManager.swift */,
 				18CC8CC3244B53DA000D3C0A /* MusicEditor.swift */,
@@ -1151,6 +1154,7 @@
 				18BE45F523DDB275009A5EDE /* PKHUDErrorView.swift in Sources */,
 				18BE468923DDB2D3009A5EDE /* LoadCellable.swift in Sources */,
 				18BE45DD23DDB275009A5EDE /* PKHUD.swift in Sources */,
+				021B1CD82BB045410057A3F9 /* CSJManager.swift in Sources */,
 				18BE467923DDB2D3009A5EDE /* Decimal+Extension.swift in Sources */,
 				18BE466123DDB2D3009A5EDE /* UIWindow+Extension.swift in Sources */,
 				18ED4E0D23EC171000A02DA0 /* AVPlayerSeeker.swift in Sources */,

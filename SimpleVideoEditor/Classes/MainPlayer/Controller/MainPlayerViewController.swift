@@ -12,6 +12,7 @@ import AVFoundation
 import RxSwift
 import RxCocoa
 import StoreKit
+import DeviceDefine
 
 class MainPlayerViewController: BaseViewController {
     
@@ -157,7 +158,7 @@ private extension MainPlayerViewController {
             $0.centerY.equalTo(selectVideoButton)
         }
         selectVideoButton.snp.makeConstraints {
-            $0.top.equalTo(5)
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(5)
             $0.centerX.equalToSuperview()
         }
         saveButton.snp.makeConstraints {

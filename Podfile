@@ -1,5 +1,8 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
+source 'https://git.ourbluecity.com/finka/ios/AHPodsSpecs.git'
+source 'https://github.com/CocoaPods/Specs.git'
+
 platform :ios, '13.0'
 inhibit_all_warnings!
 
@@ -16,6 +19,10 @@ target 'SimpleVideoEditor' do
     pod 'Bugly',  '2.5.93'
     pod 'SwiftyNotification'
     pod 'Ads-CN-Beta', '6.0.0.1'
+    pod 'DeviceDefine',                     '0.3.0'
+
+    pod 'AHUIKitExtension', :git => 'https://git.ourbluecity.com/finka/ios/AHUIKitExtension', :tag => '2.9.0'
+
     
   target 'SimpleVideoEditorTests' do
     inherit! :search_paths

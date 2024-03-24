@@ -10,6 +10,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 import AVFoundation
+import DeviceDefine
 
 enum PlayState {
     case playing
@@ -69,7 +70,7 @@ class PlayerViewModel {
                 }
             } else {
                 let videoHeight = item.videoHeight(from: SCREEN_WIDTH - 30 * 2)
-                return [30, STATUS_BAR_HEIGHT, SCREEN_WIDTH - 2 * 30, videoHeight]
+                return [30, Device.UI.topGuideHeight, SCREEN_WIDTH - 2 * 30, videoHeight]
             }
         }
         let timeReply = timeControler.playTime

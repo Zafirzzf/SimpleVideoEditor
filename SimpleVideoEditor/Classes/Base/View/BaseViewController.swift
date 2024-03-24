@@ -27,13 +27,6 @@ extension BaseViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    func popOrDismiss() {
-        if isNaviRoot {
-            self.dismiss()
-        } else {
-            self.pop()
-        }
-    }
     func pop(_ animated: Bool = true) {
         navigationController?.popViewController(animated: animated)
     }

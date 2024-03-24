@@ -1,8 +1,11 @@
 ${PODS_ROOT}/Target Support Files/Pods-SimpleVideoEditor/Pods-SimpleVideoEditor-frameworks.sh
+${BUILT_PRODUCTS_DIR}/AHUIKitExtension/AHUIKitExtension.framework
+${BUILT_PRODUCTS_DIR}/DeviceDefine/DeviceDefine.framework
 ${BUILT_PRODUCTS_DIR}/NimbleKit/NimbleKit.framework
 ${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework
 ${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework
 ${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework
+${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
 ${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework
 ${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyNotification/SwiftyNotification.framework
