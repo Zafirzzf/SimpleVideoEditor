@@ -176,6 +176,7 @@ code_sign_if_enabled() {
 }
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/AHProgressView/AHProgressView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AHUIKitExtension/AHUIKitExtension.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/DeviceDefine/DeviceDefine.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/NimbleKit/NimbleKit.framework"
@@ -188,6 +189,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyNotification/SwiftyNotification.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/AHProgressView/AHProgressView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AHUIKitExtension/AHUIKitExtension.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/DeviceDefine/DeviceDefine.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/NimbleKit/NimbleKit.framework"

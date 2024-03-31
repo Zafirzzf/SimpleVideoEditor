@@ -12,4 +12,7 @@ import SwiftyPreference
 struct PreferenceConfig {
     @DefaultsKey(key: "openAppTimes", defaultValue: 0)
     static var openAppTimes: Int
+    
+    @DefaultsKey(key: "adRecordList", defaultValue: [])
+    static var adRecordList: [String]
 }

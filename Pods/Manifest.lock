@@ -2,6 +2,10 @@ PODS:
   - Ads-CN-Beta (6.0.0.1):
     - Ads-CN-Beta/BUAdSDK (= 6.0.0.1)
   - Ads-CN-Beta/BUAdSDK (6.0.0.1)
+  - AHLogRecorder (0.1.5):
+    - SnapKit
+  - AHProgressView (1.7.0):
+    - SnapKit
   - AHUIKitExtension (2.9.0):
     - SDWebImage
     - SnapKit
@@ -23,6 +27,8 @@ PODS:
 
 DEPENDENCIES:
   - Ads-CN-Beta (= 6.0.0.1)
+  - AHLogRecorder (from `https://git.ourbluecity.com/finka/ios/AHLogRecorder`, tag `0.1.5`)
+  - AHProgressView (= 1.7.0)
   - AHUIKitExtension (from `https://git.ourbluecity.com/finka/ios/AHUIKitExtension`, tag `2.9.0`)
   - Bugly (= 2.5.93)
   - DeviceDefine (= 0.3.0)
@@ -35,6 +41,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://git.ourbluecity.com/finka/ios/AHPodsSpecs.git:
+    - AHProgressView
     - DeviceDefine
   https://github.com/CocoaPods/Specs.git:
     - SDWebImage
@@ -50,17 +57,25 @@ SPEC REPOS:
     - SwiftyNotification
 
 EXTERNAL SOURCES:
+  AHLogRecorder:
+    :git: https://git.ourbluecity.com/finka/ios/AHLogRecorder
+    :tag: 0.1.5
   AHUIKitExtension:
     :git: https://git.ourbluecity.com/finka/ios/AHUIKitExtension
     :tag: 2.9.0
 
 CHECKOUT OPTIONS:
+  AHLogRecorder:
+    :git: https://git.ourbluecity.com/finka/ios/AHLogRecorder
+    :tag: 0.1.5
   AHUIKitExtension:
     :git: https://git.ourbluecity.com/finka/ios/AHUIKitExtension
     :tag: 2.9.0
 
 SPEC CHECKSUMS:
   Ads-CN-Beta: a23c8b868e1074adb46d65c682ef67b441421e67
+  AHLogRecorder: 7dea08b21e642347847014dab3b7a0140515a54a
+  AHProgressView: eb3ef15046500b66c74337df63057e6e13971433
   AHUIKitExtension: 62ed7ecacecaff523729f2c848cc91a231dd05b6
   Bugly: b8715e6ec4004b7f7fbffab0643ba80545aee3da
   DeviceDefine: 0a8c5ac726473798b4e0371b25a89aa7c3153685
@@ -73,6 +88,6 @@ SPEC CHECKSUMS:
   SwiftDate: bbc26e26fc8c0c33fbee8c140c5e8a68293a148a
   SwiftyNotification: 97bc51087f1cb0decd8866183b45d9fed15aa0c7
 
-PODFILE CHECKSUM: 2b786eabf413cb4d4596e15eb411d2edfb650067
+PODFILE CHECKSUM: d91464e761b406d6dc04743f9ae894e13500dfc5
 
 COCOAPODS: 1.14.3

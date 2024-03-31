@@ -9,6 +9,7 @@
 import Foundation
 import AHUIKitExtension
 import BUAdSDK
+import AHProgressView
 
 final class CSJManager: NSObject {
     
@@ -43,9 +44,11 @@ extension CSJManager: BUNativeExpressRewardedVideoAdDelegate {
         print(#function)
     }
     func nativeExpressRewardedVideoAdViewRenderSuccess(_ rewardedVideoAd: BUNativeExpressRewardedVideoAd) {
-        print(#function)
+        adLog.append(title: "广告渲染成功")
     }
     func nativeExpressRewardedVideoAd(_ rewardedVideoAd: BUNativeExpressRewardedVideoAd, didFailWithError error: Error?) {
+        adLog.append(title: "广告加载失败", subTitle: error?.localizedDescription)
+        AHProgressView.showTextToast(message: "广告加载失败:\n \(error?.localizedDescription ?? "")")
         print(#function, error)
     }
     
