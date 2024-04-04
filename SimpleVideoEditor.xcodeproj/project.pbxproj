@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		021B1CD82BB045410057A3F9 /* CSJManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B1CD72BB045410057A3F9 /* CSJManager.swift */; };
 		021E16A22BB9A0E800E5E4E8 /* AdRecordLoger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021E16A12BB9A0E800E5E4E8 /* AdRecordLoger.swift */; };
+		021E16B42BBEAF6A00E5E4E8 /* AdInfoInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021E16B32BBEAF6A00E5E4E8 /* AdInfoInputVC.swift */; };
 		181AFFCD23DED0C00092EC79 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181AFFCC23DED0C00092EC79 /* PlayerViewModel.swift */; };
 		181AFFCE23DED0C00092EC79 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181AFFCC23DED0C00092EC79 /* PlayerViewModel.swift */; };
 		181AFFD023DED3DA0092EC79 /* PlayerControlBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181AFFCF23DED3DA0092EC79 /* PlayerControlBottomView.swift */; };
@@ -254,6 +255,7 @@
 /* Begin PBXFileReference section */
 		021B1CD72BB045410057A3F9 /* CSJManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSJManager.swift; sourceTree = "<group>"; };
 		021E16A12BB9A0E800E5E4E8 /* AdRecordLoger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdRecordLoger.swift; sourceTree = "<group>"; };
+		021E16B32BBEAF6A00E5E4E8 /* AdInfoInputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdInfoInputVC.swift; sourceTree = "<group>"; };
 		181AFFCC23DED0C00092EC79 /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
 		181AFFCF23DED3DA0092EC79 /* PlayerControlBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerControlBottomView.swift; sourceTree = "<group>"; };
 		181AFFD223DF17A30092EC79 /* VideoPickItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPickItem.swift; sourceTree = "<group>"; };
@@ -536,6 +538,7 @@
 			children = (
 				1825342524552D2900218B36 /* PlayerTimeController.swift */,
 				021B1CD72BB045410057A3F9 /* CSJManager.swift */,
+				021E16B32BBEAF6A00E5E4E8 /* AdInfoInputVC.swift */,
 				18ED4E0C23EC171000A02DA0 /* AVPlayerSeeker.swift */,
 				181AFFDE23E190330092EC79 /* VideoManager.swift */,
 				18CC8CC3244B53DA000D3C0A /* MusicEditor.swift */,
@@ -1173,6 +1176,7 @@
 				18BE460B23DDB275009A5EDE /* ValidateTool.swift in Sources */,
 				18BE468D23DDB2D3009A5EDE /* AbnormalViewState.swift in Sources */,
 				18BE45D923DDB275009A5EDE /* PKHUDAnimating.swift in Sources */,
+				021E16B42BBEAF6A00E5E4E8 /* AdInfoInputVC.swift in Sources */,
 				18CC8CC0244B038F000D3C0A /* EmailSender.swift in Sources */,
 				181AFFCD23DED0C00092EC79 /* PlayerViewModel.swift in Sources */,
 				18BE45ED23DDB275009A5EDE /* WindowRootViewController.swift in Sources */,

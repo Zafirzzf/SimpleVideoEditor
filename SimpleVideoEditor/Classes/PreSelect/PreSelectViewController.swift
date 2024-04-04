@@ -9,6 +9,7 @@
 import UIKit
 import AppTrackingTransparency
 import AdSupport
+import AHLogRecorder
 
 class PreSelectViewController: BaseViewController {
 
@@ -78,6 +79,9 @@ class PreSelectViewController: BaseViewController {
                 CSJManager.shared.loadAdData()
 //                self.push(MusicFileViewController())
         }.base
+        musicFileButton.addGestureRecognizer(UILongPressGestureRecognizer.self) { _ in
+            self.present(AHLogRecorderListVC(dataSource: adLog))
+        }
         
         titleLabel.snp.makeConstraints {
             $0.top.equalTo(NAVIGATION_BAR_HHEIGHT + 5)

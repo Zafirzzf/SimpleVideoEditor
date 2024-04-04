@@ -15,4 +15,10 @@ struct PreferenceConfig {
     
     @DefaultsKey(key: "adRecordList", defaultValue: [])
     static var adRecordList: [String]
+    
+    @DefaultsKey(key: "adAppId", defaultValue: nil)
+    static var adAppId: String?
+    
+    @DefaultsKey(key: "adShotIds", defaultValue: [])
+    static var adShotIds: [String]
 }

@@ -15,27 +15,58 @@ final class CSJManager: NSObject {
     
     static let shared = CSJManager()
     var ad: BUNativeExpressRewardedVideoAd?
+    private var loadAdFailCount = 0
+    private var currentSlotId: String?
+    private var failSlotIds: [String?] = []
     
-    private override init() {
+    func initSDK(complete: @escaping () -> Void) {
+        guard let appId = PreferenceConfig.adAppId else {
+            DispatchQueue.main.async {
+                UIViewController.topViewController.present(AdInfoInputVC(), animated: true)
+            }
+            return
+        }
         
-        super.init()
         let config = BUAdSDKConfiguration()
-        config.appID = "5512536"
+        config.appID = appId
         BUAdSDKManager.start(asyncCompletionHandler: { success, error in
-            print("穿山甲初始化结果: \(success), \(error)")
+            DispatchQueue.main.async {
+                complete()
+                AHProgressView.showTextToast(message: "穿山甲初始化结果: \(success), \(error)")
+            }
         })
-       
     }
     
     func loadAdData() {
-        let model = BURewardedVideoModel()
-        model.rewardName = "钻石"
-        model.rewardAmount = 200
-
-        ad = BUNativeExpressRewardedVideoAd(slotID: "956692499", rewardedVideoModel: model)
-        ad?.loadData()
-        ad?.delegate = self
-
+        
+        if PreferenceConfig.adAppId == nil {
+            DispatchQueue.main.async {
+                UIViewController.topViewController.present(AdInfoInputVC(), animated: true)
+            }
+            return
+        }
+        
+        if currentSlotId == nil {
+            currentSlotId = PreferenceConfig.adShotIds.randomElement()
+        } else {
+            currentSlotId = PreferenceConfig.adShotIds.filter {
+                !failSlotIds.contains($0)
+            }.randomElement()
+        }
+        if currentSlotId == nil {
+            AHProgressView.showTextToast(message: "所有广告位尝试失败")
+        }
+        initSDK { [self] in
+            let model = BURewardedVideoModel()
+            model.rewardName = "钻石"
+            model.rewardAmount = 200
+            AHProgressView.loadingWithTimeout(4)
+            
+            ad = BUNativeExpressRewardedVideoAd(slotID: currentSlotId!, rewardedVideoModel: model)
+            ad?.loadData()
+            ad?.delegate = self
+        }
+        
     }
 }
 
@@ -44,12 +75,17 @@ extension CSJManager: BUNativeExpressRewardedVideoAdDelegate {
         print(#function)
     }
     func nativeExpressRewardedVideoAdViewRenderSuccess(_ rewardedVideoAd: BUNativeExpressRewardedVideoAd) {
-        adLog.append(title: "广告渲染成功")
+        AHProgressView.hide()
+        adLog.append(title: "广告渲染成功\(currentSlotId!)")
+        failSlotIds = []
     }
     func nativeExpressRewardedVideoAd(_ rewardedVideoAd: BUNativeExpressRewardedVideoAd, didFailWithError error: Error?) {
-        adLog.append(title: "广告加载失败", subTitle: error?.localizedDescription)
-        AHProgressView.showTextToast(message: "广告加载失败:\n \(error?.localizedDescription ?? "")")
+        adLog.append(title: "广告位加载失败:\(currentSlotId!)", subTitle: error?.localizedDescription)
+        AHProgressView.showTextToast(message: "广告位加载失败:\n \(error?.localizedDescription ?? "")")
+        failSlotIds.append(currentSlotId)
+        loadAdData()
         print(#function, error)
+        
     }
     
     func nativeExpressRewardedVideoAdDidDownLoadVideo(_ rewardedVideoAd: BUNativeExpressRewardedVideoAd) {
