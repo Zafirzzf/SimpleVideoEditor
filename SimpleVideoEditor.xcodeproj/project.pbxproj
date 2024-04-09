@@ -1598,7 +1598,7 @@
 					"\"SwiftyNotification\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zafir.videoEditor;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zafir.videoEditor.i1;
 				PRODUCT_NAME = SimplePlayer;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SimpleVideoEditor/Bridging-Header.h";

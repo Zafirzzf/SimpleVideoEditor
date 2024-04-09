@@ -55,6 +55,7 @@ final class CSJManager: NSObject {
         }
         if currentSlotId == nil {
             AHProgressView.showTextToast(message: "所有广告位尝试失败")
+            return
         }
         initSDK { [self] in
             let model = BURewardedVideoModel()
@@ -76,11 +77,11 @@ extension CSJManager: BUNativeExpressRewardedVideoAdDelegate {
     }
     func nativeExpressRewardedVideoAdViewRenderSuccess(_ rewardedVideoAd: BUNativeExpressRewardedVideoAd) {
         AHProgressView.hide()
-        adLog.append(title: "广告渲染成功\(currentSlotId!)")
+        AdLogWrapper.append(title: "广告渲染成功\(currentSlotId!)")
         failSlotIds = []
     }
     func nativeExpressRewardedVideoAd(_ rewardedVideoAd: BUNativeExpressRewardedVideoAd, didFailWithError error: Error?) {
-        adLog.append(title: "广告位加载失败:\(currentSlotId!)", subTitle: error?.localizedDescription)
+        AdLogWrapper.append(title: "广告位加载失败:\(currentSlotId!)", subTitle: error?.localizedDescription)
         AHProgressView.showTextToast(message: "广告位加载失败:\n \(error?.localizedDescription ?? "")")
         failSlotIds.append(currentSlotId)
         loadAdData()

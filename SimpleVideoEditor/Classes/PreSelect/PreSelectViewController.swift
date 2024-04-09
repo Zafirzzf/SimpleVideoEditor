@@ -80,7 +80,7 @@ class PreSelectViewController: BaseViewController {
 //                self.push(MusicFileViewController())
         }.base
         musicFileButton.addGestureRecognizer(UILongPressGestureRecognizer.self) { _ in
-            self.present(AHLogRecorderListVC(dataSource: adLog))
+            self.present(AHLogRecorderListVC(dataSource: AdLogWrapper.adLog))
         }
         
         titleLabel.snp.makeConstraints {
