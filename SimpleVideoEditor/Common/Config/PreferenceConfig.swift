@@ -8,17 +8,21 @@
 
 import Foundation
 import SwiftyPreference
+import AHLogRecorder
 
 struct PreferenceConfig {
     @DefaultsKey(key: "openAppTimes", defaultValue: 0)
     static var openAppTimes: Int
     
     @DefaultsKey(key: "adRecordList", defaultValue: [])
-    static var adRecordList: [String]
+    static var adRecordList: [LogRecorderDataSource.Recorder]
     
-    @DefaultsKey(key: "adAppId", defaultValue: nil)
-    static var adAppId: String?
+//    @DefaultsKey(key: "adAppId", defaultValue: nil)
+//    static var adAppId: String?
+//    
+//    @DefaultsKey(key: "adShotIds", defaultValue: [])
+//    static var adShotIds: [String]
     
-    @DefaultsKey(key: "adShotIds", defaultValue: [])
-    static var adShotIds: [String]
+    @DefaultsKey(key: "csjIsTestAd", defaultValue: false)
+    static var csjIsTestAd: Bool
 }

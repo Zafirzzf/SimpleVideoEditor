@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		020B1A7B2BC58ABD00CF9233 /* CSJAdConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020B1A7A2BC58ABD00CF9233 /* CSJAdConfig.swift */; };
 		021B1CD82BB045410057A3F9 /* CSJManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B1CD72BB045410057A3F9 /* CSJManager.swift */; };
 		021E16A22BB9A0E800E5E4E8 /* AdRecordLoger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021E16A12BB9A0E800E5E4E8 /* AdRecordLoger.swift */; };
 		021E16B42BBEAF6A00E5E4E8 /* AdInfoInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021E16B32BBEAF6A00E5E4E8 /* AdInfoInputVC.swift */; };
@@ -212,7 +213,6 @@
 		18C6E41A23FBC023005F05F8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C6E41923FBC023005F05F8 /* Foundation.framework */; };
 		18C6E43623FBF73F005F05F8 /* PreferenceConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C6E43523FBF73F005F05F8 /* PreferenceConfig.swift */; };
 		18C6E43723FBF73F005F05F8 /* PreferenceConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C6E43523FBF73F005F05F8 /* PreferenceConfig.swift */; };
-		18C6E43A23FBF7FA005F05F8 /* SwiftyPreference in Frameworks */ = {isa = PBXBuildFile; productRef = 18C6E43923FBF7FA005F05F8 /* SwiftyPreference */; };
 		18C8F1E92442C3CB00FE5CB4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18C8F1E82442C3CB00FE5CB4 /* GoogleService-Info.plist */; };
 		18C8F1EA2442C3CB00FE5CB4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18C8F1E82442C3CB00FE5CB4 /* GoogleService-Info.plist */; };
 		18CC8CB8244AF452000D3C0A /* SettingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC8CB7244AF452000D3C0A /* SettingListView.swift */; };
@@ -253,6 +253,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		020B1A7A2BC58ABD00CF9233 /* CSJAdConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSJAdConfig.swift; sourceTree = "<group>"; };
 		021B1CD72BB045410057A3F9 /* CSJManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSJManager.swift; sourceTree = "<group>"; };
 		021E16A12BB9A0E800E5E4E8 /* AdRecordLoger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdRecordLoger.swift; sourceTree = "<group>"; };
 		021E16B32BBEAF6A00E5E4E8 /* AdInfoInputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdInfoInputVC.swift; sourceTree = "<group>"; };
@@ -410,7 +411,6 @@
 			files = (
 				18C6E41A23FBC023005F05F8 /* Foundation.framework in Frameworks */,
 				18C6E41823FBC01C005F05F8 /* UIKit.framework in Frameworks */,
-				18C6E43A23FBF7FA005F05F8 /* SwiftyPreference in Frameworks */,
 				18C6E41623FBC017005F05F8 /* CoreGraphics.framework in Frameworks */,
 				18C6E41423FBC012005F05F8 /* AdSupport.framework in Frameworks */,
 				18C6E41023FBBFFF005F05F8 /* QuartzCore.framework in Frameworks */,
@@ -546,6 +546,7 @@
 				18C1B68523E5A0F200B673E1 /* FakeProgressMaker.swift */,
 				181AFFE123E1B49F0092EC79 /* PhotoLibraryManager.swift */,
 				021E16A12BB9A0E800E5E4E8 /* AdRecordLoger.swift */,
+				020B1A7A2BC58ABD00CF9233 /* CSJAdConfig.swift */,
 				18BE45AD23DDB275009A5EDE /* PKHUD */,
 				18BE45C023DDB275009A5EDE /* ZFAlertView */,
 				18BE45C723DDB275009A5EDE /* NiceGesture */,
@@ -953,7 +954,6 @@
 			);
 			name = SimpleVideoEditor;
 			packageProductDependencies = (
-				18C6E43923FBF7FA005F05F8 /* SwiftyPreference */,
 			);
 			productName = SimpleVideoEditor;
 			productReference = 18BE457A23D95B72009A5EDE /* SimplePlayer.app */;
@@ -1008,7 +1008,6 @@
 			);
 			mainGroup = 18BE457123D95B72009A5EDE;
 			packageReferences = (
-				18C6E43823FBF7FA005F05F8 /* XCRemoteSwiftPackageReference "SwiftyPreference" */,
 			);
 			productRefGroup = 18BE457B23D95B72009A5EDE /* Products */;
 			projectDirPath = "";
@@ -1146,6 +1145,7 @@
 				18BE465F23DDB2D3009A5EDE /* UIColor+Extension.swift in Sources */,
 				18BE45E323DDB275009A5EDE /* PKHUDWideBaseView.swift in Sources */,
 				18BE466723DDB2D3009A5EDE /* UIView+Extension.swift in Sources */,
+				020B1A7B2BC58ABD00CF9233 /* CSJAdConfig.swift in Sources */,
 				181AFFD923E16EF50092EC79 /* PlayerControlOptionView.swift in Sources */,
 				1865B40B23DE9CAD006BEFF0 /* PreSelectViewController.swift in Sources */,
 				18BE460D23DDB275009A5EDE /* MediaTool.swift in Sources */,
@@ -1508,6 +1508,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 2YBDAL8C2A;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SimpleVideoEditor/Util",
@@ -1700,25 +1701,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		18C6E43823FBF7FA005F05F8 /* XCRemoteSwiftPackageReference "SwiftyPreference" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Zafirzzf/SwiftyPreference.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.3;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		18C6E43923FBF7FA005F05F8 /* SwiftyPreference */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 18C6E43823FBF7FA005F05F8 /* XCRemoteSwiftPackageReference "SwiftyPreference" */;
-			productName = SwiftyPreference;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 18BE457223D95B72009A5EDE /* Project object */;
 }

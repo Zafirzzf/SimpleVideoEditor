@@ -8,24 +8,34 @@
 
 import Foundation
 import AHLogRecorder
+import ObjectMapper
+import SwiftyPreference
 
+extension LogRecorderDataSource.Recorder: Mappable, PreferenceModel {
+    public init?(map: ObjectMapper.Map) { 
+        self.init(content: "", subContent: "")
+    }
+    
+    public mutating func mapping(map: Map) {
+        content <- map["content"]
+        subContent <- map["subContent"]
+        time <- map["time"]
+    }
+}
 class AdLogWrapper {
     static let adLog = LogRecorderDataSource()
 
     static let shared = AdLogWrapper()
     
     private init() {
-        PreferenceConfig.adRecordList.forEach {
-            let title = $0.components(separatedBy: ",").first ?? ""
-            let subTitle = $0.components(separatedBy: ",").last
-            Self.adLog.append(title: title, subTitle: subTitle)
-        }
+        Self.adLog.lists = PreferenceConfig.adRecordList
     }
     
     static func append(title: String, subTitle: String? = nil) {
+        let recorder = LogRecorderDataSource.Recorder.init(content: title, subContent: subTitle)
         adLog.append(title: title, subTitle: subTitle)
         var list = PreferenceConfig.adRecordList
-        list.append(title + (subTitle.flatMap({ ", " + $0 }) ?? ""))
+        list.append(recorder)
         PreferenceConfig.adRecordList = list
     }
     

@@ -20,9 +20,11 @@ target 'SimpleVideoEditor' do
     pod 'SwiftyNotification'
     pod 'Ads-CN-Beta', '6.0.0.1'
     pod 'AHProgressView',                   '1.7.0'
+    pod 'ObjectMapper'
+    pod 'SwiftyPreference'
 
     pod 'DeviceDefine',                     '0.3.0'
-    pod 'AHLogRecorder', :git => 'https://git.ourbluecity.com/finka/ios/AHLogRecorder', :tag => '0.1.5'
+    pod 'AHLogRecorder', :git => 'https://git.ourbluecity.com/finka/ios/AHLogRecorder', :tag => '0.1.6'
     pod 'AHUIKitExtension', :git => 'https://git.ourbluecity.com/finka/ios/AHUIKitExtension', :tag => '2.9.0'
 
     

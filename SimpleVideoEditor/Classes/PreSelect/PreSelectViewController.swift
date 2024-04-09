@@ -76,12 +76,33 @@ class PreSelectViewController: BaseViewController {
             .title("提取的音乐".international)
             .addToSuperView(self.view)
             .whenTap { [unowned self] in
-                CSJManager.shared.loadAdData()
+                if PreferenceConfig.csjIsTestAd {
+                    ZFAlertView(title: "确认使用测试代码位吗", leftTitle: "取消", rightTitle: "确认") { isLeft in
+                        if !isLeft {
+                            CSJManager.shared.loadAdData()
+
+                        }
+                    }.show()
+                } else {
+                    CSJManager.shared.loadAdData()
+                }
 //                self.push(MusicFileViewController())
         }.base
-        musicFileButton.addGestureRecognizer(UILongPressGestureRecognizer.self) { _ in
+        
+        let historyButton = UIButton(title: "历史记录",
+                                     titleColor: .white,
+                                     titleFont: .bold(size: 14)
+        )
+        historyButton.addTouch {
+            _ = AdLogWrapper.shared
             self.present(AHLogRecorderListVC(dataSource: AdLogWrapper.adLog))
         }
+        view.addSubview(historyButton)
+        
+        let adTestSwitch = UISwitch()
+        adTestSwitch.isOn = PreferenceConfig.csjIsTestAd
+        adTestSwitch.addTarget(self, action: #selector(adSwitchAction), for: .valueChanged)
+        view.addSubview(adTestSwitch)
         
         titleLabel.snp.makeConstraints {
             $0.top.equalTo(NAVIGATION_BAR_HHEIGHT + 5)
@@ -97,9 +118,22 @@ class PreSelectViewController: BaseViewController {
             $0.centerY.equalToSuperview().offset(90)
             $0.centerX.equalToSuperview()
         }
+        historyButton.snp.makeConstraints {
+            $0.centerY.equalTo(musicFileButton)
+            $0.trailing.equalTo(musicFileButton.snp.leading).offset(-20)
+        }
+        adTestSwitch.snp.makeConstraints {
+            $0.centerY.equalTo(musicFileButton)
+            $0.leading.equalTo(musicFileButton.snp.trailing).offset(20)
+        }
         musicFileButton.snp.makeConstraints {
             $0.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).offset(-50)
             $0.centerX.equalToSuperview()
         }
+    }
+    
+    @objc
+    func adSwitchAction(_ switchButton: UISwitch) {
+        PreferenceConfig.csjIsTestAd = switchButton.isOn
     }
 }

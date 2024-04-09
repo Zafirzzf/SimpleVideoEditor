@@ -36,10 +36,10 @@ final class AdInfoInputVC: UIViewController {
                 return
             }
             
-            PreferenceConfig.adAppId = appIdTF.text!
-            PreferenceConfig.adShotIds = [shotId1.text!, shotId2.text!, shotId3.text!].filter {
-                !$0.isEmpty
-            }
+//            PreferenceConfig.adAppId = appIdTF.text!
+//            PreferenceConfig.adShotIds = [shotId1.text!, shotId2.text!, shotId3.text!].filter {
+//                !$0.isEmpty
+//            }
             self.dismiss(animated: true)
         }
         
