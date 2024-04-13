@@ -60,7 +60,7 @@ final class CSJManager: NSObject {
             let model = BURewardedVideoModel()
             model.rewardName = "钻石"
             model.rewardAmount = 200
-            AHProgressView.loadingWithTimeout(4)
+            AHProgressView.loading()
             
             ad = BUNativeExpressRewardedVideoAd(slotID: currentSlotId!, rewardedVideoModel: model)
             ad?.loadData()
