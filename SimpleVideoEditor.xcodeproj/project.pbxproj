@@ -273,7 +273,7 @@
 		184C691E23E917A80040ABCB /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		1865B40623DE8FBB006BEFF0 /* MainPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPlayerViewController.swift; sourceTree = "<group>"; };
 		1865B40A23DE9CAD006BEFF0 /* PreSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreSelectViewController.swift; sourceTree = "<group>"; };
-		18BE457A23D95B72009A5EDE /* SimplePlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimplePlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18BE457A23D95B72009A5EDE /* 飞飞的泡泡.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "飞飞的泡泡.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BE457D23D95B72009A5EDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18BE458623D95B73009A5EDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18BE458923D95B73009A5EDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -500,7 +500,7 @@
 		18BE457B23D95B72009A5EDE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				18BE457A23D95B72009A5EDE /* SimplePlayer.app */,
+				18BE457A23D95B72009A5EDE /* 飞飞的泡泡.app */,
 				18BE459023D95B73009A5EDE /* SimpleVideoEditorTests.xctest */,
 			);
 			name = Products;
@@ -956,7 +956,7 @@
 			packageProductDependencies = (
 			);
 			productName = SimpleVideoEditor;
-			productReference = 18BE457A23D95B72009A5EDE /* SimplePlayer.app */;
+			productReference = 18BE457A23D95B72009A5EDE /* 飞飞的泡泡.app */;
 			productType = "com.apple.product-type.application";
 		};
 		18BE458F23D95B73009A5EDE /* SimpleVideoEditorTests */ = {
@@ -1545,8 +1545,8 @@
 					"\"SwiftyNotification\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zafir.videoEditor;
-				PRODUCT_NAME = SimplePlayer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zafir.videoEditor.new1;
+				PRODUCT_NAME = "飞飞的泡泡";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -1603,8 +1603,8 @@
 					"\"SwiftyNotification\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zafir.videoEditor.i1;
-				PRODUCT_NAME = SimplePlayer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zafir.videoEditor.new1;
+				PRODUCT_NAME = "飞飞的泡泡";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
