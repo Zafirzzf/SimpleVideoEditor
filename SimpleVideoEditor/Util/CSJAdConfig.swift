@@ -8,7 +8,7 @@
 
 import Foundation
 
-let csjAppid = PreferenceConfig.csjIsTestAd ? "5519852" : "5519488"
+let csjAppid = PreferenceConfig.csjIsTestAd ? "5519852" : "5523452"
 let csjSlotIds = PreferenceConfig.csjIsTestAd ?
 ["956991985"] :
-["956977004", "956976998", "956976988"]
+["957096568", "957096564", "957096563"]
