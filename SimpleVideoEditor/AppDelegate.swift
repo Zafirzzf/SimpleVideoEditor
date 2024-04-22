@@ -22,7 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         Bugly.start(withAppId: "749b56a434")
         UIViewController.rootTabViewControoler = window?.rootViewController
-        _ = CSJManager.shared
         
 //        let path = Bundle.main.path(forResource: "test1", ofType: "MP4")!
 //        if UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(path) {

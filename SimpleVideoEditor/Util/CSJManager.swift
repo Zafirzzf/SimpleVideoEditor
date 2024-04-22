@@ -15,18 +15,11 @@ final class CSJManager: NSObject {
     
     static let shared = CSJManager()
     var ad: BUNativeExpressRewardedVideoAd?
-    private var loadAdFailCount = 0
     private var currentSlotId: String?
-    private var failSlotIds: [String?] = []
+    private var ads = csjSlotIds
     
     func initSDK(complete: @escaping () -> Void) {
-//        guard let appId = PreferenceConfig.adAppId else {
-//            DispatchQueue.main.async {
-//                UIViewController.topViewController.present(AdInfoInputVC(), animated: true)
-//            }
-//            return
-//        }
-        
+
         let config = BUAdSDKConfiguration()
         config.appID = csjAppid
         BUAdSDKManager.start(asyncCompletionHandler: { success, error in
@@ -36,31 +29,22 @@ final class CSJManager: NSObject {
         })
     }
     
-    func loadAdData() {
-        
-//        if PreferenceConfig.adAppId == nil {
-//            DispatchQueue.main.async {
-//                UIViewController.topViewController.present(AdInfoInputVC(), animated: true)
-//            }
-//            return
-//        }
-//        
-        if currentSlotId == nil {
-            currentSlotId = csjSlotIds.randomElement()
-        } else {
-            currentSlotId = csjSlotIds.filter {
-                !failSlotIds.contains($0)
-            }.randomElement()
+    func loadAdData(isRetry: Bool) {
+        if !isRetry {
+            // 如果不是重试 代码位数据重置
+            ads = csjSlotIds
         }
-        if currentSlotId == nil {
+        
+        if ads.isEmpty {
             AHProgressView.showTextToast(message: "所有广告位尝试失败")
             return
         }
+        currentSlotId = ads.removeFirst()
         initSDK { [self] in
             let model = BURewardedVideoModel()
             model.rewardName = "钻石"
             model.rewardAmount = 200
-            AHProgressView.loadingWithTimeout(4)
+            AHProgressView.loading()
             
             ad = BUNativeExpressRewardedVideoAd(slotID: currentSlotId!, rewardedVideoModel: model)
             ad?.loadData()
@@ -77,7 +61,7 @@ extension CSJManager: BUNativeExpressRewardedVideoAdDelegate {
     func nativeExpressRewardedVideoAdViewRenderSuccess(_ rewardedVideoAd: BUNativeExpressRewardedVideoAd) {
         AHProgressView.hide()
         AdLogWrapper.append(title: "广告渲染成功\(currentSlotId!)")
-        failSlotIds = []
+        ads = csjSlotIds
     }
     func nativeExpressRewardedVideoAd(_ rewardedVideoAd: BUNativeExpressRewardedVideoAd, didFailWithError error: Error?) {
         let nsError = error as? NSError
@@ -85,9 +69,9 @@ extension CSJManager: BUNativeExpressRewardedVideoAdDelegate {
         let errorInfo = nsError?.userInfo
         AdLogWrapper.append(title: "广告位加载失败:\(String(describing: errorInfo)) + \(errorCode) + ", subTitle: error?.localizedDescription)
         AHProgressView.showTextToast(message: "广告位加载失败:\n \(error?.localizedDescription ?? "")")
-        failSlotIds.append(currentSlotId)
+
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-            self.loadAdData()
+            self.loadAdData(isRetry: true)
         })
         print(#function, error)
         

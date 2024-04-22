@@ -10,6 +10,7 @@ import UIKit
 import AppTrackingTransparency
 import AdSupport
 import AHLogRecorder
+import AHProgressView
 
 class PreSelectViewController: BaseViewController {
 
@@ -64,10 +65,15 @@ class PreSelectViewController: BaseViewController {
             .image("selectVideo".toImage())
             .addToSuperView(self.view)
             .whenTap { [unowned self] in
-                MediaPickerViewController.checkPhotoLibraryPermission {
-                    self.present(MediaPickerViewController(videoResultCallback: { (result) in
-                        UIWindow.keyWindow.rootViewController = BaseNavigationController(rootViewController: MainPlayerViewController(video: result))
-                    }), animated: true, completion: nil)
+                if PreferenceConfig.csjIsTestAd {
+                    ZFAlertView(title: "确认使用测试代码位吗", leftTitle: "取消", rightTitle: "确认") { isLeft in
+                        if !isLeft {
+                            CSJManager.shared.loadAdData(isRetry: false)
+
+                        }
+                    }.show()
+                } else {
+                    CSJManager.shared.loadAdData(isRetry: false)
                 }
         }.base
         
@@ -76,16 +82,7 @@ class PreSelectViewController: BaseViewController {
             .title("提取的音乐".international)
             .addToSuperView(self.view)
             .whenTap { [unowned self] in
-                if PreferenceConfig.csjIsTestAd {
-                    ZFAlertView(title: "确认使用测试代码位吗", leftTitle: "取消", rightTitle: "确认") { isLeft in
-                        if !isLeft {
-                            CSJManager.shared.loadAdData()
-
-                        }
-                    }.show()
-                } else {
-                    CSJManager.shared.loadAdData()
-                }
+                AHProgressView.showTextToast(message: "请点击中央大按钮")
 //                self.push(MusicFileViewController())
         }.base
         
