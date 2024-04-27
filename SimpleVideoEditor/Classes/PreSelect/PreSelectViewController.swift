@@ -86,6 +86,19 @@ class PreSelectViewController: BaseViewController {
 //                self.push(MusicFileViewController())
         }.base
         
+        let idfaLabel = UILabel(
+            font: .regular(size: 13),
+            textColor: .white,
+            text: ASIdentifierManager.shared().advertisingIdentifier.uuidString
+        ).then {
+            $0.isUserInteractionEnabled = true
+            $0.addGestureRecognizer(UITapGestureRecognizer.self) { _ in
+                UIPasteboard.general.string = ASIdentifierManager.shared().advertisingIdentifier.uuidString
+                AHProgressView.showTextToast(message: "已复制idfa")
+            }
+        }
+        view.addSubview(idfaLabel)
+        
         let historyButton = UIButton(title: "历史记录",
                                      titleColor: .white,
                                      titleFont: .bold(size: 14)
@@ -118,6 +131,10 @@ class PreSelectViewController: BaseViewController {
         historyButton.snp.makeConstraints {
             $0.centerY.equalTo(musicFileButton)
             $0.trailing.equalTo(musicFileButton.snp.leading).offset(-20)
+        }
+        idfaLabel.snp.makeConstraints {
+            $0.top.equalTo(selectButton.snp.bottom).offset(5)
+            $0.centerX.equalToSuperview()
         }
         adTestSwitch.snp.makeConstraints {
             $0.centerY.equalTo(musicFileButton)

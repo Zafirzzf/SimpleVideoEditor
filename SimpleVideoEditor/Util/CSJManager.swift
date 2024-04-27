@@ -45,7 +45,7 @@ final class CSJManager: NSObject {
             model.rewardName = "钻石"
             model.rewardAmount = 200
             AHProgressView.loading()
-            
+            UIApplication.shared.isIdleTimerDisabled = true
             ad = BUNativeExpressRewardedVideoAd(slotID: currentSlotId!, rewardedVideoModel: model)
             ad?.loadData()
             ad?.delegate = self
@@ -60,6 +60,7 @@ extension CSJManager: BUNativeExpressRewardedVideoAdDelegate {
     }
     func nativeExpressRewardedVideoAdViewRenderSuccess(_ rewardedVideoAd: BUNativeExpressRewardedVideoAd) {
         AHProgressView.hide()
+        UIApplication.shared.isIdleTimerDisabled = false
         AdLogWrapper.append(title: "广告渲染成功\(currentSlotId!)")
         ads = csjSlotIds
     }
@@ -69,7 +70,7 @@ extension CSJManager: BUNativeExpressRewardedVideoAdDelegate {
         let errorInfo = nsError?.userInfo
         AdLogWrapper.append(title: "广告位加载失败:\(String(describing: errorInfo)) + \(errorCode) + ", subTitle: error?.localizedDescription)
         AHProgressView.showTextToast(message: "广告位加载失败:\n \(error?.localizedDescription ?? "")")
-
+        UIApplication.shared.isIdleTimerDisabled = false
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
             self.loadAdData(isRetry: true)
         })
