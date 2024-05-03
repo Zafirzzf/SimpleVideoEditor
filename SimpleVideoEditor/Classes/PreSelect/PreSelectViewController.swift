@@ -79,6 +79,7 @@ class PreSelectViewController: BaseViewController {
         
         let musicFileButton = OptionButton(position: .top)
             .nb.image("musicFile".toImage())
+            .hidden(true)
             .title("提取的音乐".international)
             .addToSuperView(self.view)
             .whenTap { [unowned self] in
@@ -101,7 +102,7 @@ class PreSelectViewController: BaseViewController {
         
         let historyButton = UIButton(title: "历史记录",
                                      titleColor: .white,
-                                     titleFont: .bold(size: 14)
+                                     titleFont: .bold(size: 20)
         )
         historyButton.addTouch {
             _ = AdLogWrapper.shared
@@ -110,6 +111,7 @@ class PreSelectViewController: BaseViewController {
         view.addSubview(historyButton)
         
         let adTestSwitch = UISwitch()
+        adTestSwitch.isHidden = true
         adTestSwitch.isOn = PreferenceConfig.csjIsTestAd
         adTestSwitch.addTarget(self, action: #selector(adSwitchAction), for: .valueChanged)
         view.addSubview(adTestSwitch)
