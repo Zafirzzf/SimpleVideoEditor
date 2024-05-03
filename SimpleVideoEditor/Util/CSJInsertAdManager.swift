@@ -1,8 +1,8 @@
 //
-//  CSJManager.swift
+//  CSJInsertAdManager.swift
 //  SimpleVideoEditor
 //
-//  Created by Zafir on 2024/3/24.
+//  Created by Zafir on 2024/5/3.
 //  Copyright © 2024 周正飞. All rights reserved.
 //
 
@@ -11,12 +11,12 @@ import AHUIKitExtension
 import BUAdSDK
 import AHProgressView
 
-final class CSJManager: NSObject {
+final class CSJInsertAdManager: NSObject {
     
     static let shared = CSJManager()
-    var ad: BUNativeExpressRewardedVideoAd?
+    var ad: BUNativeExpressFullscreenVideoAd?
     private var currentSlotId: String?
-    private var ads = csjSlotIds
+    private var ads = insertSlotIds
     
     func initSDK(complete: @escaping () -> Void) {
 
@@ -32,7 +32,7 @@ final class CSJManager: NSObject {
     func loadAdData(isRetry: Bool) {
         if !isRetry {
             // 如果不是重试 代码位数据重置
-            ads = csjSlotIds
+            ads = insertSlotIds
         }
         
         if ads.isEmpty {
@@ -46,25 +46,36 @@ final class CSJManager: NSObject {
             model.rewardAmount = 200
             AHProgressView.loading()
             UIApplication.shared.isIdleTimerDisabled = true
-            ad = BUNativeExpressRewardedVideoAd(slotID: currentSlotId!, rewardedVideoModel: model)
+            
+            ad = BUNativeExpressFullscreenVideoAd(slotID: currentSlotId!)
             ad?.loadData()
             ad?.delegate = self
         }
-        
     }
 }
 
-extension CSJManager: BUNativeExpressRewardedVideoAdDelegate {
-    func nativeExpressRewardedVideoAdDidLoad(_ rewardedVideoAd: BUNativeExpressRewardedVideoAd) {
-        print(#function)
+extension CSJInsertAdManager: BUNativeExpressFullscreenVideoAdDelegate {
+    
+    func nativeExpressFullscreenVideoAdDidDownLoadVideo(_ fullscreenVideoAd: BUNativeExpressFullscreenVideoAd) {
+        fullscreenVideoAd.show(fromRootViewController: .topViewController)
     }
-    func nativeExpressRewardedVideoAdViewRenderSuccess(_ rewardedVideoAd: BUNativeExpressRewardedVideoAd) {
-        AHProgressView.hide()
-        UIApplication.shared.isIdleTimerDisabled = false
-        AdLogWrapper.append(title: "广告渲染成功\(currentSlotId!)")
-        ads = csjSlotIds
+    func nativeExpressFullscreenVideoAdViewRenderFail(_ rewardedVideoAd: BUNativeExpressFullscreenVideoAd, error: Error?) {
+        if error == nil { return }
+        AHProgressView.showTextToast(message: "广告位渲染失败:\n \(error?.localizedDescription ?? "")")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+            self.loadAdData(isRetry: true)
+        })
     }
-    func nativeExpressRewardedVideoAd(_ rewardedVideoAd: BUNativeExpressRewardedVideoAd, didFailWithError error: Error?) {
+    
+    func nativeExpressFullscreenVideoAdDidPlayFinish(_ fullscreenVideoAd: BUNativeExpressFullscreenVideoAd, didFailWithError error: Error?) {
+        if error == nil { return }
+        AHProgressView.showTextToast(message: "广告位渲染失败:\n \(error?.localizedDescription ?? "")")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+            self.loadAdData(isRetry: true)
+        })
+    }
+    
+    func nativeExpressFullscreenVideoAd(_ fullscreenVideoAd: BUNativeExpressFullscreenVideoAd, didFailWithError error: Error?) {
         let nsError = error as? NSError
         let errorCode = nsError?.code ?? -1
         let errorInfo = nsError?.userInfo
@@ -74,13 +85,5 @@ extension CSJManager: BUNativeExpressRewardedVideoAdDelegate {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
             self.loadAdData(isRetry: true)
         })
-        print(#function, error)
-        
-    }
-    
-    func nativeExpressRewardedVideoAdDidDownLoadVideo(_ rewardedVideoAd: BUNativeExpressRewardedVideoAd) {
-        print(#function)
-        ad?.show(fromRootViewController: .topViewController)
     }
 }
-
