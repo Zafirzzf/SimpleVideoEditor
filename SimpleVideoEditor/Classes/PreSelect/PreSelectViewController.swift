@@ -11,15 +11,24 @@ import AppTrackingTransparency
 import AdSupport
 import AHLogRecorder
 import AHProgressView
+import AudioToolbox
 
 class PreSelectViewController: BaseViewController {
 
+    weak var idfaLabel: UILabel?
+    
+    let timeButton = UIButton(title: "点击开始倒计时10分钟", titleColor: .white, titleFont: .bold(size: 20))
+    weak var countDownTimer: Timer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        timeButton.addTouch { [unowned self] in
+            self.setupCountDownView(minute: 5)
+        }
         NotificationCenter.default.addObserver(forName: UIApplication.didBecomeActiveNotification, object: nil, queue: .main) { _ in
             self.requestIDFAPermission()
-            print("idfa 是: \(ASIdentifierManager.shared().advertisingIdentifier.uuidString)")
+            self.idfaLabel?.text = ASIdentifierManager.shared().advertisingIdentifier.uuidString
         }
     }
     
@@ -40,8 +49,12 @@ class PreSelectViewController: BaseViewController {
         }
     }
     
+    
     func setupView() {
         view.backgroundColor = .blackLight
+        CSJManager.shared.resultCallback = {
+            self.view.backgroundColor = $0 ? .green.withAlphaComponent(0.7) : .red.withAlphaComponent(0.7)
+        }
         
         let titleLabel = UILabel().nb
             .font(UIFont(name: "Helvetica-BoldOblique", size: 25)!)
@@ -98,7 +111,8 @@ class PreSelectViewController: BaseViewController {
                 AHProgressView.showTextToast(message: "已复制idfa")
             }
         }
-        view.addSubview(idfaLabel)
+        self.idfaLabel = idfaLabel
+        view.addSubviews(idfaLabel, timeButton)
         
         let historyButton = UIButton(title: "历史记录",
                                      titleColor: .white,
@@ -124,6 +138,10 @@ class PreSelectViewController: BaseViewController {
             $0.top.equalTo(titleLabel.snp.bottom).offset(20)
             $0.left.equalTo(10)
             $0.right.equalTo(-10)
+        }
+        timeButton.snp.makeConstraints {
+            $0.bottom.equalTo(selectButton.snp.top).offset(-40)
+            $0.centerX.equalToSuperview()
         }
         selectButton.snp.makeConstraints {
             $0.width.height.equalTo(80)
@@ -152,4 +170,28 @@ class PreSelectViewController: BaseViewController {
     func adSwitchAction(_ switchButton: UISwitch) {
         PreferenceConfig.csjIsTestAd = switchButton.isOn
     }
+    
+    private func setupCountDownView(minute: Int) {
+        
+        countDownTimer?.invalidate()
+        var seconds: Int = 10 * 60
+        countDownTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [self] in
+            seconds -= 1
+            timeButton.setTitle(hhMMss(seconds: seconds), for: .normal)
+            if seconds == 0 {
+                $0.invalidate()
+                timeButton.setTitleColor(.red, for: .normal)
+                timeButton.setTitle("10分钟到,再次点击可重新计时", for: .normal)
+                AudioServicesPlaySystemSound(1521)
+            }
+        }
+        countDownTimer?.fire()
+    }
+}
+
+func hhMMss(seconds: Int) -> String {
+    let hours = seconds / 3600
+    let minute = seconds / 60 % 60
+    let second = seconds % 60
+    return String(format: "%0.2d:%0.2d:%0.2d", hours, minute, second)
 }

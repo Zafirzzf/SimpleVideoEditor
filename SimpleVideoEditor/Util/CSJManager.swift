@@ -17,6 +17,8 @@ final class CSJManager: NSObject {
     var ad: BUNativeExpressRewardedVideoAd?
     private var currentSlotId: String?
     private var ads = csjSlotIds
+    var resultCallback: BoolCallback?
+
     
     func initSDK(complete: @escaping () -> Void) {
 
@@ -37,6 +39,7 @@ final class CSJManager: NSObject {
         
         if ads.isEmpty {
             AHProgressView.showTextToast(message: "所有广告位尝试失败")
+            resultCallback?(false)
             return
         }
         currentSlotId = ads.removeFirst()
@@ -62,6 +65,7 @@ extension CSJManager: BUNativeExpressRewardedVideoAdDelegate {
         AHProgressView.hide()
         UIApplication.shared.isIdleTimerDisabled = false
         AdLogWrapper.append(title: "广告渲染成功\(currentSlotId!)")
+        resultCallback?(true)
         ads = csjSlotIds
     }
     func nativeExpressRewardedVideoAd(_ rewardedVideoAd: BUNativeExpressRewardedVideoAd, didFailWithError error: Error?) {
