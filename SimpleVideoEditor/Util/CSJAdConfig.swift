@@ -8,5 +8,5 @@
 
 import Foundation
 
-var csjAppid: String { "5519488" }
+var csjAppid = "5519488"
 var csjSlotIds: [String] { ["956977004", "956976998", "956976988"] }
