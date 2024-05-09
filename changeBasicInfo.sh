@@ -13,7 +13,7 @@ fi
 export $(cat $CONFIG_FILE | xargs)
 
 # 检查变量是否被正确读取
-if [ -z "$BUNDLE_ID" ] || [ -z "$PRODUCT_NAME" ] || [ -z "$CLASS_VARIABLE_NAME" ] || [ -z "$CLASS_VARIABLE_VALUE" ] || [ -z "$BUILD_VERSION" ]; then
+if [ -z "$BUNDLE_ID" ] || [ -z "$PRODUCT_NAME" ] || [ -z "$APP_ID_NAME" ] || [ -z "$APP_SLOT_IDS" ] || [ -z "$APP_ID_VALUE" ] || [ -z "$APP_SLOT_IDS_VALUE" ]; then
     echo "配置文件中的某些必要信息未被设置."
     exit 1
 fi
@@ -23,14 +23,17 @@ PROJECT_FILE="SimpleVideoEditor.xcodeproj/project.pbxproj"
 INFO_PLIST_PATH="SimpleVideoEditor/Info.plist"
 CLASS_FILE_PATH="SimpleVideoEditor/Util/CSJAdConfig.swift"
 
-sed -i '' -e "s/\([a-zA-Z0-9_.-]*\)\.app \*/$PRODUCT_NAME.app */g" -e "s/\"\([a-zA-Z0-9_.-]*\)\.app\"/\"$PRODUCT_NAME.app\"/g" PROJECT_FILE
+sed -i '' -e "s/\([^[:space:]/]*\)\.app\([;]\)/\"$PRODUCT_NAME.app\";/g" -e "s/\([^[:space:]/]*\)\.app\([\"*]\)/\"$PRODUCT_NAME.app\2/g" -e "s/\([^[:space:]/]*\)\.app \*/\"$PRODUCT_NAME.app\" */g" $PROJECT_FILE
+
+sed -i '' "s/\(PRODUCT_NAME = \).*;/\1\"$PRODUCT_NAME\";/g" "$PROJECT_FILE"
 
 sed -i '' "s/\(PRODUCT_BUNDLE_IDENTIFIER = \).*;/\1$BUNDLE_ID;/g" "$PROJECT_FILE"
 sed -i '' "s/\(CURRENT_PROJECT_VERSION = \).*;/\1$BUILD_VERSION;/g" "$PROJECT_FILE"
 
 # 更新类变量
-sed -i '' "s/^\(.*$CLASS_VARIABLE_NAME.*=\).*$/\1 \"$CLASS_VARIABLE_VALUE\" /" "$CLASS_FILE_PATH"
+sed -i '' "s/^\(.*$APP_ID_NAME.*=\).*$/\1 \"$APP_ID_VALUE\" /" "$CLASS_FILE_PATH"
 
+sed -i '' "s/^\(.*$APP_SLOT_IDS.*=\).*$/\1 \[\"$APP_SLOT_IDS_VALUE\"\] /" "$CLASS_FILE_PATH"
 
 
 echo "更新完成."
