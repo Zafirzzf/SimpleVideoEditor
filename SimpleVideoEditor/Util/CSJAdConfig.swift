@@ -8,8 +8,5 @@
 
 import Foundation
 
-var csjAppid: String { PreferenceConfig.csjIsTestAd ? "5519852" : "5519488" }
-var csjSlotIds: [String] { PreferenceConfig.csjIsTestAd ?
-    ["956991985"] :
-    ["956977004", "956976998", "956976988"]
-}
+var csjAppid: String { "5519488" }
+var csjSlotIds: [String] { ["956977004", "956976998", "956976988"] }
