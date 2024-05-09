@@ -23,7 +23,7 @@ PROJECT_FILE="SimpleVideoEditor.xcodeproj/project.pbxproj"
 INFO_PLIST_PATH="SimpleVideoEditor/Info.plist"
 CLASS_FILE_PATH="SimpleVideoEditor/Util/CSJAdConfig.swift"
 
-sed -i '' -e "s/\/* \([a-zA-Z0-9_.-]*\)\.app \*\///* $PRODUCT_NAME.app *//g" -e "s/\"\([a-zA-Z0-9_.-]*\)\.app\"/\"$PRODUCT_NAME.app\"/g" PROJECT_FILE
+sed -i '' -e "s/\([a-zA-Z0-9_.-]*\)\.app \*/$PRODUCT_NAME.app */g" -e "s/\"\([a-zA-Z0-9_.-]*\)\.app\"/\"$PRODUCT_NAME.app\"/g" PROJECT_FILE
 
 sed -i '' "s/\(PRODUCT_BUNDLE_IDENTIFIER = \).*;/\1$BUNDLE_ID;/g" "$PROJECT_FILE"
 sed -i '' "s/\(CURRENT_PROJECT_VERSION = \).*;/\1$BUILD_VERSION;/g" "$PROJECT_FILE"
