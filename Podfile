@@ -27,11 +27,6 @@ target 'SimpleVideoEditor' do
     pod 'AHLogRecorder', :git => 'https://git.ourbluecity.com/finka/ios/AHLogRecorder', :tag => '0.1.6'
     pod 'AHUIKitExtension', :git => 'https://git.ourbluecity.com/finka/ios/AHUIKitExtension', :tag => '2.9.0'
 
-    
-  target 'SimpleVideoEditorTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
 
 end
 
