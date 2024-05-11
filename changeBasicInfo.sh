@@ -20,12 +20,15 @@ fi
 
 # 定义你的xcodeproj文件路径
 PROJECT_FILE="/Users/blued/Desktop/myself/SimpleVideoEditor/SimpleVideoEditor.xcodeproj/project.pbxproj"
-INFO_PLIST_PATH="/Users/blued/Desktop/myself/SimpleVideoEditor/SimpleVideoEditor/SimpleVideoEditor/Info.plist"
+INFO_PLIST_PATH="/Users/blued/Desktop/myself/SimpleVideoEditor/SimpleVideoEditor/Info.plist"
 CLASS_FILE_PATH="/Users/blued/Desktop/myself/SimpleVideoEditor/SimpleVideoEditor/Util/CSJAdConfig.swift"
 
 sed -i '' -e "s/\([^[:space:]/]*\)\.app\([;]\)/\"$PRODUCT_NAME.app\";/g" -e "s/\([^[:space:]/]*\)\.app\([\"*]\)/\"$PRODUCT_NAME.app\2/g" -e "s/\([^[:space:]/]*\)\.app \*/\"$PRODUCT_NAME.app\" */g" $PROJECT_FILE
 
 sed -i '' "s/\(PRODUCT_NAME = \).*;/\1\"$PRODUCT_NAME\";/g" "$PROJECT_FILE"
+
+/usr/libexec/PlistBuddy -c "Set :CFBundleName $PRODUCT_NAME" "$INFO_PLIST_PATH"
+
 
 sed -i '' "s/\(PRODUCT_BUNDLE_IDENTIFIER = \).*;/\1$BUNDLE_ID;/g" "$PROJECT_FILE"
 sed -i '' "s/\(CURRENT_PROJECT_VERSION = \).*;/\1$BUILD_VERSION;/g" "$PROJECT_FILE"
