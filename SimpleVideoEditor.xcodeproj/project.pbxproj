@@ -163,7 +163,7 @@
 		184C691E23E917A80040ABCB /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		1865B40623DE8FBB006BEFF0 /* MainPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPlayerViewController.swift; sourceTree = "<group>"; };
 		1865B40A23DE9CAD006BEFF0 /* PreSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreSelectViewController.swift; sourceTree = "<group>"; };
-		18BE457A23D95B72009A5EDE /* "周大圣5.app" */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "周大圣5.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		18BE457A23D95B72009A5EDE /* "京栎4.app" */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "京栎4.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BE457D23D95B72009A5EDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18BE458623D95B73009A5EDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18BE458923D95B73009A5EDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -381,7 +381,7 @@
 		18BE457B23D95B72009A5EDE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				18BE457A23D95B72009A5EDE /* "周大圣5.app" */,
+				18BE457A23D95B72009A5EDE /* "京栎4.app" */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -836,7 +836,7 @@
 			packageProductDependencies = (
 			);
 			productName = SimpleVideoEditor;
-			productReference = 18BE457A23D95B72009A5EDE /* "周大圣5.app" */;
+			productReference = 18BE457A23D95B72009A5EDE /* "京栎4.app" */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1219,7 +1219,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = 2YBDAL8C2A;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1258,8 +1258,8 @@
 					"\"SwiftyNotification\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zafir.caclulate.zhoubei4;
-				PRODUCT_NAME = "周大圣5";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zafir.caclulate.jing4;
+				PRODUCT_NAME = "京栎4";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SimpleVideoEditor/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -1274,7 +1274,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = 2YBDAL8C2A;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1312,8 +1312,8 @@
 					"\"SwiftyNotification\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zafir.caclulate.zhoubei4;
-				PRODUCT_NAME = "周大圣5";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zafir.caclulate.jing4;
+				PRODUCT_NAME = "京栎4";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SimpleVideoEditor/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;

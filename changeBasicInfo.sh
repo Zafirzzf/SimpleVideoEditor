@@ -19,9 +19,9 @@ if [ -z "$BUNDLE_ID" ] || [ -z "$PRODUCT_NAME" ] || [ -z "$APP_ID_NAME" ] || [ -
 fi
 
 # 定义你的xcodeproj文件路径
-PROJECT_FILE="SimpleVideoEditor.xcodeproj/project.pbxproj"
-INFO_PLIST_PATH="SimpleVideoEditor/Info.plist"
-CLASS_FILE_PATH="SimpleVideoEditor/Util/CSJAdConfig.swift"
+PROJECT_FILE="/Users/blued/Desktop/myself/SimpleVideoEditor/SimpleVideoEditor.xcodeproj/project.pbxproj"
+INFO_PLIST_PATH="/Users/blued/Desktop/myself/SimpleVideoEditor/SimpleVideoEditor/SimpleVideoEditor/Info.plist"
+CLASS_FILE_PATH="/Users/blued/Desktop/myself/SimpleVideoEditor/SimpleVideoEditor/Util/CSJAdConfig.swift"
 
 sed -i '' -e "s/\([^[:space:]/]*\)\.app\([;]\)/\"$PRODUCT_NAME.app\";/g" -e "s/\([^[:space:]/]*\)\.app\([\"*]\)/\"$PRODUCT_NAME.app\2/g" -e "s/\([^[:space:]/]*\)\.app \*/\"$PRODUCT_NAME.app\" */g" $PROJECT_FILE
 
