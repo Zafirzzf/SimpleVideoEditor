@@ -8,8 +8,8 @@
 
 import Foundation
 
-var csjAppid = "5547053"
+var csjAppid = "5547051"
 
-private var _ids = ["957867844", "957867838", "957867834"]
+private var _ids = ["957870383", "957870376", "957870374"]
 
 var csjSlotIds: [String] { _ids }

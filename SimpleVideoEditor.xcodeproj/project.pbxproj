@@ -163,7 +163,7 @@
 		184C691E23E917A80040ABCB /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		1865B40623DE8FBB006BEFF0 /* MainPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPlayerViewController.swift; sourceTree = "<group>"; };
 		1865B40A23DE9CAD006BEFF0 /* PreSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreSelectViewController.swift; sourceTree = "<group>"; };
-		18BE457A23D95B72009A5EDE /* 乐乐剪辑.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "乐乐剪辑.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		18BE457A23D95B72009A5EDE /* 快乐的剪辑.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "快乐的剪辑.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BE457D23D95B72009A5EDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18BE458623D95B73009A5EDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18BE458923D95B73009A5EDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -381,7 +381,7 @@
 		18BE457B23D95B72009A5EDE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				18BE457A23D95B72009A5EDE /* 乐乐剪辑.app */,
+				18BE457A23D95B72009A5EDE /* 快乐的剪辑.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -836,7 +836,7 @@
 			packageProductDependencies = (
 			);
 			productName = SimpleVideoEditor;
-			productReference = 18BE457A23D95B72009A5EDE /* 乐乐剪辑.app */;
+			productReference = 18BE457A23D95B72009A5EDE /* 快乐的剪辑.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1258,8 +1258,8 @@
 					"\"SwiftyNotification\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zafir.videoEditor.5m2;
-				PRODUCT_NAME = "乐乐剪辑";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zafir.videoEditor.5m1;
+				PRODUCT_NAME = "快乐的剪辑";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SimpleVideoEditor/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -1312,8 +1312,8 @@
 					"\"SwiftyNotification\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zafir.videoEditor.5m2;
-				PRODUCT_NAME = "乐乐剪辑";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zafir.videoEditor.5m1;
+				PRODUCT_NAME = "快乐的剪辑";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SimpleVideoEditor/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
