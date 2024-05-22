@@ -74,7 +74,7 @@ extension CSJManager: BUNativeExpressRewardedVideoAdDelegate {
         AdLogWrapper.append(title: "广告位加载失败:\(String(describing: errorInfo)) + \(errorCode) + ", subTitle: error?.localizedDescription)
         AHProgressView.showTextToast(message: "广告位加载失败:\n \(error?.localizedDescription ?? "")")
         UIApplication.shared.isIdleTimerDisabled = false
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.2, execute: {
             self.loadAdData(isRetry: true)
         })
         print(#function, error)
