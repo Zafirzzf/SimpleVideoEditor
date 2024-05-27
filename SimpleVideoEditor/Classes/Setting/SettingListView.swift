@@ -39,8 +39,13 @@ class SettingListView: UIView, SingleTableViewProtocol, SideSheetProtocol {
             .title("提取的音乐".international)
             .addToSuperView(self)
             .whenTap { [unowned self] in
-                VCManager.push(vc: MusicFileViewController())
-                self.dismiss()
+                ZFAlertView(title: "解锁提取音乐", leftTitle: "取消", rightTitle: "看视频解锁") { isLeft in
+                    if !isLeft {
+                        GDTADManager.shared.loadAdData()
+                    }
+                }.show()
+//                VCManager.push(vc: MusicFileViewController())
+//                self.dismiss()
         }.base
         
         tableView.snp.makeConstraints {

@@ -1,10 +1,18 @@
 PODS:
+  - AHLogRecorder (0.1.5):
+    - SnapKit
+  - AHProgressView (1.7.0):
+    - SnapKit
   - AHUIKitExtension (2.9.0):
     - SDWebImage
     - SnapKit
   - Bugly (2.5.93)
   - DeviceDefine (0.3.0)
+  - GDTMobSDK (4.14.71):
+    - GDTMobSDK/GDTMobSDK (= 4.14.71)
+  - GDTMobSDK/GDTMobSDK (4.14.71)
   - NimbleKit (2.1)
+  - ObjectMapper (4.4.2)
   - RxCocoa (6.6.0):
     - RxRelay (= 6.6.0)
     - RxSwift (= 6.6.0)
@@ -20,10 +28,14 @@ PODS:
   - SwiftyPreference (3.0.1)
 
 DEPENDENCIES:
+  - AHLogRecorder (from `https://git.ourbluecity.com/finka/ios/AHLogRecorder`, tag `0.1.6`)
+  - AHProgressView (from `https://git.ourbluecity.com/finka/ios/BasicComponents/AHProgressView.git`, tag `1.7.2`)
   - AHUIKitExtension (from `https://git.ourbluecity.com/finka/ios/AHUIKitExtension`, tag `2.9.1`)
   - Bugly (= 2.5.93)
   - DeviceDefine (= 0.3.0)
+  - GDTMobSDK (= 4.14.71)
   - NimbleKit
+  - ObjectMapper
   - RxCocoa (= 6.6.0)
   - RxSwift (= 6.6.0)
   - SnapKit (= 5.7.1)
@@ -36,7 +48,9 @@ SPEC REPOS:
     - DeviceDefine
   https://github.com/CocoaPods/Specs.git:
     - Bugly
+    - GDTMobSDK
     - NimbleKit
+    - ObjectMapper
     - RxCocoa
     - RxRelay
     - RxSwift
@@ -47,20 +61,36 @@ SPEC REPOS:
     - SwiftyPreference
 
 EXTERNAL SOURCES:
+  AHLogRecorder:
+    :git: https://git.ourbluecity.com/finka/ios/AHLogRecorder
+    :tag: 0.1.6
+  AHProgressView:
+    :git: https://git.ourbluecity.com/finka/ios/BasicComponents/AHProgressView.git
+    :tag: 1.7.2
   AHUIKitExtension:
     :git: https://git.ourbluecity.com/finka/ios/AHUIKitExtension
     :tag: 2.9.1
 
 CHECKOUT OPTIONS:
+  AHLogRecorder:
+    :git: https://git.ourbluecity.com/finka/ios/AHLogRecorder
+    :tag: 0.1.6
+  AHProgressView:
+    :git: https://git.ourbluecity.com/finka/ios/BasicComponents/AHProgressView.git
+    :tag: 1.7.2
   AHUIKitExtension:
     :git: https://git.ourbluecity.com/finka/ios/AHUIKitExtension
     :tag: 2.9.1
 
 SPEC CHECKSUMS:
+  AHLogRecorder: 7dea08b21e642347847014dab3b7a0140515a54a
+  AHProgressView: d69e275e2b4575dbad23be90594d582d86e16e27
   AHUIKitExtension: 62ed7ecacecaff523729f2c848cc91a231dd05b6
   Bugly: b8715e6ec4004b7f7fbffab0643ba80545aee3da
   DeviceDefine: 0a8c5ac726473798b4e0371b25a89aa7c3153685
+  GDTMobSDK: 489e726007e6944166b72c793fe2e39e2956f080
   NimbleKit: fc0c4d88eece0fc61f0a32c5e3a605c1fd1d30c0
+  ObjectMapper: e6e4d91ff7f2861df7aecc536c92d8363f4c9677
   RxCocoa: 44a80de90e25b739b5aeaae3c8c371a32e3343cc
   RxRelay: 45eaa5db8ee4fb50e5ebd57deec0159e97fa51e6
   RxSwift: a4b44f7d24599f674deebd1818eab82e58410632
@@ -70,6 +100,6 @@ SPEC CHECKSUMS:
   SwiftyNotification: 97bc51087f1cb0decd8866183b45d9fed15aa0c7
   SwiftyPreference: dc29c1230091e6046642e463ff3b90d005091fba
 
-PODFILE CHECKSUM: d5c7f553166df6295c812ba95ecce37461a98119
+PODFILE CHECKSUM: 46602c50d940947dc806d5891ccb1e1a71918ac8
 
 COCOAPODS: 1.15.2
