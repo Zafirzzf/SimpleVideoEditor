@@ -41,7 +41,14 @@ class PlayerControlOptionView: UIView {
             .image("music_normal".toImage(), "music_sel".toImage())
             .addToSuperView(self)
             .whenTap {
-                self.musicTap.accept(())
+                ZFAlertView(title: "解锁提取音乐", leftTitle: "取消", rightTitle: "看视频解锁") { isLeft in
+                    if !isLeft {
+                        GDTADManager.shared.loadAdData(success: {
+                            self.musicTap.accept(())
+                        })
+                    }
+                }.show()
+//                self.musicTap.accept(())
         }
         let stackView = UIStackView(arrangedSubviews: [mirrorButton, rateButton, musicButton])
         stackView.alignment = .center

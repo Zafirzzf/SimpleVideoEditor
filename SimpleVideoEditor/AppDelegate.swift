@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .white
-        window?.rootViewController = PreSelectViewController()
+        window?.rootViewController = UINavigationController(rootViewController: PreSelectViewController()) 
         window?.makeKeyAndVisible()
         Bugly.start(withAppId: "749b56a434")
         UIViewController.rootTabViewControoler = window?.rootViewController

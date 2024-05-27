@@ -9,11 +9,14 @@
 import Foundation
 import AHProgressView
 
+weak var showVC: UIViewController?
+
 class GDTADManager: NSObject {
     
     static let shared = GDTADManager()
     
     var rewardVideo: GDTRewardVideoAd?
+    var successCallback: VoidCallback?
     
     override init() {
         super.init()
@@ -35,7 +38,8 @@ class GDTADManager: NSObject {
         }
     }
     
-    func loadAdData() {
+    func loadAdData(success: @escaping VoidCallback) {
+        self.successCallback = success
         initSDK { [self] in
             rewardVideo = GDTRewardVideoAd.init(placementId: "7069560445173044")
             rewardVideo?.delegate = self
@@ -54,10 +58,12 @@ extension GDTADManager: GDTRewardedVideoAdDelegate {
             AdLogWrapper.append(title: "广告加载失败: 过期了")
             return
         }
-        rewardVideo.show(fromRootViewController: .topViewController)
+        guard let showVC else { return }
+        rewardVideo.show(fromRootViewController: showVC)
     }
     
     func gdt_rewardVideoAdDidRewardEffective(_ rewardedVideoAd: GDTRewardVideoAd, info: [AnyHashable : Any]) {
+        successCallback?()
         AdLogWrapper.append(title: "广告渲染成功: 价格\(String(describing: rewardedVideoAd.eCPM() / 10))毛")
     }
     

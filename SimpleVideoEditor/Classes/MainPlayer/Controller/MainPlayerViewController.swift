@@ -36,6 +36,7 @@ class MainPlayerViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        showVC = self
         setup()
         setupBottomControlView()
         setupPlayer()
