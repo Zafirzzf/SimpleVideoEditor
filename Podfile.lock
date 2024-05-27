@@ -1,7 +1,4 @@
 PODS:
-  - Ads-CN-Beta (6.0.0.1):
-    - Ads-CN-Beta/BUAdSDK (= 6.0.0.1)
-  - Ads-CN-Beta/BUAdSDK (6.0.0.1)
   - AHUIKitExtension (2.9.0):
     - SDWebImage
     - SnapKit
@@ -14,16 +11,16 @@ PODS:
   - RxRelay (6.6.0):
     - RxSwift (= 6.6.0)
   - RxSwift (6.6.0)
-  - SDWebImage (5.19.0):
-    - SDWebImage/Core (= 5.19.0)
-  - SDWebImage/Core (5.19.0)
+  - SDWebImage (5.19.1):
+    - SDWebImage/Core (= 5.19.1)
+  - SDWebImage/Core (5.19.1)
   - SnapKit (5.7.1)
   - SwiftDate (7.0.0)
   - SwiftyNotification (1.3.1)
+  - SwiftyPreference (3.0.1)
 
 DEPENDENCIES:
-  - Ads-CN-Beta (= 6.0.0.1)
-  - AHUIKitExtension (from `https://git.ourbluecity.com/finka/ios/AHUIKitExtension`, tag `2.9.0`)
+  - AHUIKitExtension (from `https://git.ourbluecity.com/finka/ios/AHUIKitExtension`, tag `2.9.1`)
   - Bugly (= 2.5.93)
   - DeviceDefine (= 0.3.0)
   - NimbleKit
@@ -32,35 +29,34 @@ DEPENDENCIES:
   - SnapKit (= 5.7.1)
   - SwiftDate (= 7.0.0)
   - SwiftyNotification
+  - SwiftyPreference (= 3.0.1)
 
 SPEC REPOS:
   https://git.ourbluecity.com/finka/ios/AHPodsSpecs.git:
     - DeviceDefine
   https://github.com/CocoaPods/Specs.git:
-    - SDWebImage
-  trunk:
-    - Ads-CN-Beta
     - Bugly
     - NimbleKit
     - RxCocoa
     - RxRelay
     - RxSwift
+    - SDWebImage
     - SnapKit
     - SwiftDate
     - SwiftyNotification
+    - SwiftyPreference
 
 EXTERNAL SOURCES:
   AHUIKitExtension:
     :git: https://git.ourbluecity.com/finka/ios/AHUIKitExtension
-    :tag: 2.9.0
+    :tag: 2.9.1
 
 CHECKOUT OPTIONS:
   AHUIKitExtension:
     :git: https://git.ourbluecity.com/finka/ios/AHUIKitExtension
-    :tag: 2.9.0
+    :tag: 2.9.1
 
 SPEC CHECKSUMS:
-  Ads-CN-Beta: a23c8b868e1074adb46d65c682ef67b441421e67
   AHUIKitExtension: 62ed7ecacecaff523729f2c848cc91a231dd05b6
   Bugly: b8715e6ec4004b7f7fbffab0643ba80545aee3da
   DeviceDefine: 0a8c5ac726473798b4e0371b25a89aa7c3153685
@@ -68,11 +64,12 @@ SPEC CHECKSUMS:
   RxCocoa: 44a80de90e25b739b5aeaae3c8c371a32e3343cc
   RxRelay: 45eaa5db8ee4fb50e5ebd57deec0159e97fa51e6
   RxSwift: a4b44f7d24599f674deebd1818eab82e58410632
-  SDWebImage: 981fd7e860af070920f249fd092420006014c3eb
+  SDWebImage: 40b0b4053e36c660a764958bff99eed16610acbb
   SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
   SwiftDate: bbc26e26fc8c0c33fbee8c140c5e8a68293a148a
   SwiftyNotification: 97bc51087f1cb0decd8866183b45d9fed15aa0c7
+  SwiftyPreference: dc29c1230091e6046642e463ff3b90d005091fba
 
-PODFILE CHECKSUM: 2b786eabf413cb4d4596e15eb411d2edfb650067
+PODFILE CHECKSUM: d5c7f553166df6295c812ba95ecce37461a98119
 
-COCOAPODS: 1.14.3
+COCOAPODS: 1.15.2

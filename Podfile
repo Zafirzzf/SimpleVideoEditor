@@ -18,10 +18,10 @@ target 'SimpleVideoEditor' do
     pod 'SwiftDate', '7.0.0'
     pod 'Bugly',  '2.5.93'
     pod 'SwiftyNotification'
-    pod 'Ads-CN-Beta', '6.0.0.1'
     pod 'DeviceDefine',                     '0.3.0'
+    pod 'SwiftyPreference',     '3.0.1'
 
-    pod 'AHUIKitExtension', :git => 'https://git.ourbluecity.com/finka/ios/AHUIKitExtension', :tag => '2.9.0'
+    pod 'AHUIKitExtension', :git => 'https://git.ourbluecity.com/finka/ios/AHUIKitExtension', :tag => '2.9.1'
 
     
   target 'SimpleVideoEditorTests' do

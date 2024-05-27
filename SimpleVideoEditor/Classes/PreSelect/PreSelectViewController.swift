@@ -75,8 +75,7 @@ class PreSelectViewController: BaseViewController {
             .title("提取的音乐".international)
             .addToSuperView(self.view)
             .whenTap { [unowned self] in
-                CSJManager.shared.loadAdData()
-//                self.push(MusicFileViewController())
+                self.push(MusicFileViewController())
         }.base
         
         titleLabel.snp.makeConstraints {

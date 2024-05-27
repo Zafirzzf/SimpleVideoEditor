@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		021B1CD82BB045410057A3F9 /* CSJManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B1CD72BB045410057A3F9 /* CSJManager.swift */; };
 		181AFFCD23DED0C00092EC79 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181AFFCC23DED0C00092EC79 /* PlayerViewModel.swift */; };
 		181AFFCE23DED0C00092EC79 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181AFFCC23DED0C00092EC79 /* PlayerViewModel.swift */; };
 		181AFFD023DED3DA0092EC79 /* PlayerControlBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181AFFCF23DED3DA0092EC79 /* PlayerControlBottomView.swift */; };
@@ -210,7 +209,6 @@
 		18C6E41A23FBC023005F05F8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C6E41923FBC023005F05F8 /* Foundation.framework */; };
 		18C6E43623FBF73F005F05F8 /* PreferenceConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C6E43523FBF73F005F05F8 /* PreferenceConfig.swift */; };
 		18C6E43723FBF73F005F05F8 /* PreferenceConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C6E43523FBF73F005F05F8 /* PreferenceConfig.swift */; };
-		18C6E43A23FBF7FA005F05F8 /* SwiftyPreference in Frameworks */ = {isa = PBXBuildFile; productRef = 18C6E43923FBF7FA005F05F8 /* SwiftyPreference */; };
 		18C8F1E92442C3CB00FE5CB4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18C8F1E82442C3CB00FE5CB4 /* GoogleService-Info.plist */; };
 		18C8F1EA2442C3CB00FE5CB4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18C8F1E82442C3CB00FE5CB4 /* GoogleService-Info.plist */; };
 		18CC8CB8244AF452000D3C0A /* SettingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC8CB7244AF452000D3C0A /* SettingListView.swift */; };
@@ -251,7 +249,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		021B1CD72BB045410057A3F9 /* CSJManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSJManager.swift; sourceTree = "<group>"; };
 		181AFFCC23DED0C00092EC79 /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
 		181AFFCF23DED3DA0092EC79 /* PlayerControlBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerControlBottomView.swift; sourceTree = "<group>"; };
 		181AFFD223DF17A30092EC79 /* VideoPickItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPickItem.swift; sourceTree = "<group>"; };
@@ -406,7 +403,6 @@
 			files = (
 				18C6E41A23FBC023005F05F8 /* Foundation.framework in Frameworks */,
 				18C6E41823FBC01C005F05F8 /* UIKit.framework in Frameworks */,
-				18C6E43A23FBF7FA005F05F8 /* SwiftyPreference in Frameworks */,
 				18C6E41623FBC017005F05F8 /* CoreGraphics.framework in Frameworks */,
 				18C6E41423FBC012005F05F8 /* AdSupport.framework in Frameworks */,
 				18C6E41023FBBFFF005F05F8 /* QuartzCore.framework in Frameworks */,
@@ -533,7 +529,6 @@
 			isa = PBXGroup;
 			children = (
 				1825342524552D2900218B36 /* PlayerTimeController.swift */,
-				021B1CD72BB045410057A3F9 /* CSJManager.swift */,
 				18ED4E0C23EC171000A02DA0 /* AVPlayerSeeker.swift */,
 				181AFFDE23E190330092EC79 /* VideoManager.swift */,
 				18CC8CC3244B53DA000D3C0A /* MusicEditor.swift */,
@@ -939,16 +934,12 @@
 				18BE457723D95B72009A5EDE /* Frameworks */,
 				18BE457823D95B72009A5EDE /* Resources */,
 				171F4C92582E3EF7655038F7 /* [CP] Embed Pods Frameworks */,
-				B017CE2CAF400DC1C629A5F8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = SimpleVideoEditor;
-			packageProductDependencies = (
-				18C6E43923FBF7FA005F05F8 /* SwiftyPreference */,
-			);
 			productName = SimpleVideoEditor;
 			productReference = 18BE457A23D95B72009A5EDE /* SimplePlayer.app */;
 			productType = "com.apple.product-type.application";
@@ -1001,9 +992,6 @@
 				"zh-Hans",
 			);
 			mainGroup = 18BE457123D95B72009A5EDE;
-			packageReferences = (
-				18C6E43823FBF7FA005F05F8 /* XCRemoteSwiftPackageReference "SwiftyPreference" */,
-			);
 			productRefGroup = 18BE457B23D95B72009A5EDE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1079,23 +1067,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B017CE2CAF400DC1C629A5F8 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SimpleVideoEditor/Pods-SimpleVideoEditor-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SimpleVideoEditor/Pods-SimpleVideoEditor-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SimpleVideoEditor/Pods-SimpleVideoEditor-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		B080FDE28E840C3A03B8E6E7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1154,7 +1125,6 @@
 				18BE45F523DDB275009A5EDE /* PKHUDErrorView.swift in Sources */,
 				18BE468923DDB2D3009A5EDE /* LoadCellable.swift in Sources */,
 				18BE45DD23DDB275009A5EDE /* PKHUD.swift in Sources */,
-				021B1CD82BB045410057A3F9 /* CSJManager.swift in Sources */,
 				18BE467923DDB2D3009A5EDE /* Decimal+Extension.swift in Sources */,
 				18BE466123DDB2D3009A5EDE /* UIWindow+Extension.swift in Sources */,
 				18ED4E0D23EC171000A02DA0 /* AVPlayerSeeker.swift in Sources */,
@@ -1692,25 +1662,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		18C6E43823FBF7FA005F05F8 /* XCRemoteSwiftPackageReference "SwiftyPreference" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Zafirzzf/SwiftyPreference.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.3;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		18C6E43923FBF7FA005F05F8 /* SwiftyPreference */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 18C6E43823FBF7FA005F05F8 /* XCRemoteSwiftPackageReference "SwiftyPreference" */;
-			productName = SwiftyPreference;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 18BE457223D95B72009A5EDE /* Project object */;
 }
